@@ -13,9 +13,11 @@
  */
 
 body, table td, select {
+  font-family: Arial Unicode MS, Arial, sans-serif;
   font-size: small;
 }
 pre {
+  font-family: "courier new", courier;
   font-size: small;
 }
 body {
@@ -227,7 +229,6 @@ a, a:visited, a:hover {
 .gwt-HorizontalSplitPanel .hsplitter {
   cursor: move;
   border: 0px;
-  background: #91c0ef url(../images/vborder.png) repeat-y;
   line-height: 0px;
 }
 .gwt-VerticalSplitPanel {
@@ -235,7 +236,6 @@ a, a:visited, a:hover {
 .gwt-VerticalSplitPanel .vsplitter {
   cursor: move;
   border: 0px;
-  background: #91c0ef url(../images/hborder.png) repeat-x;
   line-height: 0px;
 }
 
@@ -250,6 +250,7 @@ a, a:visited, a:hover {
 }
 
 .gwt-Label {
+  padding-left: 5px;
 }
 
 .gwt-ListBox {
@@ -623,13 +624,10 @@ a, a:visited, a:hover {
   padding: 3px;
   border: 1px solid #bbbbbb;
   border-bottom: 0px;
-  background: #d3def6 url(../images/hborder.png) repeat-x 0px -989px;
 }
 .gwt-StackPanel .gwt-StackPanelContent {
-  border: 1px solid #bbbbbb;
   border-bottom: 0px;
   background: white;
-  padding: 2px 2px 10px 5px;
 }
 
 .gwt-DecoratedStackPanel {
@@ -916,7 +914,6 @@ a, a:visited, a:hover {
 
 .gwt-TextBox {
   padding: 2px;
-  box-sizing: border-box;
 }
 .gwt-TextBox-readonly {
   color: #888;

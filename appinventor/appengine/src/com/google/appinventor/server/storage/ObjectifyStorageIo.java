@@ -1818,7 +1818,7 @@ public class ObjectifyStorageIo implements  StorageIo {
 
     ByteArrayOutputStream zipFile = new ByteArrayOutputStream();
     final ZipOutputStream out = new ZipOutputStream(zipFile);
-    out.setComment("Built with MIT App Inventor");
+    out.setComment("Built with ReactiveIDE");
 
     try {
       JobRetryHelper job = new JobRetryHelper() {

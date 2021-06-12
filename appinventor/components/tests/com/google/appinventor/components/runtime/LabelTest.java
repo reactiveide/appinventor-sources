@@ -124,8 +124,8 @@ public class LabelTest extends RobolectricTestBase {
 
   @Test
   public void testText() {
-    aLabel.Text("MIT App Inventor");
-    assertEquals("Invalid Label text", "MIT App Inventor", textView.getText());
+    aLabel.Text("ReactiveIDE");
+    assertEquals("Invalid Label text", "ReactiveIDE", textView.getText());
   }
 
   @Test

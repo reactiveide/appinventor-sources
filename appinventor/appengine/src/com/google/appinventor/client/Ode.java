@@ -1549,7 +1549,7 @@ public class Ode implements EntryPoint {
 
   /**
    * Creates, visually centers, and optionally displays the dialog box
-   * that informs the user how to start learning about using App Inventor
+   * that informs the user how to start learning about using ReactiveIDE
    * or create a new project.
    * @param showDialog Convenience variable to show the created DialogBox.
    * @return The created and optionally displayed Dialog box.
@@ -1631,7 +1631,7 @@ public class Ode implements EntryPoint {
   }
 
   /**
-   * Possibly display the MIT App Inventor "Splash Screen"
+   * Possibly display the ReactiveIDE "Splash Screen"
    *
    * @param force Bypass the check to see if they have dimissed this version
    */
@@ -1849,7 +1849,7 @@ public class Ode implements EntryPoint {
    * modal dialog box which cannot be dismissed. Instead it presents
    * just one option, a "Reload" button which reloads the browser.
    * This should trigger a re-authentication (or in the case of an
-   * App Inventor upgrade trigging the problem, the loading of newer
+   * ReactiveIDE upgrade trigging the problem, the loading of newer
    * code).
    */
 
@@ -1883,7 +1883,7 @@ public class Ode implements EntryPoint {
   /**
    * Show a Warning Dialog box when another login session has been
    * created. The user is then given two choices. They can either
-   * close this session of App Inventor, which will close the current
+   * close this session of ReactiveIDE, which will close the current
    * window, or they can click "Take Over" which will reload this
    * window effectively making it the latest login and invalidating
    * all other sessions.
@@ -1944,7 +1944,7 @@ public class Ode implements EntryPoint {
    * safe because normal sessionIds are UUIDs which are always longer
    * then the word "force." I know this is a bit kludgey, but by doing
    * it this way we don't have to change the RPC interface which makes
-   * releasing this code non-disruptive to people using App Inventor
+   * releasing this code non-disruptive to people using ReactiveIDE
    * during the release.
    *
    * If the user selects "Cancel" we take them back to the
@@ -2167,7 +2167,7 @@ public class Ode implements EntryPoint {
 
   /**
    * Display a Dialog box that explains that you cannot connect a
-   * device or the emulator to App Inventor until you have a project
+   * device or the emulator to ReactiveIDE until you have a project
    * selected.
    */
 
