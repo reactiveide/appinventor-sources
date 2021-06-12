@@ -111,10 +111,8 @@ public class TextBoxTest extends RobolectricTestBase {
   
   @Test
   public void testText() {
-    aTextBox.Text("
-ReactiveIDE");
-    assertEquals("Invalid TextBox Text", "
-ReactiveIDE", editText.getText().toString());
+    aTextBox.Text("ReactiveIDE");
+    assertEquals("Invalid TextBox Text", "ReactiveIDE", editText.getText().toString());
   }
   
   @Test
@@ -126,13 +124,11 @@ ReactiveIDE", editText.getText().toString());
   @Test
   public void testMultiLine() {
     aTextBox.MultiLine(true);
-    aTextBox.Text("
-ReactiveIDE \nis The Best !!!");
+    aTextBox.Text("ReactiveIDE \nis The Best !!!");
     assertEquals("Invalid TextBox MultiLine", 2, editText.getLineCount());
     
     aTextBox.MultiLine(false);
-    aTextBox.Text("
-ReactiveIDE \nis The Best !!!");
+    aTextBox.Text("ReactiveIDE \nis The Best !!!");
     assertEquals("Invalid TextBox MultiLine", 1, editText.getLineCount());
   }
   
