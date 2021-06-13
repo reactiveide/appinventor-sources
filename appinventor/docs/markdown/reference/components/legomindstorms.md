@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: LEGO® MINDSTORMS®
+title: IoT
 ---
 
 [&laquo; Back to index](index.html)
-# LEGO® MINDSTORMS®
+# IoT
 
 Table of Contents:
 
@@ -16,6 +16,7 @@ Table of Contents:
 * [Ev3TouchSensor](#Ev3TouchSensor)
 * [Ev3UI](#Ev3UI)
 * [Ev3UltrasonicSensor](#Ev3UltrasonicSensor)
+* [Microbit](#Microbit)
 * [NxtColorSensor](#NxtColorSensor)
 * [NxtDirectCommands](#NxtDirectCommands)
 * [NxtDrive](#NxtDrive)
@@ -484,6 +485,330 @@ None
 
 {:id="Ev3UltrasonicSensor.SetInchUnit" class="method"} <i/> SetInchUnit()
 : Measure the distance in inches.
+
+## Microbit  {#Microbit}
+
+Component for Microbit
+
+
+
+### Properties  {#Microbit-Properties}
+
+{:.properties}
+
+{:id="Microbit.BluetoothDevice" .component} *BluetoothDevice*
+: The BluetoothLE component connected to the micro:bit device.
+
+### Events  {#Microbit-Events}
+
+{:.events}
+
+{:id="Microbit.AccelerometerDataReceived"} AccelerometerDataReceived(*Accelerometer_X_*{:.number},*Accelerometer_Y*{:.number},*Accelerometer_Z*{:.number})
+: Event for AccelerometerDataReceived
+
+{:id="Microbit.AccelerometerPeriodReceived"} AccelerometerPeriodReceived(*Accelerometer_Period*{:.number})
+: Event for AccelerometerPeriodReceived
+
+{:id="Microbit.AppearanceReceived"} AppearanceReceived(*Category*{:.number})
+: Event for AppearanceReceived
+
+{:id="Microbit.ButtonAStateReceived"} ButtonAStateReceived(*Button_State_Value*{:.number})
+: Event for ButtonAStateReceived
+
+{:id="Microbit.ButtonBStateReceived"} ButtonBStateReceived(*Button_State_Value*{:.number})
+: Event for ButtonBStateReceived
+
+{:id="Microbit.DFUControlReceived"} DFUControlReceived(*dfu_control*{:.number})
+: Event for DFUControlReceived
+
+{:id="Microbit.DeviceNameReceived"} DeviceNameReceived(*Name*{:.text})
+: Event for DeviceNameReceived
+
+{:id="Microbit.FirmwareRevisionStringReceived"} FirmwareRevisionStringReceived(*Firmware_Revision*{:.text})
+: Event for FirmwareRevisionStringReceived
+
+{:id="Microbit.HardwareRevisionStringReceived"} HardwareRevisionStringReceived(*Hardware_Revision*{:.text})
+: Event for HardwareRevisionStringReceived
+
+{:id="Microbit.LEDMatrixStateReceived"} LEDMatrixStateReceived(*LED_Matrix_State*{:.list})
+: Event for LEDMatrixStateReceived
+
+{:id="Microbit.MagnetometerBearingReceived"} MagnetometerBearingReceived(*bearing_value*{:.number})
+: Event for MagnetometerBearingReceived
+
+{:id="Microbit.MagnetometerDataReceived"} MagnetometerDataReceived(*Magnetometer_X*{:.number},*Magnetometer_Y*{:.number},*Magnetometer_Z*{:.number})
+: Event for MagnetometerDataReceived
+
+{:id="Microbit.MagnetometerPeriodReceived"} MagnetometerPeriodReceived(*Magnetometer_Period*{:.number})
+: Event for MagnetometerPeriodReceived
+
+{:id="Microbit.ManufacturerNameStringReceived"} ManufacturerNameStringReceived(*Manufacturer_Name*{:.text})
+: Event for ManufacturerNameStringReceived
+
+{:id="Microbit.MicroBitEventReceived"} MicroBitEventReceived(*Event_Type_And_Value*{:.number})
+: Event for MicroBitEventReceived
+
+{:id="Microbit.MicroBitRequirementsReceived"} MicroBitRequirementsReceived(*microbit_reqs_value*{:.number})
+: Event for MicroBitRequirementsReceived
+
+{:id="Microbit.ModelNumberStringReceived"} ModelNumberStringReceived(*Model_Number*{:.text})
+: Event for ModelNumberStringReceived
+
+{:id="Microbit.PeripheralPreferredConnectionParametersReceived"} PeripheralPreferredConnectionParametersReceived(*Minimum_Connection_Interval*{:.number},*Maximum_Connection_Interval*{:.number},*Slave_Latency*{:.number},*Connection_Supervision_Timeout_Multiplier*{:.number})
+: Event for PeripheralPreferredConnectionParametersReceived
+
+{:id="Microbit.PinADConfigurationReceived"} PinADConfigurationReceived(*Pin_AD_Config_Value*{:.list})
+: Event for PinADConfigurationReceived
+
+{:id="Microbit.PinDataReceived"} PinDataReceived(*IO_Pin_Data*{:.list})
+: Event for PinDataReceived
+
+{:id="Microbit.PinIOConfigurationReceived"} PinIOConfigurationReceived(*Pin_IO_Config_Value*{:.list})
+: Event for PinIOConfigurationReceived
+
+{:id="Microbit.ScrollingDelayReceived"} ScrollingDelayReceived(*Scrolling_Delay_Value*{:.number})
+: Event for ScrollingDelayReceived
+
+{:id="Microbit.SerialNumberStringReceived"} SerialNumberStringReceived(*Serial_Number*{:.text})
+: Event for SerialNumberStringReceived
+
+{:id="Microbit.TXCharacteristicReceived"} TXCharacteristicReceived(*UART_TX_Field*{:.list})
+: Event for TXCharacteristicReceived
+
+{:id="Microbit.TemperaturePeriodReceived"} TemperaturePeriodReceived(*temperature_period_value*{:.number})
+: Event for TemperaturePeriodReceived
+
+{:id="Microbit.TemperatureReceived"} TemperatureReceived(*temperature_value*{:.number})
+: Event for TemperatureReceived
+
+{:id="Microbit.WroteAccelerometerPeriod"} WroteAccelerometerPeriod(*Accelerometer_Period*{:.number})
+: Event for WroteAccelerometerPeriod
+
+{:id="Microbit.WroteClientEvent"} WroteClientEvent(*Event_Types_And_Values*{:.number})
+: Event for WroteClientEvent
+
+{:id="Microbit.WroteClientRequirements"} WroteClientRequirements(*Client_Requirements_Value*{:.number})
+: Event for WroteClientRequirements
+
+{:id="Microbit.WroteDFUControl"} WroteDFUControl(*dfu_control*{:.number})
+: Event for WroteDFUControl
+
+{:id="Microbit.WroteDeviceName"} WroteDeviceName(*Name*{:.text})
+: Event for WroteDeviceName
+
+{:id="Microbit.WroteLEDMatrixState"} WroteLEDMatrixState(*LED_Matrix_State*{:.list})
+: Event for WroteLEDMatrixState
+
+{:id="Microbit.WroteLEDText"} WroteLEDText(*LED_Text_Value*{:.text})
+: Event for WroteLEDText
+
+{:id="Microbit.WroteMagnetometerPeriod"} WroteMagnetometerPeriod(*Magnetometer_Period*{:.number})
+: Event for WroteMagnetometerPeriod
+
+{:id="Microbit.WrotePWMControl"} WrotePWMControl(*PWM_Control_Field*{:.list})
+: Event for WrotePWMControl
+
+{:id="Microbit.WrotePinADConfiguration"} WrotePinADConfiguration(*Pin_AD_Config_Value*{:.list})
+: Event for WrotePinADConfiguration
+
+{:id="Microbit.WrotePinData"} WrotePinData(*IO_Pin_Data*{:.list})
+: Event for WrotePinData
+
+{:id="Microbit.WrotePinIOConfiguration"} WrotePinIOConfiguration(*Pin_IO_Config_Value*{:.list})
+: Event for WrotePinIOConfiguration
+
+{:id="Microbit.WroteRXCharacteristic"} WroteRXCharacteristic(*UART_TX_Field*{:.list})
+: Event for WroteRXCharacteristic
+
+{:id="Microbit.WroteScrollingDelay"} WroteScrollingDelay(*Scrolling_Delay_Value*{:.number})
+: Event for WroteScrollingDelay
+
+{:id="Microbit.WroteTemperaturePeriod"} WroteTemperaturePeriod(*temperature_period_value*{:.number})
+: Event for WroteTemperaturePeriod
+
+### Methods  {#Microbit-Methods}
+
+{:.methods}
+
+{:id="Microbit.ReadAccelerometerData" class="method"} <i/> ReadAccelerometerData()
+: Method for ReadAccelerometerData
+
+{:id="Microbit.ReadAccelerometerPeriod" class="method"} <i/> ReadAccelerometerPeriod()
+: Method for ReadAccelerometerPeriod
+
+{:id="Microbit.ReadAppearance" class="method"} <i/> ReadAppearance()
+: Method for ReadAppearance
+
+{:id="Microbit.ReadButtonAState" class="method"} <i/> ReadButtonAState()
+: Method for ReadButtonAState
+
+{:id="Microbit.ReadButtonBState" class="method"} <i/> ReadButtonBState()
+: Method for ReadButtonBState
+
+{:id="Microbit.ReadDFUControl" class="method"} <i/> ReadDFUControl()
+: Method for ReadDFUControl
+
+{:id="Microbit.ReadDeviceName" class="method"} <i/> ReadDeviceName()
+: Method for ReadDeviceName
+
+{:id="Microbit.ReadFirmwareRevisionString" class="method"} <i/> ReadFirmwareRevisionString()
+: Method for ReadFirmwareRevisionString
+
+{:id="Microbit.ReadHardwareRevisionString" class="method"} <i/> ReadHardwareRevisionString()
+: Method for ReadHardwareRevisionString
+
+{:id="Microbit.ReadLEDMatrixState" class="method"} <i/> ReadLEDMatrixState()
+: Method for ReadLEDMatrixState
+
+{:id="Microbit.ReadMagnetometerBearing" class="method"} <i/> ReadMagnetometerBearing()
+: Method for ReadMagnetometerBearing
+
+{:id="Microbit.ReadMagnetometerData" class="method"} <i/> ReadMagnetometerData()
+: Method for ReadMagnetometerData
+
+{:id="Microbit.ReadMagnetometerPeriod" class="method"} <i/> ReadMagnetometerPeriod()
+: Method for ReadMagnetometerPeriod
+
+{:id="Microbit.ReadManufacturerNameString" class="method"} <i/> ReadManufacturerNameString()
+: Method for ReadManufacturerNameString
+
+{:id="Microbit.ReadMicroBitEvent" class="method"} <i/> ReadMicroBitEvent()
+: Method for ReadMicroBitEvent
+
+{:id="Microbit.ReadMicroBitRequirements" class="method"} <i/> ReadMicroBitRequirements()
+: Method for ReadMicroBitRequirements
+
+{:id="Microbit.ReadModelNumberString" class="method"} <i/> ReadModelNumberString()
+: Method for ReadModelNumberString
+
+{:id="Microbit.ReadPeripheralPreferredConnectionParameters" class="method"} <i/> ReadPeripheralPreferredConnectionParameters()
+: Method for ReadPeripheralPreferredConnectionParameters
+
+{:id="Microbit.ReadPinADConfiguration" class="method"} <i/> ReadPinADConfiguration()
+: Method for ReadPinADConfiguration
+
+{:id="Microbit.ReadPinData" class="method"} <i/> ReadPinData()
+: Method for ReadPinData
+
+{:id="Microbit.ReadPinIOConfiguration" class="method"} <i/> ReadPinIOConfiguration()
+: Method for ReadPinIOConfiguration
+
+{:id="Microbit.ReadScrollingDelay" class="method"} <i/> ReadScrollingDelay()
+: Method for ReadScrollingDelay
+
+{:id="Microbit.ReadSerialNumberString" class="method"} <i/> ReadSerialNumberString()
+: Method for ReadSerialNumberString
+
+{:id="Microbit.ReadTemperature" class="method"} <i/> ReadTemperature()
+: Method for ReadTemperature
+
+{:id="Microbit.ReadTemperaturePeriod" class="method"} <i/> ReadTemperaturePeriod()
+: Method for ReadTemperaturePeriod
+
+{:id="Microbit.RequestAccelerometerDataUpdates" class="method"} <i/> RequestAccelerometerDataUpdates()
+: Method for RequestAccelerometerDataUpdates
+
+{:id="Microbit.RequestButtonAStateUpdates" class="method"} <i/> RequestButtonAStateUpdates()
+: Method for RequestButtonAStateUpdates
+
+{:id="Microbit.RequestButtonBStateUpdates" class="method"} <i/> RequestButtonBStateUpdates()
+: Method for RequestButtonBStateUpdates
+
+{:id="Microbit.RequestMagnetometerBearingUpdates" class="method"} <i/> RequestMagnetometerBearingUpdates()
+: Method for RequestMagnetometerBearingUpdates
+
+{:id="Microbit.RequestMagnetometerDataUpdates" class="method"} <i/> RequestMagnetometerDataUpdates()
+: Method for RequestMagnetometerDataUpdates
+
+{:id="Microbit.RequestMicroBitEventUpdates" class="method"} <i/> RequestMicroBitEventUpdates()
+: Method for RequestMicroBitEventUpdates
+
+{:id="Microbit.RequestMicroBitRequirementsUpdates" class="method"} <i/> RequestMicroBitRequirementsUpdates()
+: Method for RequestMicroBitRequirementsUpdates
+
+{:id="Microbit.RequestPinDataUpdates" class="method"} <i/> RequestPinDataUpdates()
+: Method for RequestPinDataUpdates
+
+{:id="Microbit.RequestTXCharacteristic" class="method"} <i/> RequestTXCharacteristic()
+: Method for RequestTXCharacteristic
+
+{:id="Microbit.RequestTemperatureUpdates" class="method"} <i/> RequestTemperatureUpdates()
+: Method for RequestTemperatureUpdates
+
+{:id="Microbit.StopAccelerometerDataUpdates" class="method"} <i/> StopAccelerometerDataUpdates()
+: Method for StopAccelerometerDataUpdates
+
+{:id="Microbit.StopButtonAStateUpdates" class="method"} <i/> StopButtonAStateUpdates()
+: Method for StopButtonAStateUpdates
+
+{:id="Microbit.StopButtonBStateUpdates" class="method"} <i/> StopButtonBStateUpdates()
+: Method for StopButtonBStateUpdates
+
+{:id="Microbit.StopMagnetometerBearingUpdates" class="method"} <i/> StopMagnetometerBearingUpdates()
+: Method for StopMagnetometerBearingUpdates
+
+{:id="Microbit.StopMagnetometerDataUpdates" class="method"} <i/> StopMagnetometerDataUpdates()
+: Method for StopMagnetometerDataUpdates
+
+{:id="Microbit.StopMicroBitEventUpdates" class="method"} <i/> StopMicroBitEventUpdates()
+: Method for StopMicroBitEventUpdates
+
+{:id="Microbit.StopMicroBitRequirementsUpdates" class="method"} <i/> StopMicroBitRequirementsUpdates()
+: Method for StopMicroBitRequirementsUpdates
+
+{:id="Microbit.StopPinDataUpdates" class="method"} <i/> StopPinDataUpdates()
+: Method for StopPinDataUpdates
+
+{:id="Microbit.StopTXCharacteristicUpdates" class="method"} <i/> StopTXCharacteristicUpdates()
+: Method for StopTXCharacteristicUpdates
+
+{:id="Microbit.StopTemperatureUpdates" class="method"} <i/> StopTemperatureUpdates()
+: Method for StopTemperatureUpdates
+
+{:id="Microbit.WriteAccelerometerPeriod" class="method"} <i/> WriteAccelerometerPeriod(*value*{:.number})
+: Method for WriteAccelerometerPeriod
+
+{:id="Microbit.WriteClientEvent" class="method"} <i/> WriteClientEvent(*Event_Types_And_Values*{:.any})
+: Method for WriteClientEvent
+
+{:id="Microbit.WriteClientRequirements" class="method"} <i/> WriteClientRequirements(*client_requirements_value*{:.any})
+: Method for WriteClientRequirements
+
+{:id="Microbit.WriteDFUControl" class="method"} <i/> WriteDFUControl(*dfu_control*{:.number})
+: Method for WriteDFUControl
+
+{:id="Microbit.WriteDeviceName" class="method"} <i/> WriteDeviceName(*name*{:.text})
+: Method for WriteDeviceName
+
+{:id="Microbit.WriteLEDMatrixState" class="method"} <i/> WriteLEDMatrixState(*LED_Matrix_State*{:.any})
+: Method for WriteLEDMatrixState
+
+{:id="Microbit.WriteLEDText" class="method"} <i/> WriteLEDText(*LED_Text_Value*{:.text})
+: Method for WriteLEDText
+
+{:id="Microbit.WriteMagnetometerPeriod" class="method"} <i/> WriteMagnetometerPeriod(*Magnetometer_Period*{:.number})
+: Method for WriteMagnetometerPeriod
+
+{:id="Microbit.WritePWMControl" class="method"} <i/> WritePWMControl(*PWM_Control_Field*{:.any})
+: Method for WritePWMControl
+
+{:id="Microbit.WritePinADConfiguration" class="method"} <i/> WritePinADConfiguration(*Pin_AD_Config_Value*{:.any})
+: Method for WritePinADConfiguration
+
+{:id="Microbit.WritePinData" class="method"} <i/> WritePinData(*IO_Pin_Data*{:.any})
+: Method for WritePinData
+
+{:id="Microbit.WritePinIOConfiguration" class="method"} <i/> WritePinIOConfiguration(*Pin_IO_Config_Value*{:.any})
+: Method for WritePinIOConfiguration
+
+{:id="Microbit.WriteRXCharacteristic" class="method"} <i/> WriteRXCharacteristic(*UART_TX*{:.any})
+: Method for WriteRXCharacteristic
+
+{:id="Microbit.WriteScrollingDelay" class="method"} <i/> WriteScrollingDelay(*Scrolling_Delay_Value*{:.number})
+: Method for WriteScrollingDelay
+
+{:id="Microbit.WriteTemperaturePeriod" class="method"} <i/> WriteTemperaturePeriod(*value*{:.number})
+: Method for WriteTemperaturePeriod
 
 ## NxtColorSensor  {#NxtColorSensor}
 

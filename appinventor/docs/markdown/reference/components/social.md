@@ -10,6 +10,7 @@ Table of Contents:
 
 * [ContactPicker](#ContactPicker)
 * [EmailPicker](#EmailPicker)
+* [GoogleSignIn](#GoogleSignIn)
 * [PhoneCall](#PhoneCall)
 * [PhoneNumberPicker](#PhoneNumberPicker)
 * [Sharing](#Sharing)
@@ -269,6 +270,32 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:id="EmailPicker.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `EmailPicker`.
+
+## GoogleSignIn  {#GoogleSignIn}
+
+Component for GoogleSignIn
+
+
+
+### Properties  {#GoogleSignIn-Properties}
+
+{:.properties}
+None
+
+
+### Events  {#GoogleSignIn-Events}
+
+{:.events}
+
+{:id="GoogleSignIn.Picked"} Picked(*accountName*{:.text})
+: Event raised after account has been picked.
+
+### Methods  {#GoogleSignIn-Methods}
+
+{:.methods}
+
+{:id="GoogleSignIn.Pick" class="method"} <i/> Pick()
+: Provide an account picker to pick a Google account.
 
 ## PhoneCall  {#PhoneCall}
 

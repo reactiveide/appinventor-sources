@@ -1,16 +1,19 @@
 ---
 layout: documentation
-title: Drawing and Animation
+title: Animation
 ---
 
 [&laquo; Back to index](index.html)
-# Drawing and Animation
+# Animation
 
 Table of Contents:
 
 * [Ball](#Ball)
 * [Canvas](#Canvas)
+* [CanvasAddons](#CanvasAddons)
+* [CircleImageSprite](#CircleImageSprite)
 * [ImageSprite](#ImageSprite)
+* [TransparentImageSprite](#TransparentImageSprite)
 
 ## Ball  {#Ball}
 
@@ -327,6 +330,146 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 : Sets the color of the given pixel.  This has no effect if the
  coordinates are out of bounds.
 
+## CanvasAddons  {#CanvasAddons}
+
+Component for CanvasAddons
+
+
+
+### Properties  {#CanvasAddons-Properties}
+
+{:.properties}
+
+{:id="CanvasAddons.BindedCanvas" .boolean .ro .bo} *BindedCanvas*
+: Property for BindedCanvas
+
+{:id="CanvasAddons.Canvas" .component} *Canvas*
+: Property for Canvas
+
+### Events  {#CanvasAddons-Events}
+
+{:.events}
+None
+
+
+### Methods  {#CanvasAddons-Methods}
+
+{:.methods}
+
+{:id="CanvasAddons.DrawArc" class="method"} <i/> DrawArc(*left*{:.number},*top*{:.number},*right*{:.number},*bottom*{:.number},*startAngle*{:.number},*sweepAngle*{:.number},*useCenter*{:.boolean},*fill*{:.boolean})
+: Draw an arc on Canvas, by drawing a arc from a specified oval
+   (specified by left, top, right & bottom),
+ start angle is 0 when heading to the right, and increase when rotate clockwise.
+
+{:id="CanvasAddons.DrawShape" class="method"} <i/> DrawShape(*pointList*{:.list},*fill*{:.boolean})
+: Draws a shape on the canvas, 
+ point list should be a list contains sub-lists with two number which represents a coordinate
+
+## CircleImageSprite  {#CircleImageSprite}
+
+Component for CircleImageSprite
+
+
+
+### Properties  {#CircleImageSprite-Properties}
+
+{:.properties}
+
+{:id="CircleImageSprite.AA_PlaceHolder" .component .wo .do} *AA_PlaceHolder*
+: A place holder for the sprite.
+ 
+ The property name "AA_PlaceHolder" is in purpose of making this property
+ at the top of the property list, and being executed first before other properties are handled
+
+{:id="CircleImageSprite.Enabled" .boolean .bo} *Enabled*
+: Property for Enabled
+
+{:id="CircleImageSprite.Heading" .number .bo} *Heading*
+: Property for Heading
+
+{:id="CircleImageSprite.Height" .number .bo} *Height*
+: Property for Height
+
+{:id="CircleImageSprite.Interval" .number .bo} *Interval*
+: Property for Interval
+
+{:id="CircleImageSprite.Picture" .text} *Picture*
+: Property for Picture
+
+{:id="CircleImageSprite.Rotates" .boolean .bo} *Rotates*
+: Property for Rotates
+
+{:id="CircleImageSprite.Speed" .number .bo} *Speed*
+: Property for Speed
+
+{:id="CircleImageSprite.Sprite" .component .ro .bo} *Sprite*
+: Return the sprite that is used in the component
+
+{:id="CircleImageSprite.Visible" .boolean .bo} *Visible*
+: Property for Visible
+
+{:id="CircleImageSprite.Width" .number .bo} *Width*
+: Property for Width
+
+{:id="CircleImageSprite.X" .number .bo} *X*
+: Property for X
+
+{:id="CircleImageSprite.Y" .number .bo} *Y*
+: Property for Y
+
+{:id="CircleImageSprite.Z" .number .bo} *Z*
+: Property for Z
+
+### Events  {#CircleImageSprite-Events}
+
+{:.events}
+
+{:id="CircleImageSprite.CollidedWith"} CollidedWith(*other*{:.component})
+: Event for CollidedWith
+
+{:id="CircleImageSprite.Dragged"} Dragged(*startX*{:.number},*startY*{:.number},*prevX*{:.number},*prevY*{:.number},*currentX*{:.number},*currentY*{:.number})
+: Event for Dragged
+
+{:id="CircleImageSprite.EdgeReached"} EdgeReached(*edge*{:.number})
+: Event for EdgeReached
+
+{:id="CircleImageSprite.Flung"} Flung(*x*{:.number},*y*{:.number},*speed*{:.number},*heading*{:.number},*xvel*{:.number},*yvel*{:.number})
+: Event for Flung
+
+{:id="CircleImageSprite.NoLongerCollidingWith"} NoLongerCollidingWith(*other*{:.component})
+: Event for NoLongerCollidingWith
+
+{:id="CircleImageSprite.TouchDown"} TouchDown(*x*{:.number},*y*{:.number})
+: Event for TouchDown
+
+{:id="CircleImageSprite.TouchUp"} TouchUp(*x*{:.number},*y*{:.number})
+: Event for TouchUp
+
+{:id="CircleImageSprite.Touched"} Touched(*x*{:.number},*y*{:.number})
+: Event for Touched
+
+### Methods  {#CircleImageSprite-Methods}
+
+{:.methods}
+
+{:id="CircleImageSprite.Bounce" class="method"} <i/> Bounce(*edge*{:.number})
+: Makes this sprite bounce, as if off a wall.  For normal bouncing, the edge argument should be the one returned by EdgeReached.
+
+{:id="CircleImageSprite.CollidingWith" class="method returns boolean"} <i/> CollidingWith(*other*{:.component})
+: Method for CollidingWith
+
+{:id="CircleImageSprite.MoveIntoBounds" class="method"} <i/> MoveIntoBounds()
+: Method for MoveIntoBounds
+
+{:id="CircleImageSprite.MoveTo" class="method"} <i/> MoveTo(*x*{:.number},*y*{:.number})
+: Moves the sprite so that its left top corner is at the specfied x and y coordinates.
+
+{:id="CircleImageSprite.PointInDirection" class="method"} <i/> PointInDirection(*x*{:.number},*y*{:.number})
+: Turns the sprite to point towards the point with coordinates as (x, y).
+
+{:id="CircleImageSprite.PointTowards" class="method"} <i/> PointTowards(*target*{:.component})
+: Turns the sprite to point towards a designated target sprite. The new heading will be parallel to the line joining the centerpoints of the two sprites.
+
 ## ImageSprite  {#ImageSprite}
 
 A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to touches and drags,
@@ -471,3 +614,114 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
 {:id="ImageSprite.PointTowards" class="method"} <i/> PointTowards(*target*{:.component})
 : Turns this `ImageSprite` to point towards a given `target` sprite. The new heading will be parallel
  to the line joining the centerpoints of the two sprites.
+
+## TransparentImageSprite  {#TransparentImageSprite}
+
+Component for TransparentImageSprite
+
+
+
+### Properties  {#TransparentImageSprite-Properties}
+
+{:.properties}
+
+{:id="TransparentImageSprite.AA_PlaceHolder" .component .wo .do} *AA_PlaceHolder*
+: A place holder for the sprite.
+ 
+ The property name "AA_PlaceHolder" is in purpose of making this property
+ at the top of the property list, and being executed first before other properties are handled
+
+{:id="TransparentImageSprite.Enabled" .boolean .bo} *Enabled*
+: Property for Enabled
+
+{:id="TransparentImageSprite.Heading" .number .bo} *Heading*
+: Property for Heading
+
+{:id="TransparentImageSprite.Height" .number .bo} *Height*
+: Property for Height
+
+{:id="TransparentImageSprite.IgnoreColor" .color} *IgnoreColor*
+: Property for IgnoreColor
+
+{:id="TransparentImageSprite.IgnoreTolerance" .number} *IgnoreTolerance*
+: Property for IgnoreTolerance
+
+{:id="TransparentImageSprite.Interval" .number .bo} *Interval*
+: Property for Interval
+
+{:id="TransparentImageSprite.Picture" .text .bo} *Picture*
+: Property for Picture
+
+{:id="TransparentImageSprite.Rotates" .boolean .bo} *Rotates*
+: Property for Rotates
+
+{:id="TransparentImageSprite.Speed" .number .bo} *Speed*
+: Property for Speed
+
+{:id="TransparentImageSprite.Sprite" .component .ro .bo} *Sprite*
+: Return the sprite that is used in the component
+
+{:id="TransparentImageSprite.Visible" .boolean .bo} *Visible*
+: Property for Visible
+
+{:id="TransparentImageSprite.Width" .number .bo} *Width*
+: Property for Width
+
+{:id="TransparentImageSprite.X" .number .bo} *X*
+: Property for X
+
+{:id="TransparentImageSprite.Y" .number .bo} *Y*
+: Property for Y
+
+{:id="TransparentImageSprite.Z" .number .bo} *Z*
+: Property for Z
+
+### Events  {#TransparentImageSprite-Events}
+
+{:.events}
+
+{:id="TransparentImageSprite.CollidedWith"} CollidedWith(*other*{:.component})
+: Event for CollidedWith
+
+{:id="TransparentImageSprite.Dragged"} Dragged(*startX*{:.number},*startY*{:.number},*prevX*{:.number},*prevY*{:.number},*currentX*{:.number},*currentY*{:.number})
+: Event for Dragged
+
+{:id="TransparentImageSprite.EdgeReached"} EdgeReached(*edge*{:.number})
+: Event for EdgeReached
+
+{:id="TransparentImageSprite.Flung"} Flung(*x*{:.number},*y*{:.number},*speed*{:.number},*heading*{:.number},*xvel*{:.number},*yvel*{:.number})
+: Event for Flung
+
+{:id="TransparentImageSprite.NoLongerCollidingWith"} NoLongerCollidingWith(*other*{:.component})
+: Event for NoLongerCollidingWith
+
+{:id="TransparentImageSprite.TouchDown"} TouchDown(*x*{:.number},*y*{:.number})
+: Event for TouchDown
+
+{:id="TransparentImageSprite.TouchUp"} TouchUp(*x*{:.number},*y*{:.number})
+: Event for TouchUp
+
+{:id="TransparentImageSprite.Touched"} Touched(*x*{:.number},*y*{:.number})
+: Event for Touched
+
+### Methods  {#TransparentImageSprite-Methods}
+
+{:.methods}
+
+{:id="TransparentImageSprite.Bounce" class="method"} <i/> Bounce(*edge*{:.number})
+: Makes this sprite bounce, as if off a wall.  For normal bouncing, the edge argument should be the one returned by EdgeReached.
+
+{:id="TransparentImageSprite.CollidingWith" class="method returns boolean"} <i/> CollidingWith(*other*{:.component})
+: Method for CollidingWith
+
+{:id="TransparentImageSprite.MoveIntoBounds" class="method"} <i/> MoveIntoBounds()
+: Method for MoveIntoBounds
+
+{:id="TransparentImageSprite.MoveTo" class="method"} <i/> MoveTo(*x*{:.number},*y*{:.number})
+: Moves the sprite so that its left top corner is at the specfied x and y coordinates.
+
+{:id="TransparentImageSprite.PointInDirection" class="method"} <i/> PointInDirection(*x*{:.number},*y*{:.number})
+: Turns the sprite to point towards the point with coordinates as (x, y).
+
+{:id="TransparentImageSprite.PointTowards" class="method"} <i/> PointTowards(*target*{:.component})
+: Turns the sprite to point towards a designated target sprite. The new heading will be parallel to the line joining the centerpoints of the two sprites.

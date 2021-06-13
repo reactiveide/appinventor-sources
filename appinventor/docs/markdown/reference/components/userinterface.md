@@ -11,6 +11,8 @@ Table of Contents:
 * [Button](#Button)
 * [CheckBox](#CheckBox)
 * [DatePicker](#DatePicker)
+* [Dialogs](#Dialogs)
+* [FloatingButton](#FloatingButton)
 * [Image](#Image)
 * [Label](#Label)
 * [ListPicker](#ListPicker)
@@ -348,6 +350,108 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 {:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
 : Allows the user to set the date from the instant to be displayed when the date picker opens.
+
+## Dialogs  {#Dialogs}
+
+Component for Dialogs
+
+
+
+### Properties  {#Dialogs-Properties}
+
+{:.properties}
+
+{:id="Dialogs.LightTheme" .boolean .wo .do} *LightTheme*
+: Gets the current theme
+
+### Events  {#Dialogs-Events}
+
+{:.events}
+
+{:id="Dialogs.AfterCheckboxSelection"} AfterCheckboxSelection(*selection*{:.list})
+: Invoked after user has finished selecting items from the Checkbox picker. Returns a list of indices of the selected items in the order of selection. Returns a list having -1 if cancel was pressed.
+
+{:id="Dialogs.AfterRadioSelection"} AfterRadioSelection(*listIndex*{:.number})
+: Event invoked when user has selected an option from the radio button picker. Outputs the index of the selected item. Returns -1 if cancel was pressed.
+
+### Methods  {#Dialogs-Methods}
+
+{:.methods}
+
+{:id="Dialogs.CheckboxListPicker" class="method"} <i/> CheckboxListPicker(*title*{:.text},*options*{:.list},*buttonText*{:.text},*cancelButtonText*{:.text},*cancelable*{:.boolean},*icon*{:.text})
+: Creates a picker dialog with a list of options of which more than one can be chosen. Invokes the 'AfterMultiSelection' event.
+
+{:id="Dialogs.DismissProgressDialog" class="method"} <i/> DismissProgressDialog()
+: Dismisses progress dialog
+
+{:id="Dialogs.MessageDialog" class="method"} <i/> MessageDialog(*icon*{:.text},*title*{:.text},*message*{:.text},*chooseButtonText*{:.text})
+: Displays a message dialog
+
+{:id="Dialogs.RadioListPicker" class="method"} <i/> RadioListPicker(*title*{:.text},*options*{:.list},*chooseButtonText*{:.text},*cancelable*{:.boolean},*cancelButtonText*{:.text},*selection*{:.number},*icon*{:.text})
+: Displays a single choice picker dialog
+
+{:id="Dialogs.ShowLinearProgress" class="method"} <i/> ShowLinearProgress(*message*{:.text},*title*{:.text},*dismissable*{:.boolean},*indeterminate*{:.boolean},*maxValue*{:.number})
+: Display a linear progress bar
+
+{:id="Dialogs.ShowSpinningProgress" class="method"} <i/> ShowSpinningProgress(*message*{:.text},*title*{:.text},*dismissable*{:.boolean})
+: Display a spinning progress dialog
+
+{:id="Dialogs.ShowToast" class="method"} <i/> ShowToast(*message*{:.text})
+: Toasts a message on the screen
+
+{:id="Dialogs.UpdateProgress" class="method"} <i/> UpdateProgress(*value*{:.number})
+: Sets the current value of the linear progress dialog. Has no effect if 'indeterminate' is set to true.
+
+## FloatingButton  {#FloatingButton}
+
+Component for FloatingButton
+
+
+
+### Properties  {#FloatingButton-Properties}
+
+{:.properties}
+
+{:id="FloatingButton.BackgroundColor" .color .wo} *BackgroundColor*
+: Property for BackgroundColor
+
+{:id="FloatingButton.ButtonSize" .number .wo} *ButtonSize*
+: Specifies the button size. Default is 56 x 56. This would be ideal if your image size is 48 x 48. Always add 8 for button size.
+
+{:id="FloatingButton.Enabled" .boolean} *Enabled*
+: If set, user can tap check box to cause action.
+
+{:id="FloatingButton.Image" .text} *Image*
+: Specifies the path of the button's image.  If there is both an Image and a BackgroundColor, only the Image will be visible.
+
+{:id="FloatingButton.MarginBottom" .number .wo} *MarginBottom*
+: Sets up bottom margins
+
+{:id="FloatingButton.MarginRight" .number .wo} *MarginRight*
+: Sets up right margin
+
+{:id="FloatingButton.Visible" .boolean} *Visible*
+: Specifies whether the component should be visible on the screen. Value is true if the component is showing and false if hidden.
+
+### Events  {#FloatingButton-Events}
+
+{:.events}
+
+{:id="FloatingButton.Click"} Click()
+: User tapped and released the button.
+
+{:id="FloatingButton.TouchDown"} TouchDown()
+: Indicates that the button was pressed down.
+
+{:id="FloatingButton.TouchUp"} TouchUp()
+: Indicates that the button has been released.
+
+### Methods  {#FloatingButton-Methods}
+
+{:.methods}
+
+{:id="FloatingButton.ReCreateFAB" class="method"} <i/> ReCreateFAB()
+: Recreates this component. Call this block when screen orientation is changed
 
 ## Image  {#Image}
 

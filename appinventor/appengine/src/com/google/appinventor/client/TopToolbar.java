@@ -846,16 +846,6 @@ public class TopToolbar extends Composite {
           "<BR/>" + MESSAGES.useCompanion(YaVersion.PREFERRED_COMPANION, YaVersion.PREFERRED_COMPANION + "u") +
           "<BR/>" + MESSAGES.targetSdkVersion(YaVersion.TARGET_SDK_VERSION, YaVersion.TARGET_ANDROID_VERSION);
       Config config = Ode.getInstance().getSystemConfig();
-      String releaseNotesUrl = config.getReleaseNotesUrl();
-      if (!Strings.isNullOrEmpty(releaseNotesUrl)) {
-        html += "<BR/><BR/>Please see <a href=\"" + releaseNotesUrl +
-            "\" target=\"_blank\">release notes</a>";
-      }
-      String tosUrl = config.getTosUrl();
-      if (!Strings.isNullOrEmpty(tosUrl)) {
-        html += "<BR/><BR/><a href=\"" + tosUrl +
-            "\" target=\"_blank\">" + MESSAGES.privacyTermsLink() + "</a>";
-      }
       HTML message = new HTML(html);
 
       SimplePanel holder = new SimplePanel();
@@ -877,7 +867,7 @@ public class TopToolbar extends Composite {
     @Override
     public void execute() {
       final DialogBox db = new DialogBox(false, true);
-      db.setText("About The Companion");
+      db.setText("About Reactive Mobile");
       db.setStyleName("ode-DialogBox");
       db.setHeight("200px");
       db.setWidth("400px");
@@ -894,7 +884,7 @@ public class TopToolbar extends Composite {
 
       VerticalPanel DialogBoxContents = new VerticalPanel();
       HTML message = new HTML(
-          "Companion Version " + BlocklyPanel.getCompVersion() + downloadinfo
+          "Reactive Mobile Version " + BlocklyPanel.getCompVersion() + downloadinfo
       );
 
       SimplePanel holder = new SimplePanel();

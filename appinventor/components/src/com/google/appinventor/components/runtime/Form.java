@@ -2323,7 +2323,7 @@ public class Form extends AppInventorCompatActivity
 
   public void addExitButtonToMenu(Menu menu) {
     MenuItem stopApplicationItem = menu.add(Menu.NONE, Menu.NONE, Menu.FIRST,
-    "Stop this application")
+    "Quit")
     .setOnMenuItemClickListener(new OnMenuItemClickListener() {
       public boolean onMenuItemClick(MenuItem item) {
         showExitApplicationNotification();
@@ -2335,7 +2335,7 @@ public class Form extends AppInventorCompatActivity
 
   public void addAboutInfoToMenu(Menu menu) {
     MenuItem aboutAppItem = menu.add(Menu.NONE, Menu.NONE, 2,
-    "About this application")
+    "Info")
     .setOnMenuItemClickListener(new OnMenuItemClickListener() {
       public boolean onMenuItemClick(MenuItem item) {
         showAboutApplicationNotification();
@@ -2356,11 +2356,10 @@ public class Form extends AppInventorCompatActivity
   }
 
   private void showExitApplicationNotification() {
-    String title = "Stop application?";
-    String message = "Stop this application and exit? You'll need to relaunch " +
-        "the application to use it again.";
-    String positiveButton = "Stop and exit";
-    String negativeButton = "Don't stop";
+    String title = "Quit?";
+    String message = "Are you sure to quit?";
+    String positiveButton = "Yes";
+    String negativeButton = "No";
     // These runnables are passed to twoButtonAlert.  They perform the corresponding actions
     // when the button is pressed.   Here there's nothing to do for "don't stop" and cancel
     Runnable stopApplication = new Runnable() {public void run () {closeApplicationFromMenu();}};
@@ -2380,16 +2379,16 @@ public class Form extends AppInventorCompatActivity
   private String yandexTranslateTagline = "";
 
   void setYandexTranslateTagline(){
-    yandexTranslateTagline = "<p><small>Language translation powered by Yandex.Translate</small></p>";
+    yandexTranslateTagline = "<p><small>Translation powered by Yandex.Translate</small></p>";
   }
 
   private void showAboutApplicationNotification() {
-    String title = "About this app";
+    String title = "Info";
     String MITtagline = "<p><small><em>by ReactiveIDE<br>hydride.io</em></small></p>";
     // Users can hide the taglines by including an HTML open comment <!-- in the about screen message
     String message = aboutScreen + MITtagline + yandexTranslateTagline;
     message = message.replaceAll("\\n", "<br>"); // Allow for line breaks in the string.
-    String buttonText ="Got it";
+    String buttonText ="OK";
     Notifier.oneButtonAlert(this, message, title, buttonText);
   }
 
@@ -2567,6 +2566,10 @@ public class Form extends AppInventorCompatActivity
     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
   }
+
+   public int convertDpToDensity(int value) {
+        return (int) (((double) value) * ((double) $context().getResources().getDisplayMetrics().density));
+    }
 
   protected void updateTitle() {
     themeHelper.setTitle(title);

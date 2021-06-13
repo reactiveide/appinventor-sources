@@ -18,7 +18,7 @@ public class ComponentConstants {
   /**
    * App constants
    */
-  public static final int APP_INVENTOR_MIN_SDK = 7;
+  public static final int APP_INVENTOR_MIN_SDK = 21;
 
   /**
    * Layout constants.
@@ -85,9 +85,9 @@ public class ComponentConstants {
    * Themeing
    */
   public static final String DEFAULT_THEME = "Classic";
-  public static final String DEFAULT_PRIMARY_COLOR = "&HFF3F51B5";
-  public static final String DEFAULT_PRIMARY_DARK_COLOR = "&HFF303F9F";
-  public static final String DEFAULT_ACCENT_COLOR = "&HFFFF4081";
+  public static final String DEFAULT_PRIMARY_COLOR = "&HFFF44336";
+  public static final String DEFAULT_PRIMARY_DARK_COLOR = "&HFF444444";
+  public static final String DEFAULT_ACCENT_COLOR = "&HFFF44336";
 
   /**
    * Map Components

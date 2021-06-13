@@ -696,6 +696,15 @@ public interface Images extends Resources {
    @Source("com/google/appinventor/images/logo.png")
    ImageResource logo();
 
+    /**
+   * For Splash Screen
+   */
+   @Source("com/google/appinventor/images/hybrocommunityscreenshot.png")
+   ImageResource hybrocommunityscreenshot();
+
+   @Source("com/google/appinventor/images/videoplayerpreviewtest.png")
+   ImageResource videoplayerpreviewtest();
+
   /**
    * Designer palette item: Arduino component
    */
@@ -755,4 +764,28 @@ public interface Images extends Resources {
    */
   @Source("com/google/appinventor/images/get-app.png")
   ImageResource GetApp();
+
+    /**
+   * Designer palette item: progressbar component
+   */
+  @Source("com/google/appinventor/images/CustomProgress.png")
+  ImageResource CustomProgress();
+
+  /**
+   * Designer palette item: progressbar component
+   */
+  @Source("com/google/appinventor/images/CustomProgressbig.png")
+  ImageResource CustomProgressbig();
+
+  @Source("com/google/appinventor/images/spacerbig.png")
+  ImageResource Spacerbig();
+
+  @Source("com/google/appinventor/images/spacer.png")
+  ImageResource Spacer();
+
+  @Source("com/google/appinventor/images/Lottiebig.png")
+  ImageResource Lottiebig();
+
+  @Source("com/google/appinventor/images/Lottie.png")
+  ImageResource Lottie();
 }

@@ -12,6 +12,7 @@ Table of Contents:
 * [BarcodeScanner](#BarcodeScanner)
 * [Barometer](#Barometer)
 * [Clock](#Clock)
+* [FingerprintSensor](#FingerprintSensor)
 * [GyroscopeSensor](#GyroscopeSensor)
 * [Hygrometer](#Hygrometer)
 * [LightSensor](#LightSensor)
@@ -337,6 +338,56 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 {:id="Clock.Year" class="method returns number"} <i/> Year(*instant*{:.InstantInTime})
 : Returns the year of the given instant.
+
+## FingerprintSensor  {#FingerprintSensor}
+
+Component for FingerprintSensor
+
+
+
+### Properties  {#FingerprintSensor-Properties}
+
+{:.properties}
+None
+
+
+### Events  {#FingerprintSensor-Events}
+
+{:.events}
+
+{:id="FingerprintSensor.AuthenticationError"} AuthenticationError(*msg*{:.text})
+: Called when an unrecoverable error has been encountered and the operation is complete.
+
+{:id="FingerprintSensor.AuthenticationFailed"} AuthenticationFailed()
+: Called when a fingerprint is valid but not recognized.
+
+{:id="FingerprintSensor.AuthenticationHelp"} AuthenticationHelp(*msg*{:.text})
+: Called when a recoverable error has been encountered during authentication.
+
+{:id="FingerprintSensor.AuthenticationSucceeded"} AuthenticationSucceeded()
+: Called when a fingerprint is recognized.
+
+### Methods  {#FingerprintSensor-Methods}
+
+{:.methods}
+
+{:id="FingerprintSensor.Authenticate" class="method"} <i/> Authenticate()
+: Starts Fingerprint Authentication
+
+{:id="FingerprintSensor.CancelAuthentication" class="method"} <i/> CancelAuthentication()
+: Cancels Fingerprint Authentication
+
+{:id="FingerprintSensor.HasEnrolledFingerprints" class="method returns boolean"} <i/> HasEnrolledFingerprints()
+: Checks if device has Enrolled Fingerprints.
+
+{:id="FingerprintSensor.HasFingerprintPermission" class="method returns boolean"} <i/> HasFingerprintPermission()
+: Checks if the user has granted the app permission to use the Fingerprint Sensor.
+
+{:id="FingerprintSensor.HasFingerprintSensor" class="method returns boolean"} <i/> HasFingerprintSensor()
+: Checks if device has a Fingerprint Sensor.
+
+{:id="FingerprintSensor.IsKeyguardSecure" class="method returns boolean"} <i/> IsKeyguardSecure()
+: Checks if the Keyguard(Lock Screen) is Secure. This is required to be able to use Fingerprint Authentication
 
 ## GyroscopeSensor  {#GyroscopeSensor}
 

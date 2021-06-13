@@ -125,6 +125,12 @@
     <property name="support.version" value="28.0.0" />
     <copy toFile="${public.deps.dir}/osmdroid.aar" file="${lib.dir}/osmdroid/osmdroid-5.6.6.aar" />
     <copy toFile="${public.deps.dir}/osmdroid.jar" file="${lib.dir}/osmdroid/osmdroid-5.6.6.jar" />
+
+    <copy toFile="${public.deps.dir}/play-services-auth-base-9.6.1.jar" file="${lib.dir}/googlesignin/play-services-auth-base-9.6.1.jar" />
+    <copy toFile="${public.deps.dir}/support-v4.aar" file="${lib.dir}/support-v4.aar" />
+    <copy toFile="${public.deps.dir}/play-services-auth-9.6.1.jar" file="${lib.dir}/googlesignin/play-services-auth-9.6.1.jar" />
+    <copy toFile="${public.deps.dir}/google-play-services.jar" file="${lib.dir}/google-play-services/google-play-services.jar" />
+    
     <copy toFile="${public.deps.dir}/webrtc.jar"
           file="${lib.dir}/webrtc/webrtc.jar" />
     <copy toFile="${public.deps.dir}/armeabi-v7a/libjingle_peerconnection_so.so"

@@ -154,7 +154,7 @@ public final class ComponentTranslationGenerator extends ComponentProcessor {
     sb.append("  String ");
     sb.append(property.name);
     sb.append("Properties();\n\n");
-  }
+      }
 
   private void outputMethodAutogen(Method method, Map<String, Parameter> outParameters, StringBuilder sb) {
     sb.append("  @DefaultMessage(\"");
@@ -223,7 +223,7 @@ public final class ComponentTranslationGenerator extends ComponentProcessor {
         .replaceAll("\"", "\\\\\"").replaceAll("'", "''").replaceAll("[ \t]+", " ").trim();
   }
 
-  private void storeTooltip(ComponentInfo component, String name, String suffix,
+    private void storeTooltip(ComponentInfo component, String name, String suffix,
       String description) {
     String key = name + suffix;
     String value = tooltips.get(key);
@@ -340,9 +340,13 @@ public final class ComponentTranslationGenerator extends ComponentProcessor {
     sb.append("import static com.google.appinventor.client.Ode.MESSAGES;\n");
     sb.append("\n");
     sb.append("public class ComponentsTranslation {\n");
-    sb.append("  public static Map<String, String> myMap = map();\n\n");
+    sb.append("  public static Map<String, String> myMap = map();");
+    sb.append("  public static Map<String, String> myMap2 = map2();\n\n");
     sb.append("  private static String getName(String key) {\n");
-    sb.append("    String value = myMap.get(key);\n");
+    sb.append("String value = \"\" ; \n");
+    sb.append("if(myMap.get(key) != null){\n");
+    sb.append("    value = myMap.get(key);\n");
+    sb.append("} else{ value = myMap2.get(key); }\n");
     sb.append("    if (key == null) {\n");
     sb.append("      return \"**Missing key in ComponentsTranslations**\";\n");
     sb.append("    } else {\n");
@@ -401,35 +405,42 @@ public final class ComponentTranslationGenerator extends ComponentProcessor {
       outputComponent(component, properties, methods, events, sb);
       categories.add(component.getCategory());
     }
-    sb.append("\n\n    /* Descriptions */\n\n");
-    for (String key : tooltips.keySet()) {
-      if (key.endsWith("PropertyDescriptions")) {
-        sb.append("    map.put(\"PROPDESC-");
-        sb.append(key.replaceAll("__", "."));
-        sb.append("\", MESSAGES.");
-        sb.append(key);
-        sb.append("());\n");
-      } else if (key.endsWith("MethodDescriptions")) {
-        sb.append("    map.put(\"METHODDESC-");
-        sb.append(key.replaceAll("__", "."));
-        sb.append("\", MESSAGES.");
-        sb.append(key);
-        sb.append("());\n");
-      } else if (key.endsWith("EventDescriptions")) {
-        sb.append("    map.put(\"EVENTDESC-");
-        sb.append(key.replaceAll("__", "."));
-        sb.append("\", MESSAGES.");
-        sb.append(key);
-        sb.append("());\n");
-      }
-    }
     sb.append("\n\n    /* Categories */\n\n");
     for (String category : categories) {
       outputCategory(category, sb);
     }
     sb.append("  return map;\n");
     sb.append("  }\n");
+    sb.append("  public static HashMap<String, String> map2() {\n");
+    sb.append("    HashMap<String, String> map2 = new HashMap<String, String>();\n");
+    
+    sb.append("\n\n    /* Descriptions */\n\n");
+        for (String key : tooltips.keySet()) {
+      if (key.endsWith("PropertyDescriptions")) {
+        sb.append("    map2.put(\"PROPDESC-");
+        sb.append(key.replaceAll("__", "."));
+        sb.append("\", MESSAGES.");
+        sb.append(key);
+        sb.append("());\n");
+      } else if (key.endsWith("MethodDescriptions")) {
+        sb.append("    map2.put(\"METHODDESC-");
+        sb.append(key.replaceAll("__", "."));
+        sb.append("\", MESSAGES.");
+        sb.append(key);
+        sb.append("());\n");
+      } else if (key.endsWith("EventDescriptions")) {
+        sb.append("    map2.put(\"EVENTDESC-");
+        sb.append(key.replaceAll("__", "."));
+        sb.append("\", MESSAGES.");
+        sb.append(key);
+        sb.append("());\n");
+      }
+    }
+    
+    sb.append("  return map2;\n");
+    sb.append("  }\n");
     sb.append("}\n");
+
     FileObject src = createOutputFileObject(OUTPUT_FILE_NAME);
     Writer writer = src.openWriter();
     writer.write(sb.toString());
