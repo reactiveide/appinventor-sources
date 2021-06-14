@@ -68,6 +68,8 @@
       <!-- Map assets for build server -->
       <fileset dir="${lib.dir}/leaflet" includes="leaflet.js,leaflet.css" />
       <fileset dir="${lib.dir}/leaflet/assets" includes="*"/>
+      <!-- add font-awesome -->
+      <fileset dir="${lib.dir}/font-awesome/fonts" includes="*"/>
       <!-- Component/extension assets (for testing) -->
       <fileset dir="${appinventor.dir}/components/src" includes="**/assets/*"/>
     </copy>

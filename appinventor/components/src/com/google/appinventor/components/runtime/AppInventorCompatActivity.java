@@ -245,9 +245,10 @@ public class AppInventorCompatActivity extends Activity implements AppCompatCall
     }
   }
 
-  protected static int getPrimaryColor() {
+  public static int getPrimaryColor() {
     return primaryColor;
   }
+
 
   @SuppressWarnings("WeakerAccess")
   protected void setPrimaryColor(int color) {

@@ -12,7 +12,7 @@ Table of Contents:
 * [CheckBox](#CheckBox)
 * [DatePicker](#DatePicker)
 * [Dialogs](#Dialogs)
-* [FloatingButton](#FloatingButton)
+* [FAB](#FAB)
 * [Image](#Image)
 * [Label](#Label)
 * [ListPicker](#ListPicker)
@@ -402,56 +402,62 @@ Component for Dialogs
 {:id="Dialogs.UpdateProgress" class="method"} <i/> UpdateProgress(*value*{:.number})
 : Sets the current value of the linear progress dialog. Has no effect if 'indeterminate' is set to true.
 
-## FloatingButton  {#FloatingButton}
+## FAB  {#FAB}
 
-Component for FloatingButton
+Component for FAB
 
 
 
-### Properties  {#FloatingButton-Properties}
+### Properties  {#FAB-Properties}
 
 {:.properties}
 
-{:id="FloatingButton.BackgroundColor" .color .wo} *BackgroundColor*
-: Property for BackgroundColor
+{:id="FAB.ButtonColor" .color} *ButtonColor*
+: Background color of FAB
 
-{:id="FloatingButton.ButtonSize" .number .wo} *ButtonSize*
-: Specifies the button size. Default is 56 x 56. This would be ideal if your image size is 48 x 48. Always add 8 for button size.
+{:id="FAB.ButtonSize" .number} *ButtonSize*
+: Button Size of FAB
 
-{:id="FloatingButton.Enabled" .boolean} *Enabled*
-: If set, user can tap check box to cause action.
+{:id="FAB.Elevation" .number .wo} *Elevation*
+: Property for Elevation
 
-{:id="FloatingButton.Image" .text} *Image*
-: Specifies the path of the button's image.  If there is both an Image and a BackgroundColor, only the Image will be visible.
+{:id="FAB.IconCode" .text} *IconCode*
+: Icon Code of FAB
 
-{:id="FloatingButton.MarginBottom" .number .wo} *MarginBottom*
-: Sets up bottom margins
+{:id="FAB.IconColor" .color} *IconColor*
+: Icon Color of FAB
 
-{:id="FloatingButton.MarginRight" .number .wo} *MarginRight*
-: Sets up right margin
+{:id="FAB.IconSize" .number} *IconSize*
+: Icon Size of FAB
 
-{:id="FloatingButton.Visible" .boolean} *Visible*
-: Specifies whether the component should be visible on the screen. Value is true if the component is showing and false if hidden.
+{:id="FAB.MarginBottom" .number .wo} *MarginBottom*
+: Property for MarginBottom
 
-### Events  {#FloatingButton-Events}
+{:id="FAB.MarginRight" .number .wo} *MarginRight*
+: Property for MarginRight
+
+{:id="FAB.UsePrimaryColor" .boolean .wo} *UsePrimaryColor*
+: Use App PrimaryColor as FAB Color
+
+{:id="FAB.Visible" .boolean .wo} *Visible*
+: Set FAB visible or not
+
+### Events  {#FAB-Events}
 
 {:.events}
 
-{:id="FloatingButton.Click"} Click()
-: User tapped and released the button.
+{:id="FAB.ButtonClicked"} ButtonClicked()
+: Event for ButtonClicked
 
-{:id="FloatingButton.TouchDown"} TouchDown()
-: Indicates that the button was pressed down.
-
-{:id="FloatingButton.TouchUp"} TouchUp()
-: Indicates that the button has been released.
-
-### Methods  {#FloatingButton-Methods}
+### Methods  {#FAB-Methods}
 
 {:.methods}
 
-{:id="FloatingButton.ReCreateFAB" class="method"} <i/> ReCreateFAB()
-: Recreates this component. Call this block when screen orientation is changed
+{:id="FAB.ChangeIcon" class="method"} <i/> ChangeIcon(*newIconCode*{:.text},*duration*{:.number})
+: Use this block when you have to change icon from existing to new one.
+
+{:id="FAB.CreateButton" class="method"} <i/> CreateButton()
+: Method for CreateButton
 
 ## Image  {#Image}
 
