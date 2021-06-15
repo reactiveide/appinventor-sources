@@ -46,7 +46,6 @@ public final class FacebookBannerAds extends AndroidViewComponent implements Com
 
         adView = new AdView(context, placementId, AdSize.BANNER_HEIGHT_50);
         adView.setLayoutParams(new LinearLayout.LayoutParams(-2, -2));
-        adView.addView(adView);
         
     }
 
