@@ -9,6 +9,9 @@ title: Monitization
 Table of Contents:
 
 * [AndroidPay](#AndroidPay)
+* [FacebookBannerAds](#FacebookBannerAds)
+* [FacebookInterstitialAds](#FacebookInterstitialAds)
+* [FacebookRewardedAds](#FacebookRewardedAds)
 * [PayPal](#PayPal)
 * [UPIGateway](#UPIGateway)
 
@@ -53,6 +56,165 @@ Component for AndroidPay
 
 {:id="AndroidPay.MakePayment" class="method"} <i/> MakePayment(*name*{:.text},*note*{:.text},*amount*{:.text},*currency*{:.text})
 : Make the payment using UPI
+
+## FacebookBannerAds  {#FacebookBannerAds}
+
+Component for FacebookBannerAds
+
+
+
+### Properties  {#FacebookBannerAds-Properties}
+
+{:.properties}
+
+{:id="FacebookBannerAds.BannerSize" .text .wo} *BannerSize*
+: Facebook Banner Ads Size
+
+{:id="FacebookBannerAds.Height" .number .bo} *Height*
+: Specifies the `FacebookBannerAds`'s vertical height, measured in pixels.
+
+{:id="FacebookBannerAds.HeightPercent" .number .wo .bo} *HeightPercent*
+: Specifies the `FacebookBannerAds`'s vertical height as a percentage
+ of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+
+{:id="FacebookBannerAds.PlacementId" .text .wo} *PlacementId*
+: Facebook Ads Placement ID
+
+{:id="FacebookBannerAds.Visible" .boolean} *Visible*
+: Specifies whether the `FacebookBannerAds` should be visible on the screen.  Value is `true`{:.logic.block}
+ if the `FacebookBannerAds` is showing and `false`{:.logic.block} if hidden.
+
+{:id="FacebookBannerAds.Width" .number .bo} *Width*
+: Specifies the horizontal width of the `FacebookBannerAds`, measured in pixels.
+
+{:id="FacebookBannerAds.WidthPercent" .number .wo .bo} *WidthPercent*
+: Specifies the horizontal width of the `FacebookBannerAds` as a percentage
+ of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+
+### Events  {#FacebookBannerAds-Events}
+
+{:.events}
+
+{:id="FacebookBannerAds.AdClicked"} AdClicked()
+: Event for AdClicked
+
+{:id="FacebookBannerAds.AdLoaded"} AdLoaded()
+: Event for AdLoaded
+
+{:id="FacebookBannerAds.ErrorOccured"} ErrorOccured(*error*{:.text})
+: Event for ErrorOccured
+
+{:id="FacebookBannerAds.LoggingImpression"} LoggingImpression()
+: Event for LoggingImpression
+
+### Methods  {#FacebookBannerAds-Methods}
+
+{:.methods}
+
+{:id="FacebookBannerAds.LoadAd" class="method"} <i/> LoadAd()
+: Method for LoadAd
+
+## FacebookInterstitialAds  {#FacebookInterstitialAds}
+
+Component for FacebookInterstitialAds
+
+
+
+### Properties  {#FacebookInterstitialAds-Properties}
+
+{:.properties}
+
+{:id="FacebookInterstitialAds.PlacementId" .text .wo} *PlacementId*
+: Facebook Ads Placement ID
+
+### Events  {#FacebookInterstitialAds-Events}
+
+{:.events}
+
+{:id="FacebookInterstitialAds.AdClicked"} AdClicked()
+: Event for AdClicked
+
+{:id="FacebookInterstitialAds.AdLoaded"} AdLoaded()
+: Event for AdLoaded
+
+{:id="FacebookInterstitialAds.ErrorOccured"} ErrorOccured(*error*{:.text})
+: Event for ErrorOccured
+
+{:id="FacebookInterstitialAds.InterstitialDismissed"} InterstitialDismissed()
+: Event for InterstitialDismissed
+
+{:id="FacebookInterstitialAds.InterstitialDisplayed"} InterstitialDisplayed()
+: Event for InterstitialDisplayed
+
+{:id="FacebookInterstitialAds.LoggingImpression"} LoggingImpression()
+: Event for LoggingImpression
+
+### Methods  {#FacebookInterstitialAds-Methods}
+
+{:.methods}
+
+{:id="FacebookInterstitialAds.IsAdInvalidated" class="method returns boolean"} <i/> IsAdInvalidated()
+: Method for IsAdInvalidated
+
+{:id="FacebookInterstitialAds.IsAdLoaded" class="method returns boolean"} <i/> IsAdLoaded()
+: Method for IsAdLoaded
+
+{:id="FacebookInterstitialAds.LoadAd" class="method"} <i/> LoadAd()
+: Method for LoadAd
+
+{:id="FacebookInterstitialAds.ShowAd" class="method"} <i/> ShowAd()
+: Method for ShowAd
+
+## FacebookRewardedAds  {#FacebookRewardedAds}
+
+Component for FacebookRewardedAds
+
+
+
+### Properties  {#FacebookRewardedAds-Properties}
+
+{:.properties}
+
+{:id="FacebookRewardedAds.PlacementId" .text .wo} *PlacementId*
+: Set Your Facebook ads placementId
+
+### Events  {#FacebookRewardedAds-Events}
+
+{:.events}
+
+{:id="FacebookRewardedAds.AdClicked"} AdClicked()
+: Event for AdClicked
+
+{:id="FacebookRewardedAds.AdLoaded"} AdLoaded()
+: Event for AdLoaded
+
+{:id="FacebookRewardedAds.ErrorOccured"} ErrorOccured(*error*{:.text})
+: Event for ErrorOccured
+
+{:id="FacebookRewardedAds.LoggingImpression"} LoggingImpression()
+: Event for LoggingImpression
+
+{:id="FacebookRewardedAds.RewardedVideoClosed"} RewardedVideoClosed()
+: Event for RewardedVideoClosed
+
+{:id="FacebookRewardedAds.RewardedVideoCompleted"} RewardedVideoCompleted()
+: Event for RewardedVideoCompleted
+
+### Methods  {#FacebookRewardedAds-Methods}
+
+{:.methods}
+
+{:id="FacebookRewardedAds.IsAdInvalidated" class="method returns boolean"} <i/> IsAdInvalidated()
+: Method for IsAdInvalidated
+
+{:id="FacebookRewardedAds.IsAdLoaded" class="method returns boolean"} <i/> IsAdLoaded()
+: Method for IsAdLoaded
+
+{:id="FacebookRewardedAds.LoadAd" class="method"} <i/> LoadAd()
+: Method for LoadAd
+
+{:id="FacebookRewardedAds.ShowAd" class="method"} <i/> ShowAd()
+: Method for ShowAd
 
 ## PayPal  {#PayPal}
 
