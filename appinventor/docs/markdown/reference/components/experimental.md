@@ -9,6 +9,7 @@ title: Experimental
 Table of Contents:
 
 * [FirebaseDB](#FirebaseDB)
+* [ImageUtil](#ImageUtil)
 
 ## FirebaseDB  {#FirebaseDB}
 
@@ -106,3 +107,28 @@ The Firebase component communicates with a Web service to store
    This function permits us to unauthenticate, which tosses the cached
  credentials. The next time authentication is needed we will use our
  current FirebaseToken and get fresh credentials.
+
+## ImageUtil  {#ImageUtil}
+
+Component for ImageUtil
+
+
+
+### Properties  {#ImageUtil-Properties}
+
+{:.properties}
+None
+
+
+### Events  {#ImageUtil-Events}
+
+{:.events}
+None
+
+
+### Methods  {#ImageUtil-Methods}
+
+{:.methods}
+
+{:id="ImageUtil.resizeImageRetainRadio" class="method"} <i/> resizeImageRetainRadio(*imageInputPath*{:.text},*imageOutputPath*{:.text},*size*{:.number})
+: Method for resizeImageRetainRadio

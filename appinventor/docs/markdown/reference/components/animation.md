@@ -13,6 +13,7 @@ Table of Contents:
 * [CanvasAddons](#CanvasAddons)
 * [CircleImageSprite](#CircleImageSprite)
 * [ImageSprite](#ImageSprite)
+* [Lottie](#Lottie)
 * [TransparentImageSprite](#TransparentImageSprite)
 
 ## Ball  {#Ball}
@@ -614,6 +615,93 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
 {:id="ImageSprite.PointTowards" class="method"} <i/> PointTowards(*target*{:.component})
 : Turns this `ImageSprite` to point towards a given `target` sprite. The new heading will be parallel
  to the line joining the centerpoints of the two sprites.
+
+## Lottie  {#Lottie}
+
+Component for Lottie
+
+
+
+### Properties  {#Lottie-Properties}
+
+{:.properties}
+
+{:id="Lottie.AnimationSpeed" .number .wo} *AnimationSpeed*
+: Set the speed of the animation.
+
+{:id="Lottie.EndFrame" .number .wo} *EndFrame*
+: Set the Ending Frame
+
+{:id="Lottie.Height" .number .bo} *Height*
+: Specifies the `Lottie`'s vertical height, measured in pixels.
+
+{:id="Lottie.HeightPercent" .number .wo .bo} *HeightPercent*
+: Specifies the `Lottie`'s vertical height as a percentage
+ of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+
+{:id="Lottie.Loop" .boolean .wo} *Loop*
+: Set Animation Loop
+
+{:id="Lottie.Source" .text .wo} *Source*
+: Set The Json File URL
+
+{:id="Lottie.StartFrame" .number .wo} *StartFrame*
+: Set the Starting Frame
+
+{:id="Lottie.Visible" .boolean} *Visible*
+: Specifies whether the `Lottie` should be visible on the screen.  Value is `true`{:.logic.block}
+ if the `Lottie` is showing and `false`{:.logic.block} if hidden.
+
+{:id="Lottie.Width" .number .bo} *Width*
+: Specifies the horizontal width of the `Lottie`, measured in pixels.
+
+{:id="Lottie.WidthPercent" .number .wo .bo} *WidthPercent*
+: Specifies the horizontal width of the `Lottie` as a percentage
+ of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+
+### Events  {#Lottie-Events}
+
+{:.events}
+
+{:id="Lottie.AnimationCanceled"} AnimationCanceled()
+: Event for AnimationCanceled
+
+{:id="Lottie.AnimationEnded"} AnimationEnded()
+: Event for AnimationEnded
+
+{:id="Lottie.AnimationRepeated"} AnimationRepeated()
+: Event for AnimationRepeated
+
+{:id="Lottie.AnimationStarted"} AnimationStarted()
+: Event for AnimationStarted
+
+{:id="Lottie.Click"} Click()
+: Event for Click
+
+### Methods  {#Lottie-Methods}
+
+{:.methods}
+
+{:id="Lottie.CancelAnimation" class="method"} <i/> CancelAnimation()
+: Method for CancelAnimation
+
+{:id="Lottie.GetCurrentFrame" class="method returns number"} <i/> GetCurrentFrame()
+: Method for GetCurrentFrame
+
+{:id="Lottie.IsAnimating" class="method returns boolean"} <i/> IsAnimating()
+: Method for IsAnimating
+
+{:id="Lottie.PauseAnimation" class="method"} <i/> PauseAnimation()
+: Method for PauseAnimation
+
+{:id="Lottie.ResumeAnimation" class="method"} <i/> ResumeAnimation()
+: Method for ResumeAnimation
+
+{:id="Lottie.SetAnimationFrame" class="method"} <i/> SetAnimationFrame(*animeFrame*{:.number})
+: Method for SetAnimationFrame
+
+{:id="Lottie.StartAnimation" class="method"} <i/> StartAnimation()
+: Method for StartAnimation
 
 ## TransparentImageSprite  {#TransparentImageSprite}
 

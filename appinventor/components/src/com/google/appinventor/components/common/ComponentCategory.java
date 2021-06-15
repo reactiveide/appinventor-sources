@@ -51,13 +51,17 @@ import java.util.Map;
     BASIC("Main"),
     LAYOUT("Layout"),
     MEDIA("Media"),
+    MONITIZATION("Monitization"),
     ANIMATION("Animation"),
     MAPS("Maps"),
     SENSORS("Sensors"),
+    DYNAMIC("Dynamic Components"),
     SOCIAL("Social"),
     STORAGE("Storage"),
+    UTILS("Utils"),
     CONNECTIVITY("Connectivity"),
     LEGOMINDSTORMS("IoT"),
+    IOT("IoT"),
     EXPERIMENTAL("Experimental"),
     EXTENSION("Extension"),
     INTERNAL("For internal use only"),
@@ -73,13 +77,16 @@ import java.util.Map;
       DOC_MAP.put("Main", "basic");
       DOC_MAP.put("Layout", "layout");
       DOC_MAP.put("Media", "media");
+      DOC_MAP.put("Monitization", "monitization");
+      DOC_MAP.put("Utils", "utils");
       DOC_MAP.put("Animation", "animation");
       DOC_MAP.put("Maps", "maps");
       DOC_MAP.put("Sensors", "sensors");
+      DOC_MAP.put("Dynamic Components", "dynamic");
       DOC_MAP.put("Social", "social");
       DOC_MAP.put("Storage", "storage");
       DOC_MAP.put("Connectivity", "connectivity");
-      DOC_MAP.put("IoT", "legomindstorms");
+      DOC_MAP.put("IoT", "iot");
       DOC_MAP.put("Experimental", "experimental");
       DOC_MAP.put("Extension", "extension");
     }

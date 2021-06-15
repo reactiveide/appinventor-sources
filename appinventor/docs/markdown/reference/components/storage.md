@@ -8,10 +8,89 @@ title: Storage
 
 Table of Contents:
 
+* [Airtable](#Airtable)
 * [CloudDB](#CloudDB)
 * [File](#File)
 * [TinyDB](#TinyDB)
 * [TinyWebDB](#TinyWebDB)
+
+## Airtable  {#Airtable}
+
+Component for Airtable
+
+
+
+### Properties  {#Airtable-Properties}
+
+{:.properties}
+
+{:id="Airtable.ApiKey" .text} *ApiKey*
+: Airtable API Key
+
+{:id="Airtable.BaseId" .text} *BaseId*
+: Airtable Base ID
+
+{:id="Airtable.TableName" .text} *TableName*
+: Airtable Table Name
+
+{:id="Airtable.ViewName" .text} *ViewName*
+: Airtable Grid view name
+
+### Events  {#Airtable-Events}
+
+{:.events}
+
+{:id="Airtable.CellChanged"} CellChanged(*responseCode*{:.number})
+: Triggered after requesting to
+
+{:id="Airtable.DeletedRowByNumber"} DeletedRowByNumber(*responseCode*{:.number})
+: Triggered after a row is deleted from spreadsheet
+
+{:id="Airtable.GotAllRows"} GotAllRows(*responseCode*{:.number},*responseContent*{:.text},*totalRows*{:.number})
+: Triggered after requesting to get all rows
+
+{:id="Airtable.GotCell"} GotCell(*responseCode*{:.number},*value*{:.text},*rowId*{:.text},*createdTime*{:.text})
+: Triggered after requesting to get data for a Cell
+
+{:id="Airtable.GotColumn"} GotColumn(*responseCode*{:.number},*values*{:.list},*rowIds*{:.list},*createdTimes*{:.list})
+: Triggered after requesting to get data for a specific Column
+
+{:id="Airtable.GotRow"} GotRow(*responseCode*{:.number},*values*{:.list})
+: Triggered after requesting to get data for a specific row
+
+{:id="Airtable.RowCreated"} RowCreated(*responseCode*{:.number})
+: Triggered after a row is created in the spreadsheet
+
+{:id="Airtable.RowUpdated"} RowUpdated(*responseCode*{:.number})
+: Triggered after spreadsheet rows are updated
+
+### Methods  {#Airtable-Methods}
+
+{:.methods}
+
+{:id="Airtable.CreateRow" class="method"} <i/> CreateRow(*columnNames*{:.list},*values*{:.list})
+: Add list of Column Names and List of Values. Triggers RowCreated block
+
+{:id="Airtable.DeleteRowNum" class="method"} <i/> DeleteRowNum(*rowNumber*{:.number})
+: Deletes data at a specific row number. Triggeres DeletedRowByNumber block
+
+{:id="Airtable.GetAllRows" class="method"} <i/> GetAllRows()
+: Block for retrieving all data. Will trigger GetAllData block. Will trigger GotAllRows block
+
+{:id="Airtable.GetCell" class="method"} <i/> GetCell(*rowNumber*{:.number},*columnName*{:.text})
+: Use this block to get data for a Cell. Specify row number and column name
+
+{:id="Airtable.GetColumn" class="method"} <i/> GetColumn(*columnName*{:.text},*maxRecord*{:.number})
+: Use this block to get data for a column. Triggeres GotColumn block
+
+{:id="Airtable.GetRow" class="method"} <i/> GetRow(*rowNumber*{:.number})
+: Retrieves data for a specic row. Triggeres GotRow block
+
+{:id="Airtable.SetCell" class="method"} <i/> SetCell(*rowNumber*{:.number},*columnName*{:.text},*value*{:.text})
+: Can be used to update data for a specific cell using row number and column name. Triggeres GotCell block
+
+{:id="Airtable.UpdateRowByNum" class="method"} <i/> UpdateRowByNum(*rowNumber*{:.number},*columnNames*{:.list},*values*{:.list})
+: Use this block to update data in a row. columnNames is list of column names and values is a list of value for each column name. Make sure lists are synchronized
 
 ## CloudDB  {#CloudDB}
 

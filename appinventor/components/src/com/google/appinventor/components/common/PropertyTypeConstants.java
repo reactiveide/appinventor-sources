@@ -327,4 +327,10 @@ public class PropertyTypeConstants {
    * com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidNavigationMethodChoicePropertyEditor}
    */
   public static final String PROPERTY_TYPE_NAVIGATION_METHOD = "navigation_method";
+
+  /**
+   * Choices of CustomProgress.
+   * com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidCustomProgressPropertyEditor}
+   */
+  public static final String PROPERTY_TYPE_PROGRESSBAR_OPTIONS = "customprogress";
 }

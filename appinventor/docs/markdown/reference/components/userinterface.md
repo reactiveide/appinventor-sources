@@ -10,6 +10,7 @@ Table of Contents:
 
 * [Button](#Button)
 * [CheckBox](#CheckBox)
+* [CustomProgress](#CustomProgress)
 * [DatePicker](#DatePicker)
 * [Dialogs](#Dialogs)
 * [FAB](#FAB)
@@ -215,6 +216,55 @@ None
 : `CheckBox` stopped being the focused component.
 
 ### Methods  {#CheckBox-Methods}
+
+{:.methods}
+None
+
+
+## CustomProgress  {#CustomProgress}
+
+Component for CustomProgress
+
+
+
+### Properties  {#CustomProgress-Properties}
+
+{:.properties}
+
+{:id="CustomProgress.AnimationStyle" .text .wo .do} *AnimationStyle*
+: Allows you to specify animation style of ProgressBar
+
+{:id="CustomProgress.BackgroundColor" .color} *BackgroundColor*
+: Property for BackgroundColor
+
+{:id="CustomProgress.Color" .color} *Color*
+: Property for Color
+
+{:id="CustomProgress.Height" .number .bo} *Height*
+: Specifies the `CustomProgress`'s vertical height, measured in pixels.
+
+{:id="CustomProgress.HeightPercent" .number .wo .bo} *HeightPercent*
+: Specifies the `CustomProgress`'s vertical height as a percentage
+ of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+
+{:id="CustomProgress.Visible" .boolean} *Visible*
+: Specifies whether the `CustomProgress` should be visible on the screen.  Value is `true`{:.logic.block}
+ if the `CustomProgress` is showing and `false`{:.logic.block} if hidden.
+
+{:id="CustomProgress.Width" .number .bo} *Width*
+: Specifies the horizontal width of the `CustomProgress`, measured in pixels.
+
+{:id="CustomProgress.WidthPercent" .number .wo .bo} *WidthPercent*
+: Specifies the horizontal width of the `CustomProgress` as a percentage
+ of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+
+### Events  {#CustomProgress-Events}
+
+{:.events}
+None
+
+
+### Methods  {#CustomProgress-Methods}
 
 {:.methods}
 None

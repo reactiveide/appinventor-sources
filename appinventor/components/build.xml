@@ -130,6 +130,25 @@
     <copy toFile="${public.deps.dir}/support-v4.aar" file="${lib.dir}/support-v4.aar" />
     <copy toFile="${public.deps.dir}/play-services-auth-9.6.1.jar" file="${lib.dir}/googlesignin/play-services-auth-9.6.1.jar" />
     <copy toFile="${public.deps.dir}/google-play-services.jar" file="${lib.dir}/google-play-services/google-play-services.jar" />
+
+    <copy toFile="${public.deps.dir}/paypal.jar" file="${lib.dir}/paypal/paypal.jar" />
+    <copy toFile="${public.deps.dir}/okhttp.jar" file="${lib.dir}/okhttp/okhttp.jar" />
+    <copy toFile="${public.deps.dir}/okio.jar" file="${lib.dir}/okhttp/okio.jar" />
+
+    <copy toFile="${public.deps.dir}/lottie.jar" file="${lib.dir}/lottie/lottie.jar" />
+    <copy toFile="${public.deps.dir}/lottie.aar" file="${lib.dir}/lottie/lottie.aar" />
+
+    <copy toFile="${public.deps.dir}/playcore.jar" file="${lib.dir}/playcore/playcore.jar" />
+    <copy toFile="${public.deps.dir}/playcore.aar" file="${lib.dir}/playcore/playcore.aar" />
+
+    <copy toFile="${public.deps.dir}/prdownloader.jar" file="${lib.dir}/prdownloader/prdownloader.jar" />
+
+    <copy toFile="${public.deps.dir}/spinkit.jar" file="${lib.dir}/spinkit/spinkit.jar" />
+
+    <copy toFile="${public.deps.dir}/exoplayer-core.aar" file="${lib.dir}/exoplayer/exoplayer-core.aar" />
+    <copy toFile="${public.deps.dir}/exoplayer-ui.aar" file="${lib.dir}/exoplayer/exoplayer-ui.aar" />
+    <copy toFile="${public.deps.dir}/exoplayer-core.jar" file="${lib.dir}/exoplayer/exoplayer-core.jar" />
+    <copy toFile="${public.deps.dir}/exoplayer-ui.jar" file="${lib.dir}/exoplayer/exoplayer-ui.jar" />
     
     <copy toFile="${public.deps.dir}/webrtc.jar"
           file="${lib.dir}/webrtc/webrtc.jar" />
