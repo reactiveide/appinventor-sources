@@ -141,6 +141,9 @@
     <copy toFile="${public.deps.dir}/playcore.jar" file="${lib.dir}/playcore/playcore.jar" />
     <copy toFile="${public.deps.dir}/playcore.aar" file="${lib.dir}/playcore/playcore.aar" />
 
+        <copy toFile="${public.deps.dir}/cardview.jar" file="${lib.dir}/cardview/cardview.jar" />
+    <copy toFile="${public.deps.dir}/cardview.aar" file="${lib.dir}/cardview/cardview.aar" />
+
     <copy toFile="${public.deps.dir}/prdownloader.jar" file="${lib.dir}/prdownloader/prdownloader.jar" />
 
     <copy toFile="${public.deps.dir}/spinkit.jar" file="${lib.dir}/spinkit/spinkit.jar" />

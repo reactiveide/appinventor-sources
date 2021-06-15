@@ -8,8 +8,112 @@ title: Experimental
 
 Table of Contents:
 
+* [DynamicCard](#DynamicCard)
+* [DynamicWebView](#DynamicWebView)
 * [FirebaseDB](#FirebaseDB)
 * [ImageUtil](#ImageUtil)
+
+## DynamicCard  {#DynamicCard}
+
+Component for DynamicCard
+
+
+
+### Properties  {#DynamicCard-Properties}
+
+{:.properties}
+None
+
+
+### Events  {#DynamicCard-Events}
+
+{:.events}
+
+{:id="DynamicCard.CardClicked"} CardClicked(*cardID*{:.number})
+: Event for CardClicked
+
+### Methods  {#DynamicCard-Methods}
+
+{:.methods}
+
+{:id="DynamicCard.AddCard" class="method"} <i/> AddCard(*id*{:.number},*width*{:.number},*height*{:.number},*layoutId*{:.number})
+: Add A CardView
+
+{:id="DynamicCard.DeleteCard" class="method"} <i/> DeleteCard(*id*{:.number})
+: Method for DeleteCard
+
+{:id="DynamicCard.SetBackroundColor" class="method"} <i/> SetBackroundColor(*id*{:.number},*color*{:.any})
+: Method for SetBackroundColor
+
+{:id="DynamicCard.SetCardClickable" class="method"} <i/> SetCardClickable(*clickable*{:.boolean},*id*{:.number})
+: Method for SetCardClickable
+
+{:id="DynamicCard.SetCardSize" class="method"} <i/> SetCardSize(*id*{:.number},*width*{:.number},*height*{:.number})
+: Method for SetCardSize
+
+{:id="DynamicCard.SetElevation" class="method"} <i/> SetElevation(*id*{:.number},*elevation*{:.number})
+: Method for SetElevation
+
+{:id="DynamicCard.SetRadius" class="method"} <i/> SetRadius(*id*{:.number},*radius*{:.number})
+: Method for SetRadius
+
+{:id="DynamicCard.SetVisible" class="method"} <i/> SetVisible(*id*{:.number},*visible*{:.boolean})
+: Method for SetVisible
+
+{:id="DynamicCard.isVisible" class="method returns boolean"} <i/> isVisible(*viewID*{:.number})
+: Get the view's visibility
+
+## DynamicWebView  {#DynamicWebView}
+
+Component for DynamicWebView
+
+
+
+### Properties  {#DynamicWebView-Properties}
+
+{:.properties}
+None
+
+
+### Events  {#DynamicWebView-Events}
+
+{:.events}
+None
+
+
+### Methods  {#DynamicWebView-Methods}
+
+{:.methods}
+
+{:id="DynamicWebView.AddWebView" class="method"} <i/> AddWebView(*webViewID*{:.number},*width*{:.number},*height*{:.number},*parentLayoutID*{:.number})
+: Add A WebView
+
+{:id="DynamicWebView.DeleteView" class="method"} <i/> DeleteView(*webViewID*{:.number})
+: Delete the selected view
+
+{:id="DynamicWebView.canGoBack" class="method returns boolean"} <i/> canGoBack(*webViewID*{:.number})
+: Get if the Dynamic WebView can go back
+
+{:id="DynamicWebView.canGoForward" class="method returns boolean"} <i/> canGoForward(*webViewID*{:.number})
+: Get if the Dynamic WebView can go forward
+
+{:id="DynamicWebView.getWebViewURL" class="method returns text"} <i/> getWebViewURL(*webViewID*{:.number})
+: Get the Dynamic WebView's current URL
+
+{:id="DynamicWebView.goBack" class="method"} <i/> goBack(*webViewID*{:.number})
+: Call the Dynamic WebView to go back
+
+{:id="DynamicWebView.goForward" class="method"} <i/> goForward(*webViewID*{:.number})
+: Call the Dynamic WebView to go forward
+
+{:id="DynamicWebView.isVisible" class="method returns boolean"} <i/> isVisible(*webViewID*{:.number})
+: Get the view's visibility
+
+{:id="DynamicWebView.setURL" class="method"} <i/> setURL(*webViewID*{:.number},*url*{:.text})
+: Call the Dynamic WebView to go to a specific URL
+
+{:id="DynamicWebView.setVisible" class="method"} <i/> setVisible(*webViewID*{:.number},*isVisible*{:.boolean})
+: Set the view's visibility
 
 ## FirebaseDB  {#FirebaseDB}
 
