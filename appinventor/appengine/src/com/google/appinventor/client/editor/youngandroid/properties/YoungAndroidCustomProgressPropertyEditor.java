@@ -44,4 +44,3 @@ public class YoungAndroidCustomProgressPropertyEditor extends ChoicePropertyEdit
     super(sortOptions);
   }
 }
-

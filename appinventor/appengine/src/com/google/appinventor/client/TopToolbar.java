@@ -144,9 +144,9 @@ public class TopToolbar extends Composite {
   public TopToolbar() {
     /*
      * Layout is as follows:
-     * +----------------------------------------------------------------+
-     * | Project ▾ | Connect ▾ | Build ▾ | Settings ▾ | Help ▾| Admin ▾ |
-     * +----------------------------------------------------------------+
+     * +---------------------------------+
+     * | Project | Test | Export | Panel |
+     * +---------------------------------+
      */
     HorizontalPanel toolbar = new HorizontalPanel();
     toolbar.setVerticalAlignment(HorizontalPanel.ALIGN_MIDDLE);
@@ -158,21 +158,15 @@ public class TopToolbar extends Composite {
     fileDropDown = makeButton(WIDGET_NAME_PROJECT, MESSAGES.projectsTabName());
     connectDropDown = makeButton(WIDGET_NAME_CONNECT_TO, MESSAGES.connectTabName());
     buildDropDown = makeButton(WIDGET_NAME_BUILD, MESSAGES.buildTabName());
-    settingsDropDown = makeButton(WIDGET_NAME_SETTINGS, MESSAGES.settingsTabName());
-    helpDropDown = makeButton(WIDGET_NAME_HELP, MESSAGES.helpTabName());
 
     createProjectsMenu();
     createConnectMenu();
     createBuildMenu();
-    createSettingsMenu();
-    createHelpMenu();
 
     // Add the Buttons to the Toolbar.
     toolbar.add(fileDropDown);
     toolbar.add(connectDropDown);
     toolbar.add(buildDropDown);
-    toolbar.add(settingsDropDown);
-    toolbar.add(helpDropDown);
 
     //Only if logged in as an admin, add the Admin Button
     if (Ode.getInstance().getUser().getIsAdmin()) {
@@ -326,77 +320,6 @@ public class TopToolbar extends Composite {
           new GenerateYailAction()));
     }
     refreshMenu(buildDropDown, buildItems);
-  }
-
-  private void createSettingsMenu() {
-    List<DropDownItem> settingsItems = Lists.newArrayList();
-    if (Ode.getUserAutoloadProject()) {
-      settingsItems.add(new DropDownItem(WIDGET_NAME_AUTOLOAD, MESSAGES.disableAutoload(),
-          new DisableAutoloadAction()));
-    } else {
-      settingsItems.add(new DropDownItem(WIDGET_NAME_AUTOLOAD, MESSAGES.enableAutoload(),
-          new EnableAutoloadAction()));
-    }
-    if (Ode.getUserDyslexicFont()) {
-      settingsItems.add(new DropDownItem(WIDGET_NAME_DYSLEXIC_FONT, MESSAGES.disableOpenDyslexic(),
-          new SetFontRegularAction()));
-    } else {
-      settingsItems.add(new DropDownItem(WIDGET_NAME_DYSLEXIC_FONT,  MESSAGES.enableOpenDyslexic(),
-          new SetFontDyslexicAction()));
-    }
-    refreshMenu(settingsDropDown, settingsItems);
-  }
-
-  private void createHelpMenu() {
-    List<DropDownItem> helpItems = Lists.newArrayList();
-    helpItems.add(new DropDownItem(WIDGET_NAME_ABOUT, MESSAGES.aboutMenuItem(),
-        new AboutAction()));
-    helpItems.add(null);
-    Config config = Ode.getSystemConfig();
-    String libraryUrl = config.getLibraryUrl();
-    if (!Strings.isNullOrEmpty(libraryUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_LIBRARY, MESSAGES.libraryMenuItem(),
-          new WindowOpenAction(libraryUrl)));
-    }
-    String getStartedUrl = config.getGetStartedUrl();
-    if (!Strings.isNullOrEmpty(getStartedUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_GETSTARTED, MESSAGES.getStartedMenuItem(),
-          new WindowOpenAction(getStartedUrl)));
-    }
-    String extensionsUrl = config.getExtensionsUrl();
-    if (!Strings.isNullOrEmpty(extensionsUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_EXTENSIONS, MESSAGES.extensionsMenuItem(),
-          new WindowOpenAction(extensionsUrl)));
-    }
-    String tutorialsUrl = config.getTutorialsUrl();
-    if (!Strings.isNullOrEmpty(tutorialsUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_TUTORIALS, MESSAGES.tutorialsMenuItem(),
-          new WindowOpenAction(tutorialsUrl)));
-    }
-    String troubleshootingUrl = config.getTroubleshootingUrl();
-    if (!Strings.isNullOrEmpty(troubleshootingUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_TROUBLESHOOTING, MESSAGES.troubleshootingMenuItem(),
-          new WindowOpenAction(troubleshootingUrl)));
-    }
-    String forumsUrl = config.getForumsUrl();
-    if (!Strings.isNullOrEmpty(forumsUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_FORUMS, MESSAGES.forumsMenuItem(),
-          new WindowOpenAction(forumsUrl)));
-    }
-    helpItems.add(null);
-    String feedbackUrl = config.getFeedbackUrl();
-    if (!Strings.isNullOrEmpty(feedbackUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_FEEDBACK, MESSAGES.feedbackMenuItem(),
-          new WindowOpenAction(feedbackUrl)));
-      helpItems.add(null);
-    }
-    helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONINFO, MESSAGES.companionInformation(),
-        new AboutCompanionAction()));
-    helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONUPDATE, MESSAGES.companionUpdate(),
-        new CompanionUpdateAction()));
-    helpItems.add(new DropDownItem(WIDGET_NAME_SHOWSPLASH, MESSAGES.showSplashMenuItem(),
-        new ShowSplashAction()));
-    refreshMenu(helpDropDown, helpItems);
   }
 
   private void createAdminMenu() {
@@ -789,136 +712,6 @@ public class TopToolbar extends Composite {
               }
             });
       }
-    }
-  }
-
-  private class EnableAutoloadAction implements Command {
-    @Override
-    public void execute() {
-      Ode.getInstance().setUserAutoloadProject(true);
-      createSettingsMenu();
-    }
-  }
-
-  private class DisableAutoloadAction implements Command {
-    @Override
-    public void execute() {
-      Ode.getInstance().setUserAutoloadProject(false);
-      createSettingsMenu();
-    }
-  }
-
-  private static class SetFontDyslexicAction implements Command {
-    @Override
-    public void execute() {
-      Ode.getInstance().setUserDyslexicFont(true);
-      // Window.Location.reload();
-      // Note: We used to reload here, but this causes
-      // a race condition with the saving of the user
-      // settings. So we now reload in the callback to
-      // saveSettings (in Ode.java)
-    }
-  }
-
-  private static class SetFontRegularAction implements Command {
-    @Override
-    public void execute() {
-      Ode.getInstance().setUserDyslexicFont(false);
-      // Window.Location.reload();
-      // Not: See above comment
-    }
-  }
-
-  private static class AboutAction implements Command {
-    @Override
-    public void execute() {
-      final DialogBox db = new DialogBox(false, true);
-      db.setText("About ReactiveIDE");
-      db.setStyleName("ode-DialogBox");
-      db.setHeight("200px");
-      db.setWidth("400px");
-      db.setGlassEnabled(true);
-      db.setAnimationEnabled(true);
-      db.center();
-
-      VerticalPanel DialogBoxContents = new VerticalPanel();
-      String html = MESSAGES.gitBuildId(GitBuildId.getDate(), GitBuildId.getVersion()) +
-          "<BR/>" + MESSAGES.useCompanion(YaVersion.PREFERRED_COMPANION, YaVersion.PREFERRED_COMPANION + "u") +
-          "<BR/>" + MESSAGES.targetSdkVersion(YaVersion.TARGET_SDK_VERSION, YaVersion.TARGET_ANDROID_VERSION);
-      Config config = Ode.getInstance().getSystemConfig();
-      HTML message = new HTML(html);
-
-      SimplePanel holder = new SimplePanel();
-      Button ok = new Button("Close");
-      ok.addClickListener(new ClickListener() {
-        public void onClick(Widget sender) {
-          db.hide();
-        }
-      });
-      holder.add(ok);
-      DialogBoxContents.add(message);
-      DialogBoxContents.add(holder);
-      db.setWidget(DialogBoxContents);
-      db.show();
-    }
-  }
-
-  private static class AboutCompanionAction implements Command {
-    @Override
-    public void execute() {
-      final DialogBox db = new DialogBox(false, true);
-      db.setText("About Reactive Mobile");
-      db.setStyleName("ode-DialogBox");
-      db.setHeight("200px");
-      db.setWidth("400px");
-      db.setGlassEnabled(true);
-      db.setAnimationEnabled(true);
-      db.center();
-
-      String downloadinfo = "";
-      if (!YaVersion.COMPANION_UPDATE_URL1.equals("")) {
-        String url = "http://" + Window.Location.getHost() + YaVersion.COMPANION_UPDATE_URL1;
-        downloadinfo = "<br/>\n<a href=" + url + ">Download URL: " + url + "</a><br/>\n";
-        downloadinfo += BlocklyPanel.getQRCode(url);
-      }
-
-      VerticalPanel DialogBoxContents = new VerticalPanel();
-      HTML message = new HTML(
-          "Reactive Mobile Version " + BlocklyPanel.getCompVersion() + downloadinfo
-      );
-
-      SimplePanel holder = new SimplePanel();
-      Button ok = new Button("Close");
-      ok.addClickListener(new ClickListener() {
-        public void onClick(Widget sender) {
-          db.hide();
-        }
-      });
-      holder.add(ok);
-      DialogBoxContents.add(message);
-      DialogBoxContents.add(holder);
-      db.setWidget(DialogBoxContents);
-      db.show();
-    }
-  }
-
-  private static class CompanionUpdateAction implements Command {
-    @Override
-    public void execute() {
-      DesignToolbar.DesignProject currentProject = Ode.getInstance().getDesignToolbar().getCurrentProject();
-      if (currentProject == null) {
-        Window.alert(MESSAGES.companionUpdateMustHaveProject());
-        return;
-      }
-      DesignToolbar.Screen screen = currentProject.screens.get(currentProject.currentScreen);
-      screen.blocksEditor.updateCompanion();
-    }
-  }
-
-  private static class ShowSplashAction implements Command {
-    @Override
-    public void execute() {
-      Ode.getInstance().showWelcomeDialog();
     }
   }
 

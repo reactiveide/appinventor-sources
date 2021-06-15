@@ -16,20 +16,24 @@ import com.google.appinventor.client.tracking.Tracking;
 import com.google.appinventor.client.widgets.DropDownButton.DropDownItem;
 import com.google.appinventor.client.widgets.DropDownButton;
 import com.google.appinventor.client.widgets.TextButton;
-
 import com.google.appinventor.shared.rpc.project.ProjectRootNode;
 import com.google.appinventor.shared.rpc.user.Config;
+
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
+import com.google.appinventor.common.version.GitBuildId;
+import com.google.appinventor.components.common.YaVersion;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.http.client.UrlBuilder;
 
+import com.google.gwt.http.client.UrlBuilder;
+import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.i18n.client.Dictionary;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.TextResource;
+
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
@@ -37,9 +41,22 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.ScrollPanel;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.SimplePanel;
+import com.google.gwt.user.client.ui.ClickListener;
+import com.google.gwt.user.client.ui.Widget;
+
 
 import java.util.List;
 import java.util.MissingResourceException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
 
@@ -51,12 +68,19 @@ public class TopPanel extends Composite {
   // Strings for links and dropdown menus:
   private final DropDownButton accountButton;
   public DropDownButton languageDropDown;
+  
+  private static final String WIDGET_NAME_AUTOLOAD = "Autoload Last Project";
+  private static final String WIDGET_NAME_DYSLEXIC_FONT = "DyslexicFont";
 
   private final String WIDGET_NAME_SIGN_OUT = "Signout";
   private final String WIDGET_NAME_USER = "User";
   private static final String WIDGET_NAME_LANGUAGE = "Language";
+  private static final String WIDGET_NAME_DARKMODE = "DarkMode";
+
+  private static final String WIDGET_NAME_ABOUT = "About";
 
   private static final String SIGNOUT_URL = "/ode/_logout";
+  private static final String LANGUAGES_IMAGE_URL = "/static/images/languages.svg";
   private static final String LOGO_IMAGE_URL = "/static/images/codi_long.png";
 
   private static final String WINDOW_OPEN_FEATURES = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
@@ -118,20 +142,16 @@ public class TopPanel extends Composite {
     Config config = ode.getSystemConfig();
     String guideUrl = config.getGuideUrl();
     if (!Strings.isNullOrEmpty(guideUrl)) {
-      TextButton guideLink = new TextButton(MESSAGES.guideTabName());
+
+      Image communityLogo = new Image("https://cdn.hybro.io/face.png");
+      communityLogo.setTitle("Community");
+      communityLogo.setSize("24px", "24px");
+      communityLogo.setStyleName("ode-Community");
+
+      TextButton guideLink = new TextButton(communityLogo);
       guideLink.addClickHandler(new WindowOpenClickHandler(guideUrl));
       guideLink.setStyleName("ode-TopPanelButton");
       links.add(guideLink);
-    }
-
-    // Feedback Link
-    String feedbackUrl = config.getFeedbackUrl();
-    if (!Strings.isNullOrEmpty(feedbackUrl)) {
-      TextButton feedbackLink = new TextButton(MESSAGES.feedbackTabName());
-      feedbackLink.addClickHandler(
-        new WindowOpenClickHandler(feedbackUrl));
-      feedbackLink.setStyleName("ode-TopPanelButton");
-      links.add(feedbackLink);
     }
 
     // Create the Account Information
@@ -145,10 +165,33 @@ public class TopPanel extends Composite {
     // Account Drop Down Button
     List<DropDownItem> userItems = Lists.newArrayList();
 
+    // Enabling DarkMode
+    userItems.add(new DropDownItem(WIDGET_NAME_DARKMODE,MESSAGES.enableDarkModeOption(), new DarkModeAction()));
+
+    // Setting and Help Menus
+    if (Ode.getUserAutoloadProject()) {
+      userItems.add(new DropDownItem(WIDGET_NAME_AUTOLOAD, MESSAGES.disableAutoload(), new DisableAutoloadAction()));
+    } else {
+      userItems.add(new DropDownItem(WIDGET_NAME_AUTOLOAD, MESSAGES.enableAutoload(), new EnableAutoloadAction()));
+    }
+    if (Ode.getUserDyslexicFont()) {
+      userItems.add(new DropDownItem(WIDGET_NAME_DYSLEXIC_FONT, MESSAGES.disableOpenDyslexic(), new SetFontRegularAction()));
+    } else {
+      userItems.add(new DropDownItem(WIDGET_NAME_DYSLEXIC_FONT,  MESSAGES.enableOpenDyslexic(), new SetFontDyslexicAction()));
+    }
+
     // Sign Out
     userItems.add(new DropDownItem(WIDGET_NAME_SIGN_OUT, MESSAGES.signOutLink(), new SignOutAction()));
+    
+    // About ReactiveIDE
+    userItems.add(new DropDownItem(WIDGET_NAME_ABOUT, MESSAGES.aboutMenuItem(), new AboutAction()));
 
-    accountButton = new DropDownButton(WIDGET_NAME_USER, " " , userItems, true);
+    Image accountLogo = new Image("https://cdn.hybro.io/account_circle.png");
+    accountLogo.setTitle("My Account");
+    accountLogo.setSize("24px", "24px");
+    accountLogo.setStyleName("ode-Account");
+
+    accountButton = new DropDownButton(WIDGET_NAME_USER, accountLogo, userItems, true);
     accountButton.setStyleName("ode-TopPanelButton");
 
     // Language
@@ -165,7 +208,13 @@ public class TopPanel extends Composite {
     }
     String currentLang = LocaleInfo.getCurrentLocale().getLocaleName();
     String nativeDisplayName = getDisplayName(currentLang);
-    languageDropDown = new DropDownButton(WIDGET_NAME_LANGUAGE, nativeDisplayName, languageItems, true);
+
+    Image languageLogo = new Image("https://cdn.hybro.io/language.png");
+    languageLogo.setTitle("Language");
+    languageLogo.setSize("24px", "24px");
+    languageLogo.setStyleName("ode-Language");
+
+    languageDropDown = new DropDownButton(WIDGET_NAME_LANGUAGE, languageLogo, languageItems, true);
     languageDropDown.setStyleName("ode-TopPanelButton");
 
     account.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
@@ -223,19 +272,89 @@ public class TopPanel extends Composite {
   }
 
   /**
-   * Updates the UI to show the user's email address.
-   *
-   * @param email the email address
-   */
-  public void showUserEmail(String email) {
-    accountButton.setCaption(email);
-  }
-
-  /**
    * Adds the MOTD box to the right panel. This should only be called once.
    */
   public void showMotd() {
     addMotd(rightPanel);
+  }
+
+  // Move Settings function here
+    private class EnableAutoloadAction implements Command {
+    @Override
+    public void execute() {
+      Ode.getInstance().setUserAutoloadProject(true);
+    }
+  }
+
+  private class DisableAutoloadAction implements Command {
+    @Override
+    public void execute() {
+      Ode.getInstance().setUserAutoloadProject(false);
+    }
+  }
+
+  // About Dialog
+    private static class AboutAction implements Command {
+    @Override
+    public void execute() {
+      final DialogBox db = new DialogBox(false, true);
+      db.setText("About ReactiveIDE");
+      db.setStyleName("ode-DialogBox");
+      db.setHeight("200px");
+      db.setWidth("400px");
+      db.setGlassEnabled(true);
+      db.setAnimationEnabled(true);
+      db.center();
+
+      VerticalPanel DialogBoxContents = new VerticalPanel();
+      String html = MESSAGES.gitBuildId(GitBuildId.getDate(), GitBuildId.getVersion()) +
+          "<BR/>" + MESSAGES.useCompanion(YaVersion.PREFERRED_COMPANION, YaVersion.PREFERRED_COMPANION + "u") +
+          "<BR/>" + MESSAGES.targetSdkVersion(YaVersion.TARGET_SDK_VERSION, YaVersion.TARGET_ANDROID_VERSION);
+      Config config = Ode.getInstance().getSystemConfig();
+      HTML message = new HTML(html);
+
+      SimplePanel holder = new SimplePanel();
+      Button ok = new Button("Close");
+      ok.addClickListener(new ClickListener() {
+        public void onClick(Widget sender) {
+          db.hide();
+        }
+      });
+      holder.add(ok);
+      DialogBoxContents.add(message);
+      DialogBoxContents.add(holder);
+      db.setWidget(DialogBoxContents);
+      db.show();
+    }
+  }
+
+  //Dark mode
+    private class DarkModeAction implements Command {
+    @Override
+    public void execute() {
+
+    }
+  }
+
+  private static class SetFontDyslexicAction implements Command {
+    @Override
+    public void execute() {
+      Ode.getInstance().setUserDyslexicFont(true);
+      // Window.Location.reload();
+      // Note: We used to reload here, but this causes
+      // a race condition with the saving of the user
+      // settings. So we now reload in the callback to
+      // saveSettings (in Ode.java)
+    }
+  }
+
+  private static class SetFontRegularAction implements Command {
+    @Override
+    public void execute() {
+      Ode.getInstance().setUserDyslexicFont(false);
+      // Window.Location.reload();
+      // Not: See above comment
+    }
   }
 
   private static class WindowOpenClickHandler implements ClickHandler {

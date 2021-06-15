@@ -51,6 +51,11 @@ import com.google.appinventor.client.editor.simple.components.MockVerticalArrang
 import com.google.appinventor.client.editor.simple.components.MockVideoPlayer;
 import com.google.appinventor.client.editor.simple.components.MockWebViewer;
 
+import com.google.appinventor.client.editor.simple.components.MockCustomProgress;
+import com.google.appinventor.client.editor.simple.components.MockSpacer;
+import com.google.appinventor.client.editor.simple.components.MockLottie;
+//import com.google.appinventor.client.editor.simple.components.MockAdmobBanner;
+
 
 import com.google.appinventor.shared.storage.StorageUtil;
 
@@ -490,6 +495,13 @@ public final class SimpleComponentDescriptor {
       return new MockRectangle(editor);
     } else if (name.equals(MockFeatureCollection.TYPE)) {
       return new MockFeatureCollection(editor);
+    } else if (name.equals(MockSpacer.TYPE)) {
+      return new MockSpacer(editor);
+    } else if (name.equals(MockCustomProgress.TYPE)) {
+      return new MockCustomProgress(editor);
+    } else if (name.equals(MockLottie.TYPE)) {
+      return new MockLottie(editor);
+
     } else {
       // TODO(user): add 3rd party mock component proxy here
       throw new UnsupportedOperationException("unknown component: " + name);

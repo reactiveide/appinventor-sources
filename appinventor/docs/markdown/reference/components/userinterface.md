@@ -22,6 +22,7 @@ Table of Contents:
 * [PasswordTextBox](#PasswordTextBox)
 * [Screen](#Screen)
 * [Slider](#Slider)
+* [Spacer](#Spacer)
 * [Spinner](#Spinner)
 * [Switch](#Switch)
 * [TextBox](#TextBox)
@@ -1358,6 +1359,49 @@ This class is used to display a `Slider`.
 : Indicates that position of the slider thumb has changed.
 
 ### Methods  {#Slider-Methods}
+
+{:.methods}
+None
+
+
+## Spacer  {#Spacer}
+
+Just a simple filler / spacer class to add fills between components
+
+
+
+### Properties  {#Spacer-Properties}
+
+{:.properties}
+
+{:id="Spacer.BackgroundColor" .color .wo} *BackgroundColor*
+: Background color of this component. This is just for UI. For apk it won't be visible
+
+{:id="Spacer.Height" .number .bo} *Height*
+: Specifies the `Spacer`'s vertical height, measured in pixels.
+
+{:id="Spacer.HeightPercent" .number .wo .bo} *HeightPercent*
+: Specifies the `Spacer`'s vertical height as a percentage
+ of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+
+{:id="Spacer.Visible" .boolean} *Visible*
+: Specifies whether the `Spacer` should be visible on the screen.  Value is `true`{:.logic.block}
+ if the `Spacer` is showing and `false`{:.logic.block} if hidden.
+
+{:id="Spacer.Width" .number .bo} *Width*
+: Specifies the horizontal width of the `Spacer`, measured in pixels.
+
+{:id="Spacer.WidthPercent" .number .wo .bo} *WidthPercent*
+: Specifies the horizontal width of the `Spacer` as a percentage
+ of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+
+### Events  {#Spacer-Events}
+
+{:.events}
+None
+
+
+### Methods  {#Spacer-Methods}
 
 {:.methods}
 None
