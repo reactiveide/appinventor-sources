@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+DIR="$PWD/appinventor"
+#check if current path is a source code
+if [ -d "$DIR" ]; then
+  #folder exists
+  temp1="0"
+else
+  cd appinventor-sources
+fi;
 title() {
   echo -ne "\e]0;$*\a"
 }
@@ -18,46 +26,250 @@ open_url() {
 
 menu() {
   until [ "$choice" = "0" ]; do
-    title Build Tools for App Inventor
+    title Build Tools for ReactiveIDE
     clear
-    echo "                                   MENU"
     echo " - - What do you want to do? - - - - - - - - - - - - - - - - - - - - - - -"
+    echo "   ______                     _    _               _____ ______  _____ "
+    echo "   | ___ \                   | |  (_)             |_   _||  _  \|  ___|"
+    echo "   | |_/ /  ___   __ _   ___ | |_  _ __   __  ___   | |  | | | || |__  "
+    echo "   |    /  / _ \ / _  | / __|| __|| |\ \ / / / _ \  | |  | | | ||  __| "
+    echo "   | |\ \ |  __/| (_| || (__ | |_ | | \ V / |  __/ _| |_ | |/ / | |___ "
+    echo "   \_| \_| \___| \__,_| \___| \__||_|  \_/   \___| \___/ |___/  \____/ "
     echo ""
-    echo "   1.Clean Build"
+    echo "   Build Tools v1.0 (built on 19 June 2021)"
+    echo ""
+    echo "   System Infomation :"
+    getinfo
+    title Build Tools for ReactiveIDE
+    echo "   "
+    echo "   1.Download & Setup Source Code"
     echo "   2.Make Auth Key"
+    echo "   3.Clean Build"
     echo ""
-    echo "   3.Build App Inventor"
-    echo "   4.Build Without Companion"
-    echo "   5.Build Companion App"
-    echo "   6.Build Extension"
+    echo "   4.Build (Full)"
+    echo "   5.Build (Without Companion)"
+    echo "   6.Build Companion App"
+    echo "   7.Build Extension"
     echo ""
-    echo "   7.Run Local Server"
-    echo "   8.Run Super Dev Mode"
-    echo "   9.Run Build Server"
+    echo "   8.Run Local Server"
+    echo "   9.Run Super Dev Mode"
+    echo "   10.Run Build Server"
     echo "   A.Run Tests"
-    echo ""
     echo "   B.Doctor"
-    echo ""
+    echo "   C.Add Script to Path"
+    echo "   D.Disable Auto/Uninstall Script"
     echo "   0.Exit"
     echo ""
     echo " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
-    read -p "Enter your choice:" choice
+    read -p "  Enter your choice:" choice
     echo ""
     case $choice in
-      1) clear ; clean ; pause ;;
+      1) clear ; clone ; makeauthkey ; clean ; pause ;;
       2) clear ; makeauthkey ; pause ;;
-      3) clear ; build ; pause ;;
-      4) clear ; buildnoplay ; pause ;;
-      5) clear ; companion ; pause ;;
-      6) clear ; extension ; pause ;;
-      7) clear ; localserver ; pause ;;
-      8) clear ; sdm ; pause ;;
-      9) clear ; buildserver ; pause ;;
+      3) clear ; clean ; pause ;;
+      4) clear ; build ; pause ;;
+      5) clear ; buildnoplay ; pause ;;
+      6) clear ; companion ; pause ;;
+      7) clear ; extension ; pause ;;
+      8) clear ; localserver ; pause ;;
+      9) clear ; sdm ; pause ;;
+      10) clear ; buildserver ; pause ;;
       a|A) clear ; tests ; pause ;;
       b|B) clear ; doctor ; pause ;;
+      c|C) clear ; addtopath ; pause ;;
+      d|D) clear ; removepath ; pause ;;
       0) clear ; exit 0 ;;
     esac
   done
+}
+
+getinfo() {
+title Gathering System Infomation ...
+
+#check java
+printf "   Java Path : "
+if type -p java; then
+    _java=java
+elif [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then  
+    _java="$JAVA_HOME/bin/java"
+else
+    echo "Java is not installed !"
+    echo "Trying to install ..."
+    if [[ $OS == 'Linux' ]]; then
+     # install java
+     if [ -f /etc/redhat-release ] ; then
+     yum install openjdk-8-jdk
+       elif [ -f /etc/SuSE-release ] ; then
+     zypper install openjdk-8-jdk
+       elif [ -f /etc/debian_version ] ; then 
+     sudo apt install openjdk-8-jdk
+       elif [ -f /etc/arch-release ] ; then
+     pacman -S openjdk-8-jdk
+       else
+     echo "Java 8 JDK is not installed ! Please install Java 8 !"
+     exit N
+        fi;
+     elif [[ $OS == 'Mac' ]]; then
+      [[ "$(brew)" =~ "command not found" ]] && nobrew=1
+      if [[ nobrew == 1 ]]; then
+        #install brew
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      fi;
+      brew install openjdk-8-jdk
+     else
+      #install java from command line not supported on such OS
+         echo "Java 8 JDK is not installed ! Please install Java 8 !"
+         exit N
+    fi;
+    fi
+
+if [[ "$_java" ]]; then
+    version=$("$_java" -version 2>&1 | awk -F '"' '/version/ {print $2}')
+    if [[ "$version" > "1.8" &&  "$version" < "1.8.9" ]]; then
+        echo "   Java Version : ${version}"
+    else         
+    echo "Java is not the right version or not installed ! Trying to install ..."
+    if [[ $OS == 'Linux' ]]; then
+     # install java
+     if [ -f /etc/redhat-release ] ; then
+     yum install openjdk-8-jdk
+       elif [ -f /etc/SuSE-release ] ; then
+     zypper install openjdk-8-jdk
+       elif [ -f /etc/debian_version ] ; then 
+     sudo apt install openjdk-8-jdk
+       elif [ -f /etc/arch-release ] ; then
+     pacman -S openjdk-8-jdk
+       else
+     echo "Java 8 JDK is not installed ! Please install Java 8 !"
+     exit N
+        fi;
+     elif [[ $OS == 'Mac' ]]; then
+      [[ "$(brew)" =~ "command not found" ]] && nobrew=1
+      if [[ nobrew == 1 ]]; then
+        #install brew
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      fi;
+      brew install openjdk-8-jdk
+     else
+      #install java from command line not supported on such OS
+         echo "Java 8 JDK is not installed ! Please install Java 8 !"
+         exit N
+    fi;
+    fi
+fi
+
+#check ant
+printf "   Ant Path : "
+if type -p ant; then
+    _ant=ant
+else
+    echo "Ant not installed ! Trying to install ..."
+    if [[ $OS == 'Linux' ]]; then
+     # install java
+     if [ -f /etc/redhat-release ] ; then
+     yum install ant
+       elif [ -f /etc/SuSE-release ] ; then
+     zypper install ant
+       elif [ -f /etc/debian_version ] ; then 
+     sudo apt install ant
+       elif [ -f /etc/arch-release ] ; then
+     pacman -S ant
+       else
+     echo "Apache Ant is not installed ! Please install Ant !"
+     exit N
+        fi;
+     elif [[ $OS == 'Mac' ]]; then
+      [[ "$(brew)" =~ "command not found" ]] && nobrew=1
+      if [[ nobrew == 1 ]]; then
+        #install brew
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      fi;
+      brew install ant
+     else
+      #install java from command line not supported on such OS
+         echo "Apache Ant is not installed ! Please install Ant !"
+         exit N
+    fi;
+    fi;
+if [[ "$_ant" ]]; then
+    version=$("$_ant" -version 2>&1 | awk '/version/ {print$4}')
+        echo "   Ant Version : ${version}"         
+fi;
+}
+
+clone() {
+title Cloning from Repo...
+#begin
+DIR="$PWD/appinventor"
+CURRENT_DIR=0
+#check if current path is a source code
+if [ -d "$DIR" ]; then
+  #folder exists
+echo "Your current directory is ${PWD}"
+while true; do
+    read -p "Do you want to setup on the current directory (yes/no) ? " cudir
+    case $cudir in
+        [Yy]* ) CURRENT_DIR=1 break;;
+        [Nn]* ) CURRENT_DIR=0 break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+fi
+
+if [[ $CURRENT_DIR = 0 ]]; then
+  # enter setup path
+  while true; do 
+  read -p "Enter Path : " DIR
+  if [[ $DIR = "none" ]]; then
+    git clone https://github.com/reactiveide/appinventor-sources.git
+    cd appinventor-sources 
+    DIR="$PWD"
+  fi
+  DIR="$DIR/appinventor"
+  read -p "Setup will be done at ${DIR}, please confirm (yes/no) : " firmdir
+  case $firmdir in
+        [Yy]* ) break;;
+        [Nn]* ) ;;
+    esac
+  done
+fi
+echo "Setting up HydrIDE on ${DIR} ..."
+cd
+cd $DIR
+cd ..
+echo "Adding upstream repository ..."
+git remote add upstream https://github.com/mit-cml/appinventor-sources.git
+echo "done"
+echo "Configuring git ignore ..."
+cp sample-.gitignore .gitignore
+echo "done"
+echo "Updating submodule ..."
+git submodule update --init
+echo "done"
+}
+
+addtopath() {
+  title Add Script to Path
+  find . -maxdepth 1 -type f ! -name "*.*" -exec cp -t /usr/bin/ {} \+
+  if type -p buildtools; then
+  echo "Added to path successfully !"
+  else
+  echo "Oops! We cant do this for you! Excute this manually : cp -r buildtools /usr/bin/buildtools"
+  fi
+  read -p "Would you like to auto launch this script at start (yes/no)?" autolaunchcmd
+    case $autolaunchcmd in
+        [Yy]* ) echo "buildtools" >> ~/.bashrc ; pause ;;
+        [Nn]* ) pause ;;
+    esac
+}
+
+removepath() {
+  title Disable Auto Run / Remove Script
+  read -p "Disable Auto Run (input 1) or Remove Script (input 2)?" autolaunchcmd
+    case $autolaunchcmd in
+        1) sed 's,buildtools[^;]*, ,' -i ~/.bashrc ; pause ;;
+        2) rm -rf /usr/bin/buildtools ; pause ;;
+    esac  
 }
 
 clean() {
@@ -102,8 +314,8 @@ extension() {
 
 localserver() {
   title Running Local Server...
-  start java_dev_appserver --address=0.0.0.0 --port=8888 appengine/build/war/
-  # wait for 10 seconds for app engine server to start
+  GCLOUD_SDK_LOCATION=$(gcloud --format='value(installation.sdk_root)' info)
+  $GCLOUD_SDK_LOCATION/bin/java_dev_appserver.sh --port=8888 --address=0.0.0.0 appengine/build/war/
   sleep 10
   open_url http://localhost:8888
 }
@@ -116,7 +328,8 @@ sdm() {
 
 buildserver() {
   title Running Build Server...
-  start ant RunLocalBuildServer
+  cd buildserver
+  ant RunLocalBuildServer
 }
 
 tests() {
