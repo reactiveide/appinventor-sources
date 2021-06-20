@@ -252,7 +252,7 @@ public class TopPanel extends Composite {
     // to get around browsers that agressively cache the image! This
     // same trick is used in StorageUtil.getFilePath().
     Image logo = new Image(LOGO_IMAGE_URL + "?t=" + System.currentTimeMillis());
-    logo.setSize("180px", "40px");
+    logo.setSize("40px", "40px");
     logo.setStyleName("ode-Logo");
     String logoUrl = ode.getSystemConfig().getLogoUrl();
     if (!Strings.isNullOrEmpty(logoUrl)) {

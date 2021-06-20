@@ -2384,7 +2384,7 @@ public class Form extends AppInventorCompatActivity
 
   private void showAboutApplicationNotification() {
     String title = "Info";
-    String MITtagline = "<p><small><em>by ReactiveIDE<br>hydride.io</em></small></p>";
+    String MITtagline = "<p><small><em>by ReactiveIDE<br>reactiveide.com</em></small></p>";
     // Users can hide the taglines by including an HTML open comment <!-- in the about screen message
     String message = aboutScreen + MITtagline + yandexTranslateTagline;
     message = message.replaceAll("\\n", "<br>"); // Allow for line breaks in the string.

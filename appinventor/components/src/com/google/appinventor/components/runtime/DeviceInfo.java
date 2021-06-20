@@ -418,6 +418,6 @@ public class DeviceInfo extends AndroidNonvisibleComponent implements Component 
 }
       @SimpleFunction(description = "About this Extension")
     public void AboutThisExtension() {
-         Toast.makeText(context, "DeviceInfo is a component that get info from your device, developed by Samuel (kwankiu.github.io), And this also belongs to Hybro, to learn more, you may check extension.hydride.io !",Toast.LENGTH_SHORT).show();
+         Toast.makeText(context, "DeviceInfo is a component that get info from your device, developed by Samuel (kwankiu.github.io)",Toast.LENGTH_SHORT).show();
          }
 }

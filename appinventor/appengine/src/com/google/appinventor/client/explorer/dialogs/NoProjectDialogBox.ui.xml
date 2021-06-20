@@ -105,7 +105,7 @@
 
     <h3 class="ode-tutorialsTitle">
       <div id='ode-codiLogoDiv'>
-          <g:Image resource="{res.logo}" altText="HydrIDE" height="64px" width="288px" /><BR/>
+          <g:Image resource="{res.logo}" altText="ReactiveIDE" height="64px" width="64px" /><BR/>
         </div>
       <ui:msg description="The header text instructing the new user to get started.">
         You have no project created yet ! You may get some tips here to help you get started !
@@ -121,11 +121,11 @@
           </h4>
           <p class="ode-noDialogExampleAbout">
             <ui:msg description="">
-              Intoducing HydrIDE's features and explain how to build an app here !<BR/>
+              Intoducing ReactiveIDE's features and explain how to build an app here !<BR/>
              <g:Image resource="{res.videoplayerpreviewtest}" altText="ReactiveIDE" height="170px" width="300px" /><BR/>
 
                     <g:Button styleName='{style.ode-buttons}'>
-         <a styleName='{style.ode-a}' href="https://community.hydride.io" target="_blank"
+         <a styleName='{style.ode-a}' href="https://c.reactiveide.com" target="_blank"
                  ui:ph="yrMediaLink">Watch Video</a>
         </g:Button>
             </ui:msg>
@@ -147,10 +147,10 @@
           <p class="ode-noDialogExampleAbout">
             <ui:msg description="Description of the Talk to Me app">
             Creating your own stunning and modern Hello World App, this example will enables user to understand how they might create their own app with ReactiveIDE ! <BR/>
-             <g:Image resource="{res.videoplayerpreviewtest}" altText="HydrIDE" height="170px" width="300px" /><BR/>
+             <g:Image resource="{res.videoplayerpreviewtest}" altText="ReactiveIDE" height="170px" width="300px" /><BR/>
 
                     <g:Button styleName='{style.ode-buttons}'>
-         <a styleName='{style.ode-a}' href="https://community.hydride.io" target="_blank"
+         <a styleName='{style.ode-a}' href="https://c.reactiveide.com" target="_blank"
                  ui:ph="yrMediaLink">Watch the Tutorial</a>
         </g:Button>
             </ui:msg>
@@ -170,10 +170,10 @@
           <p class="ode-noDialogExampleAbout">
             <ui:msg description="Description of the Translate app">
               Go to our tutorial page or our community to learn more ! <BR/>
-               <g:Image resource="{res.hybrocommunityscreenshot}" altText="HydrIDE" height="170px" width="300px" /><BR/>
+               <g:Image resource="{res.hybrocommunityscreenshot}" altText="ReactiveIDE" height="170px" width="300px" /><BR/>
 
                <g:Button styleName='{style.ode-buttons}'>
-         <a styleName='{style.ode-a}' href="https://community.hybro.io" target="_blank"
+         <a styleName='{style.ode-a}' href="https://c.reactiveide.com" target="_blank"
                  ui:ph="yrMediaLink">Go to ReactiveIDE Community</a>
         </g:Button>
             </ui:msg>

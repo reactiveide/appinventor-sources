@@ -236,7 +236,7 @@ if [[ $CURRENT_DIR = 0 ]]; then
     esac
   done
 fi
-echo "Setting up HydrIDE on ${DIR} ..."
+echo "Setting up ReactiveIDE on ${DIR} ..."
 echo "Adding upstream repository ..."
 git remote add upstream https://github.com/mit-cml/appinventor-sources.git
 echo "done"
