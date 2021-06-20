@@ -31,7 +31,7 @@ import java.util.List;
         "target='_blank'>how to instructions</a> for the Arduino 101 Light Sensor.</li></ul>",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101LightSensor extends Arduino101ExtensionWithPin<Arduino101LightSensor> {
   private static final String LIGHT_SENSOR_SERVICE_UUID = "E95D0E00-251D-470A-A062-FA1922DFA9A7";

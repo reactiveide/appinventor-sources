@@ -40,7 +40,7 @@ import com.google.android.exoplayer2.trackselection.*;
     version = 1,
     description = "Exo player",
     category = ComponentCategory.MEDIA,
-    iconName = "https://cdn.hybro.io/exoplayer.png",
+    iconName = "https://cdn.reactiveide.com/exoplayer.png",
     nonVisible = true)
 
 @UsesLibraries(libraries = "exoplayer-core.jar, exoplayer-core.aar, exoplayer-ui.jar, exoplayer-ui.aar")

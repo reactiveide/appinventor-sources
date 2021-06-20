@@ -48,7 +48,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@DesignerComponent(version = 2, description = "UPI Payment Gateway component (Only for India)", category = ComponentCategory.MONITIZATION, nonVisible = true, iconName = "https://cdn.hybro.io/upigateway.png")
+@DesignerComponent(version = 2, description = "UPI Payment Gateway component (Only for India)", category = ComponentCategory.MONITIZATION, nonVisible = true, iconName = "https://cdn.reactiveide.com/upigateway.png")
 @SimpleObject
 public class UPIGateway extends AndroidNonvisibleComponent implements ActivityResultListener {
     private ComponentContainer container;

@@ -46,7 +46,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@DesignerComponent(version = 1, description = "Easily work with packages with this component", category = ComponentCategory.UTILS, nonVisible = true, iconName = "https://cdn.hybro.io/button.png")
+@DesignerComponent(version = 1, description = "Easily work with packages with this component", category = ComponentCategory.UTILS, nonVisible = true, iconName = "https://cdn.reactiveide.com/button.png")
 @SimpleObject
 public final class PackageUtils extends AndroidNonvisibleComponent {
   public static Context context;

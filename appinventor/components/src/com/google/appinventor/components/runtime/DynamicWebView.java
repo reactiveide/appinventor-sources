@@ -46,7 +46,7 @@ import gnu.math.IntNum;
                   description = "Dynamic Component - Web Viewer, a dynamic component for creating WebViewer.",
                   category = ComponentCategory.EXPERIMENTAL,
                   nonVisible = true,
-                  iconName = "https://cdn.hybro.io/web.png")
+                  iconName = "https://cdn.reactiveide.com/web.png")
 
 @SimpleObject
 public class DynamicWebView extends AndroidNonvisibleComponent {

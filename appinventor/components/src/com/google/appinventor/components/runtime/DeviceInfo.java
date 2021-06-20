@@ -46,7 +46,7 @@ import java.util.Locale;
     description = "DeviceInfo Component allows you to get some infomation or status from client's device, such as Android Version, IMEI. Wifi, Battery Level, etc. This component is created by (kwankiu.github.io), one of the member in Hybro (hybro.io), thank you for using it, hope it make use to boost your project/app to a success !",
     category = ComponentCategory.BASIC,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/deviceinfoblack.png")
+    iconName = "https://cdn.reactiveide.com/deviceinfoblack.png")
 
 @UsesPermissions(permissionNames = "android.permission.READ_EXTERNAL_STORAGE,android.permission.READ_PHONE_STATE,android.permission.ACCESS_NETWORK_STATE,android.permission.ACCESS_WIFI_STATE,android.permission.INTERNET,android.permission.CHANGE_WIFI_STATE,android.permission.ACCESS_COARSE_LOCATION")
 

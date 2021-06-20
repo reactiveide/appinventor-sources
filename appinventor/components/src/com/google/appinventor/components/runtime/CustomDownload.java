@@ -40,7 +40,7 @@ import com.downloader.Status;
 @DesignerComponent(version = 1,  description = "Download Files With This",
         category = ComponentCategory.UTILS,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/downloadicon.png")
+        iconName = "https://cdn.reactiveide.com/downloadicon.png")
 @UsesLibraries(libraries="prdownloader.jar")
 @SimpleObject
 public class CustomDownload extends AndroidNonvisibleComponent {

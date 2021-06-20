@@ -29,7 +29,7 @@ import com.google.appinventor.components.runtime.Form;
     category = ComponentCategory.EXTENSION,
     helpUrl = "http://iot.appinventor.mit.edu/#/arduino101/arduinopwm",
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101PWMMotor extends Arduino101ExtensionWithIntensity {
   private static final String PWM_SERVICE_UUID = "E95D0F00-251D-470A-A062-FA1922DFA9A7";

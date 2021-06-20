@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Place icon.png in the root directory -->
-    <link rel="shortcut icon" href="https://cdn.hybro.io/hybrostudiologo500.png">
+    <link rel="shortcut icon" href="https://cdn.reactiveide.com/hybrostudiologo500.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   
@@ -514,7 +514,7 @@ hr {
       <center>
   <div class="spacetop" style="margin-top:150px;">
   </div>
-<img src="https://cdn.hybro.io/hydridelogo.png" height="120px" style="padding-top:20px;">
+<img src="https://cdn.reactiveide.com/hydridelogo.png" height="120px" style="padding-top:20px;">
 <br>
 <br>
 <p style="color:#f44336; font-size:26px;"><b>HydrIDE</b></p>
@@ -550,7 +550,7 @@ hr {
 
 <center>
   <br><br>
-     <img src="https://cdn.hybro.io/hydridelogo.png" height="100">
+     <img src="https://cdn.reactiveide.com/hydridelogo.png" height="100">
   <br>
   <p style="color:#f44336; font-size:16px;"><b style="font-size:28px;">HydrIDE</b></p>
   <br><br>

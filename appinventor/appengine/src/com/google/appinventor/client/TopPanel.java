@@ -143,7 +143,7 @@ public class TopPanel extends Composite {
     String guideUrl = config.getGuideUrl();
     if (!Strings.isNullOrEmpty(guideUrl)) {
 
-      Image communityLogo = new Image("https://cdn.hybro.io/face.png");
+      Image communityLogo = new Image("https://cdn.reactiveide.com/face.png");
       communityLogo.setTitle("Community");
       communityLogo.setSize("24px", "24px");
       communityLogo.setStyleName("ode-Community");
@@ -186,7 +186,7 @@ public class TopPanel extends Composite {
     // About ReactiveIDE
     userItems.add(new DropDownItem(WIDGET_NAME_ABOUT, MESSAGES.aboutMenuItem(), new AboutAction()));
 
-    Image accountLogo = new Image("https://cdn.hybro.io/account_circle.png");
+    Image accountLogo = new Image("https://cdn.reactiveide.com/account_circle.png");
     accountLogo.setTitle("My Account");
     accountLogo.setSize("24px", "24px");
     accountLogo.setStyleName("ode-Account");
@@ -209,7 +209,7 @@ public class TopPanel extends Composite {
     String currentLang = LocaleInfo.getCurrentLocale().getLocaleName();
     String nativeDisplayName = getDisplayName(currentLang);
 
-    Image languageLogo = new Image("https://cdn.hybro.io/language.png");
+    Image languageLogo = new Image("https://cdn.reactiveide.com/language.png");
     languageLogo.setTitle("Language");
     languageLogo.setSize("24px", "24px");
     languageLogo.setStyleName("ode-Language");

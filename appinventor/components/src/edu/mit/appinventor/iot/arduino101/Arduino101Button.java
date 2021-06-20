@@ -31,7 +31,7 @@ import java.util.List;
         "target='_blank'>how to instructions</a> for the Arduino 101 Button.</li></ul>",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101Button extends Arduino101ExtensionWithPin<Arduino101Button> {
   private static final String BUTTON_SERVICE_UUID = "E95D0200-251D-470A-A062-FA1922DFA9A7";

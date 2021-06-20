@@ -220,12 +220,15 @@ if [[ $CURRENT_DIR = 0 ]]; then
   # enter setup path
   while true; do 
   read -p "Enter Path : " DIR
-  if [[ $DIR = "none" ]]; then
-    git clone https://github.com/reactiveide/appinventor-sources.git
-    cd appinventor-sources 
-    DIR="$PWD"
-  fi
+  git clone https://github.com/reactiveide/appinventor-sources.git
   DIR="$DIR/appinventor"
+  #check if current path is a source code
+  if [ -d "$DIR" ]; then
+  #folder exists
+  temp1="0"
+  else
+  cd appinventor-sources
+  fi;
   read -p "Setup will be done at ${DIR}, please confirm (yes/no) : " firmdir
   case $firmdir in
         [Yy]* ) break;;
@@ -234,9 +237,6 @@ if [[ $CURRENT_DIR = 0 ]]; then
   done
 fi
 echo "Setting up HydrIDE on ${DIR} ..."
-cd
-cd $DIR
-cd ..
 echo "Adding upstream repository ..."
 git remote add upstream https://github.com/mit-cml/appinventor-sources.git
 echo "done"

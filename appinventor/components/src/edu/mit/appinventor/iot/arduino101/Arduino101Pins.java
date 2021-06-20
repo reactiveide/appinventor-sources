@@ -38,7 +38,7 @@ import java.util.List;
     category = ComponentCategory.EXTENSION,
     helpUrl = "http://iot.appinventor.mit.edu/#/arduino101/arduinopins",
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101Pins extends Arduino101ExtensionBase {
   public static final String PIN_SERVICE = "a56ada00-ed09-11e5-9c97-0002a5d5c51b";

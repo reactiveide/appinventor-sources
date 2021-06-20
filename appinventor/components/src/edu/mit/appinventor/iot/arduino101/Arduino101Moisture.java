@@ -34,7 +34,7 @@ import java.util.List;
     category = ComponentCategory.EXTENSION,
     helpUrl = "http://iot.appinventor.mit.edu/#/arduino101/arduinomoisture",
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101Moisture extends Arduino101ExtensionWithPin<Arduino101Moisture> {
   private static final String MOISTURE_SERVICE_UUID = "E95D0800-251D-470A-A062-FA1922DFA9A7";

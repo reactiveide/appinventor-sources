@@ -29,7 +29,7 @@ import com.google.appinventor.components.runtime.Form;
         "target='_blank'>how to instructions</a> for the Arduino 101 LED.</li></ul>",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101Led extends Arduino101ExtensionWithIntensity {
   private static final String LED_SERVICE_UUID = "E95D0700-251D-470A-A062-FA1922DFA9A7";

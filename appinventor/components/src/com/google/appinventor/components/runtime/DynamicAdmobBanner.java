@@ -45,7 +45,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 
 @DesignerComponent(category = ComponentCategory.DYNAMIC,
  description = "Create Dynamic Admob Banner With This!",
- iconName = "https://cdn.hybro.io/admob.png",
+ iconName = "https://cdn.reactiveide.com/admob.png",
  nonVisible = true,
   version = 1)
 @UsesLibraries(libraries = "google-play-services.jar")

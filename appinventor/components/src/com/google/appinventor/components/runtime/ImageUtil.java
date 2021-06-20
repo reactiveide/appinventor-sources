@@ -57,7 +57,7 @@ import com.google.appinventor.components.runtime.util.AsynchUtil;
 import com.google.appinventor.components.annotations.UsesLibraries;
 
 
-@DesignerComponent(version = 4, description = "A component that can edit images.", category = ComponentCategory.EXPERIMENTAL, nonVisible = true, iconName = "https://cdn.hybro.io/image.png")
+@DesignerComponent(version = 4, description = "A component that can edit images.", category = ComponentCategory.EXPERIMENTAL, nonVisible = true, iconName = "https://cdn.reactiveide.com/image.png")
 @SimpleObject
 @UsesPermissions(permissionNames = "android.permission.READ_EXTERNAL_STORAGE, android.permission.WRITE_EXTERNAL_STORAGE")
 public final class ImageUtil extends AndroidNonvisibleComponent {

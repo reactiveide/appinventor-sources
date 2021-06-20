@@ -29,7 +29,7 @@ import java.util.List;
         "target='_blank'>how to instructions</a> for the Arduino 101 Accelerometer.</li></ul>",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101Accelerometer extends Arduino101ExtensionBase {
   private static final String ACCELEROMETER_SERVICE_UUID = "E95D0100-251D-470A-A062-FA1922DFA9A7";

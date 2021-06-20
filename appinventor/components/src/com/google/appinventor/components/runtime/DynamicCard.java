@@ -44,7 +44,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic Card",
         category = ComponentCategory.EXPERIMENTAL,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/button.png")
+        iconName = "https://cdn.reactiveide.com/button.png")
 
 @UsesLibraries(libraries = "cardview.jar , cardview.aar")
 @SimpleObject

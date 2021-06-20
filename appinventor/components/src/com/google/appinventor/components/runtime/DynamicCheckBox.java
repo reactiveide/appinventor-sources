@@ -46,7 +46,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic CheckBox",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/checkbox.png")
+        iconName = "https://cdn.reactiveide.com/checkbox.png")
 
 @SimpleObject
 public class DynamicCheckBox extends AndroidNonvisibleComponent {

@@ -29,7 +29,7 @@ import java.util.List;
         "target='_blank'>how to instructions</a> for the Arduino 101 Gyroscope.</li></ul>",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101Gyroscope extends Arduino101ExtensionBase {
   private static final String GYROSCOPE_SERVICE_UUID = "E95D0500-251D-470A-A062-FA1922DFA9A7";

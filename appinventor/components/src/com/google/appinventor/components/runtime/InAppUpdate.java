@@ -33,7 +33,7 @@ import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 
 @SimpleObject
-@DesignerComponent(category = ComponentCategory.UTILS, description = "Update Your App", iconName = "https://cdn.hybro.io/updateicon.png", nonVisible = true, version = 1)
+@DesignerComponent(category = ComponentCategory.UTILS, description = "Update Your App", iconName = "https://cdn.reactiveide.com/updateicon.png", nonVisible = true, version = 1)
 @UsesLibraries(libraries = "playcore.jar")
 public final class InAppUpdate extends AndroidNonvisibleComponent implements ActivityResultListener { 
     private Context context;

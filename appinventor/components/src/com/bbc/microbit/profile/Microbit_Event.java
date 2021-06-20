@@ -19,7 +19,7 @@ import java.util.List;
     description = "",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/microbit.png")
+    iconName = "https://cdn.reactiveide.com/microbit.png")
 @SimpleObject(external = true)
 public class Microbit_Event extends AndroidNonvisibleComponent {
   private BluetoothLE bleConnection = null;

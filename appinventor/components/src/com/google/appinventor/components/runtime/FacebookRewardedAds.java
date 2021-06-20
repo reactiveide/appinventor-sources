@@ -38,7 +38,7 @@ import com.facebook.ads.*;
 
 @UsesLibraries(libraries="audience-network-sdk.jar, audience-network-sdk.aar")
 @SimpleObject
-@DesignerComponent(category = ComponentCategory.MONITIZATION, description = "Show Fb Rewarded ads", nonVisible = true, version = 1,iconName = "https://cdn.hybro.io/facebook.png")
+@DesignerComponent(category = ComponentCategory.MONITIZATION, description = "Show Fb Rewarded ads", nonVisible = true, version = 1,iconName = "https://cdn.reactiveide.com/facebook.png")
 public final class FacebookRewardedAds extends AndroidNonvisibleComponent implements Component {
     private final Activity activity;
     private ComponentContainer container;

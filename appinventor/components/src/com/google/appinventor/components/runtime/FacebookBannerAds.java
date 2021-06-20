@@ -27,7 +27,7 @@ import com.facebook.ads.*;
 
 @UsesLibraries(libraries="audience-network-sdk.jar, audience-network-sdk.aar")
 @SimpleObject
-@DesignerComponent(category = ComponentCategory.MONITIZATION, description = "Facebook Banner Ads", version = 1, iconName = "https://cdn.hybro.io/facebook.png")
+@DesignerComponent(category = ComponentCategory.MONITIZATION, description = "Facebook Banner Ads", version = 1, iconName = "https://cdn.reactiveide.com/facebook.png")
 public final class FacebookBannerAds extends AndroidViewComponent implements Component {
     private final String TAG = "";
     private final Activity activity;

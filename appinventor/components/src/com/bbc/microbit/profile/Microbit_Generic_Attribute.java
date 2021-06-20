@@ -14,7 +14,7 @@ import edu.mit.appinventor.ble.BluetoothLE;
     description = "",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/microbit.png")
+    iconName = "https://cdn.reactiveide.com/microbit.png")
 @SimpleObject(external = true)
 public class Microbit_Generic_Attribute extends AndroidNonvisibleComponent {
   private BluetoothLE bleConnection = null;

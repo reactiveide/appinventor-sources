@@ -41,7 +41,7 @@ import android.graphics.Color;
 @DesignerComponent(version = 1,  description = "Creates Dynamic Arrangement",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/table.png")
+        iconName = "https://cdn.reactiveide.com/table.png")
 @SimpleObject
 public class DynamicArrangement extends AndroidNonvisibleComponent {
     private ComponentContainer container;

@@ -40,7 +40,7 @@ import java.util.List;
 @DesignerComponent(category = ComponentCategory.STORAGE,
         version = 1,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/airtable.png")
+        iconName = "https://cdn.reactiveide.com/airtable.png")
 
 @UsesPermissions(permissionNames = "android.permission.INTERNET")
 @SimpleObject

@@ -36,7 +36,7 @@ import java.util.List;
     category = ComponentCategory.EXTENSION,
     helpUrl = "http://iot.appinventor.mit.edu/#/arduino101/arduinorgblcd",
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101RgbLcd extends Arduino101ExtensionBase {
   private static final String RGBLCD_SERVICE_UUID = "E95D0B00-251D-470A-A062-FA1922DFA9A7";

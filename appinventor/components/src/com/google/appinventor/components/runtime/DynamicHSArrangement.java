@@ -43,7 +43,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic Horizontal Scrollable Arrangement",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/horizontal.png")
+        iconName = "https://cdn.reactiveide.com/horizontal.png")
 @SimpleObject
 public class DynamicHSArrangement extends AndroidNonvisibleComponent {
     private ComponentContainer container;

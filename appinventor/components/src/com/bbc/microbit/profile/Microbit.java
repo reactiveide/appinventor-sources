@@ -20,7 +20,7 @@ import java.util.List;
     description = "",
     category = ComponentCategory.LEGOMINDSTORMS,
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/microbit.png")
+    iconName = "https://cdn.reactiveide.com/microbit.png")
 @SimpleObject(external = true)
 public class Microbit extends AndroidNonvisibleComponent {
   private BluetoothLE bleConnection = null;

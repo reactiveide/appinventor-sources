@@ -37,7 +37,7 @@ import java.util.List;
     category = ComponentCategory.EXTENSION,
     helpUrl = "http://iot.appinventor.mit.edu/#/arduino101/arduinoproximitysensor",
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101ProximitySensor extends Arduino101ExtensionWithPin {
   private static final String PROXIMITY_SERVICE_UUID = "E95D0A00-251D-470A-A062-FA1922DFA9A7";

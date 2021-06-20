@@ -42,7 +42,7 @@ import com.google.appinventor.components.runtime.ReplForm;
 
 @UsesAssets(fileNames = "fontawesome-webfont.ttf")
 @SimpleObject
-@DesignerComponent(category = ComponentCategory.USERINTERFACE, description = "Floating Action Button (FAB) is a button that float on the right button corner, it uses Font Aweome 4.6.2 as icon library. Cheatsheet : https://fontawesome.com/v4.7/cheatsheet/ ", iconName = "https://cdn.hybro.io/fab.png", nonVisible = true, version = 1)
+@DesignerComponent(category = ComponentCategory.USERINTERFACE, description = "Floating Action Button (FAB) is a button that float on the right button corner, it uses Font Aweome 4.6.2 as icon library. Cheatsheet : https://fontawesome.com/v4.7/cheatsheet/ ", iconName = "https://cdn.reactiveide.com/fab.png", nonVisible = true, version = 1)
 
 public class FAB extends AndroidNonvisibleComponent implements Component {
     public static final int VERSION = 1;

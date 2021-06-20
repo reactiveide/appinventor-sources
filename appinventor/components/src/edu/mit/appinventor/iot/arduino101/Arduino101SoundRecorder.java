@@ -31,7 +31,7 @@ import java.util.List;
     category = ComponentCategory.EXTENSION,
     helpUrl = "http://iot.appinventor.mit.edu/#/arduino101/arduinosoundrecorder",
     nonVisible = true,
-    iconName = "https://cdn.hybro.io/arduino.png")
+    iconName = "https://cdn.reactiveide.com/arduino.png")
 @SimpleObject(external = true)
 public class Arduino101SoundRecorder extends Arduino101ExtensionWithSerialTTL {
   private static final String SOUND_RECORDER_SERVICE = "E95D0D00-251D-470A-A062-FA1922DFA9A7";

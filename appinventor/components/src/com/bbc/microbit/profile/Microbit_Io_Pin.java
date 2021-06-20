@@ -30,7 +30,7 @@ import java.util.List;
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
     helpUrl = "http://iot.appinventor.mit.edu/#/microbit/microbitiopin",
-    iconName = "https://cdn.hybro.io/microbit.png")
+    iconName = "https://cdn.reactiveide.com/microbit.png")
 @SimpleObject(external = true)
 public class Microbit_Io_Pin extends AndroidNonvisibleComponent {
   private BluetoothLE bleConnection = null;

@@ -46,7 +46,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic CircularProgress",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/CustomProgress.png")
+        iconName = "https://cdn.reactiveide.com/CustomProgress.png")
 
 @SimpleObject
 public class DynamicCircularProgress extends AndroidNonvisibleComponent {

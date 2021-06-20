@@ -43,7 +43,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic Space",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/spacer.png")
+        iconName = "https://cdn.reactiveide.com/spacer.png")
 
 
 @SimpleObject

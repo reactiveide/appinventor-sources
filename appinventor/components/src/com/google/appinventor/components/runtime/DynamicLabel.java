@@ -46,7 +46,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic Label",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/label.png")
+        iconName = "https://cdn.reactiveide.com/label.png")
 
 
 @SimpleObject

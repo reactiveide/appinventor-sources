@@ -67,7 +67,7 @@ import java.net.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-@DesignerComponent(version = 4, description = "A component to work with files and folders", category = ComponentCategory.UTILS, nonVisible = true, iconName = "https://cdn.hybro.io/file.png")
+@DesignerComponent(version = 4, description = "A component to work with files and folders", category = ComponentCategory.UTILS, nonVisible = true, iconName = "https://cdn.reactiveide.com/file.png")
 @SimpleObject
 @UsesPermissions(permissionNames = "android.permission.READ_EXTERNAL_STORAGE, android.permission.WRITE_EXTERNAL_STORAGE")
 public final class FileUtils extends AndroidNonvisibleComponent {

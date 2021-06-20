@@ -46,7 +46,7 @@ import com.google.appinventor.components.runtime.DynamicArrangement;
 @DesignerComponent(version = 1,  description = "Creates Dynamic Switch",
         category = ComponentCategory.DYNAMIC,
         nonVisible = true,
-        iconName = "https://cdn.hybro.io/switch.png")
+        iconName = "https://cdn.reactiveide.com/switch.png")
 
 @SimpleObject
 public class DynamicSwitch extends AndroidNonvisibleComponent {
