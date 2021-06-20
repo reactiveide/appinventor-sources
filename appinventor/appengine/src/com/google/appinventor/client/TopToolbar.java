@@ -49,6 +49,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ClickListener;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -155,9 +156,9 @@ public class TopToolbar extends Composite {
     isReadOnly = Ode.getInstance().isReadOnly();
 
     // Create the TopToolbar drop down menus.
-    fileDropDown = makeButton(WIDGET_NAME_PROJECT, MESSAGES.projectsTabName());
-    connectDropDown = makeButton(WIDGET_NAME_CONNECT_TO, MESSAGES.connectTabName());
-    buildDropDown = makeButton(WIDGET_NAME_BUILD, MESSAGES.buildTabName());
+    fileDropDown = makeImgButton(WIDGET_NAME_PROJECT, MESSAGES.projectsTabName(), "https://cdn.reactiveide.com/account_circle.png");
+    connectDropDown = makeImgButton(WIDGET_NAME_CONNECT_TO, MESSAGES.connectTabName(), "https://cdn.reactiveide.com/account_circle.png");
+    buildDropDown = makeImgButton(WIDGET_NAME_BUILD, MESSAGES.buildTabName(), "https://cdn.reactiveide.com/account_circle.png");
 
     createProjectsMenu();
     createConnectMenu();
@@ -204,6 +205,16 @@ public class TopToolbar extends Composite {
 
   private DropDownButton makeButton(String id, String text) {
     DropDownButton button = new DropDownButton(id, text, new ArrayList<DropDownItem>(), false);
+    button.setStyleName("ode-TopPanelButton");
+    return button;
+  }
+
+    private DropDownButton makeImgButton(String id, String text, String imgurl) {
+    Image buildImgLogo = new Image(imgurl);
+    buildImgLogo.setTitle(text);
+    buildImgLogo.setSize("24px", "24px");
+    buildImgLogo.setStyleName("ode-"+text);
+    DropDownButton button = new DropDownButton(id, buildImgLogo, new ArrayList<DropDownItem>(), false);
     button.setStyleName("ode-TopPanelButton");
     return button;
   }

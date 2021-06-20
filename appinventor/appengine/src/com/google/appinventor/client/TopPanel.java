@@ -77,6 +77,8 @@ public class TopPanel extends Composite {
   private static final String WIDGET_NAME_LANGUAGE = "Language";
   private static final String WIDGET_NAME_DARKMODE = "DarkMode";
 
+  public Label projectNameLabel;
+
   private static final String WIDGET_NAME_ABOUT = "About";
 
   private static final String SIGNOUT_URL = "/ode/_logout";
@@ -258,8 +260,14 @@ public class TopPanel extends Composite {
     if (!Strings.isNullOrEmpty(logoUrl)) {
       logo.addClickHandler(new WindowOpenClickHandler(logoUrl));
     }
+
+    projectNameLabel = new Label();
+    projectNameLabel.setStyleName("ya-ProjectName");
+
     panel.add(logo);
-    panel.setCellWidth(logo, "230px");
+    panel.add(projectNameLabel);
+    panel.setCellWidth(logo, "60px");
+    panel.setCellWidth(projectNameLabel, "200px");
     panel.setCellHorizontalAlignment(logo, HorizontalPanel.ALIGN_LEFT);
     panel.setCellVerticalAlignment(logo, HorizontalPanel.ALIGN_MIDDLE);
   }
@@ -276,6 +284,10 @@ public class TopPanel extends Composite {
    */
   public void showMotd() {
     addMotd(rightPanel);
+  }
+  
+  public void updateProjectName(String projectName) {
+  projectNameLabel.setText(projectName);
   }
 
   // Move Settings function here

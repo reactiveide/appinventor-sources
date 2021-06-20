@@ -10,6 +10,7 @@ import com.google.appinventor.client.editor.FileEditor;
 import com.google.appinventor.client.editor.ProjectEditor;
 import com.google.appinventor.client.editor.youngandroid.BlocklyPanel;
 import com.google.appinventor.client.editor.youngandroid.YaBlocksEditor;
+import com.google.appinventor.client.TopPanel;
 
 import com.google.appinventor.client.explorer.commands.AddFormCommand;
 import com.google.appinventor.client.explorer.commands.ChainableCommand;
@@ -142,8 +143,6 @@ public class DesignToolbar extends Toolbar {
   }
   public View currentView = View.FORM;
 
-  public Label projectNameLabel;
-
   // Project currently displayed in designer
   private DesignProject currentProject;
 
@@ -171,13 +170,7 @@ public class DesignToolbar extends Toolbar {
 
     isReadOnly = Ode.getInstance().isReadOnly();
     galleryEnabled = Ode.getInstance().getSystemConfig().getGalleryEnabled();
-    projectNameLabel = new Label();
-    projectNameLabel.setStyleName("ya-ProjectName");
     HorizontalPanel toolbar = (HorizontalPanel) getWidget();
-    toolbar.insert(projectNameLabel, 0);
-
-    // width of palette minus cellspacing/border of buttons
-    toolbar.setCellWidth(projectNameLabel, "222px");
 
     addButton(new ToolbarItem(WIDGET_NAME_TUTORIAL_TOGGLE,
         MESSAGES.toggleTutorialButton(), new ToogleTutorialAction()));
@@ -463,7 +456,8 @@ public class DesignToolbar extends Toolbar {
         addDropDownButtonItem(WIDGET_NAME_SCREENS_DROPDOWN, new DropDownItem(screen.screenName,
             screen.screenName, new SwitchScreenAction(projectId, screen.screenName)));
       }
-      projectNameLabel.setText(projectName);
+      TopPanel toppanelt = new TopPanel();
+      toppanelt.updateProjectName(projectName);
       YaBlocksEditor.resendAssetsAndExtensions();  // Send assets for active project
     } else {
       ErrorReporter.reportError("Design toolbar doesn't know about project " + projectName +
