@@ -162,6 +162,13 @@ public class AssetList extends Composite implements ProjectChangeListener {
     refreshAssetList();
   }
 
+  public void launchAssetsDialog() {
+    if (assetsFolder != null) {
+          FileUploadWizard uploader = new FileUploadWizard(assetsFolder);
+          uploader.show();
+        }
+  }
+
   // ProjectChangeListener implementation
   @Override
   public void onProjectLoaded(Project project) {

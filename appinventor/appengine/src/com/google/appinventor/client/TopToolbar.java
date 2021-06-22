@@ -24,12 +24,14 @@ import com.google.appinventor.client.output.OdeLog;
 import com.google.appinventor.client.tracking.Tracking;
 import com.google.appinventor.client.utils.Downloader;
 import com.google.appinventor.client.widgets.DropDownButton;
+import com.google.appinventor.client.widgets.TextButton;
 import com.google.appinventor.client.widgets.DropDownButton.DropDownItem;
 import com.google.appinventor.client.wizards.DownloadUserSourceWizard;
 import com.google.appinventor.client.wizards.KeystoreUploadWizard;
 import com.google.appinventor.client.wizards.ProjectUploadWizard;
 import com.google.appinventor.client.wizards.TemplateUploadWizard;
 import com.google.appinventor.client.wizards.ComponentImportWizard;
+import com.google.appinventor.client.wizards.FileUploadWizard;
 import com.google.appinventor.client.wizards.ComponentUploadWizard;
 import com.google.appinventor.client.wizards.youngandroid.NewYoungAndroidProjectWizard;
 import com.google.appinventor.common.version.AppInventorFeatures;
@@ -47,6 +49,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ClickListener;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.Image;
@@ -55,6 +59,8 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.appinventor.client.explorer.youngandroid.AssetList;
+import com.google.appinventor.client.widgets.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +72,7 @@ import static com.google.appinventor.client.Ode.MESSAGES;
  * TopToolbar lives in the TopPanel, to create functionality in the designer.
  */
 public class TopToolbar extends Composite {
+
   private static final String WIDGET_NAME_NEW = "New";
   private static final String WIDGET_NAME_DELETE = "Delete";
   private static final String WIDGET_NAME_DELETE_TRASH = "Delete Trash";
@@ -110,6 +117,11 @@ public class TopToolbar extends Composite {
   private static final String WIDGET_NAME_IMPORTTEMPLATE = "ImportTemplate";
   private static final String WIDGET_NAME_EXPORTALLPROJECTS = "ExportAllProjects";
   private static final String WIDGET_NAME_EXPORTPROJECT = "ExportProject";
+  private static final String WIDGET_NAME_ADDFORM = "AddForm";
+  private static final String WIDGET_NAME_REMOVEFORM = "RemoveForm";
+  private static final String WIDGET_NAME_SCREENS_DROPDOWN = "ScreensDropdown";
+  private static final String WIDGET_NAME_SWITCH_TO_BLOCKS_EDITOR = "SwitchToBlocksEditor";
+  private static final String WIDGET_NAME_SWITCH_TO_FORM_EDITOR = "SwitchToFormEditor";
 
   private static final String WIDGET_NAME_ADMIN = "Admin";
   private static final String WIDGET_NAME_USER_ADMIN = "UserAdmin";
@@ -123,6 +135,7 @@ public class TopToolbar extends Composite {
   private DropDownButton fileDropDown;
   private DropDownButton connectDropDown;
   private DropDownButton buildDropDown;
+  private DropDownButton screenDropDown;
   private DropDownButton helpDropDown;
   private DropDownButton adminDropDown;
   private DropDownButton settingsDropDown;
@@ -156,18 +169,76 @@ public class TopToolbar extends Composite {
     isReadOnly = Ode.getInstance().isReadOnly();
 
     // Create the TopToolbar drop down menus.
-    fileDropDown = makeImgButton(WIDGET_NAME_PROJECT, MESSAGES.projectsTabName(), "https://cdn.reactiveide.com/account_circle.png");
-    connectDropDown = makeImgButton(WIDGET_NAME_CONNECT_TO, MESSAGES.connectTabName(), "https://cdn.reactiveide.com/account_circle.png");
-    buildDropDown = makeImgButton(WIDGET_NAME_BUILD, MESSAGES.buildTabName(), "https://cdn.reactiveide.com/account_circle.png");
+    fileDropDown = makeImgButton(WIDGET_NAME_PROJECT, MESSAGES.projectsTabName(), "https://cdn.reactiveide.com/mtl-icons/twotone_folder_open_red.png",1);
+    connectDropDown = makeImgButton(WIDGET_NAME_CONNECT_TO, MESSAGES.connectTabName(), "https://cdn.reactiveide.com/mtl-icons/twotone_phone_android_red.png",0);
+    buildDropDown = makeImgButton(WIDGET_NAME_BUILD, MESSAGES.buildTabName(), "https://cdn.reactiveide.com/mtl-icons/twotone_build_red.png",2);
 
     createProjectsMenu();
     createConnectMenu();
     createBuildMenu();
 
+    // Create Screen Control Buttons
+    screenDropDown = makeImgButton(WIDGET_NAME_SCREENS_DROPDOWN, MESSAGES.screensButton(), "https://cdn.reactiveide.com/mtl-icons/outline_phonelink_setup_red.png",0);
+
+    Image newScreenLogo =  new Image("https://cdn.reactiveide.com/mtl-icons/twotone_note_add_red.png");
+      newScreenLogo.setTitle("New Screen");
+      newScreenLogo.setSize("24px", "24px");
+      newScreenLogo.setStyleName("ode-Community");
+
+    TextButton newScreenButton = new TextButton(newScreenLogo);
+      //newScreenButton.addClickHandler();
+      newScreenButton.setStyleName("ode-TopPanelButton");
+
+    Image copyScreenLogo = new Image("https://cdn.reactiveide.com/mtl-icons/twotone_content_copy_red.png");
+      copyScreenLogo.setTitle("Copy Screen");
+      copyScreenLogo.setSize("24px", "24px");
+      copyScreenLogo.setStyleName("ode-Community");
+
+    TextButton copyScreenButton = new TextButton(copyScreenLogo);
+      //copyScreenButton.addClickHandler();
+      copyScreenButton.setStyleName("ode-TopPanelButton");
+
+    Image removeScreenLogo = new Image("https://cdn.reactiveide.com/mtl-icons/round_phonelink_erase_red.png");
+      removeScreenLogo.setTitle("Remove Screen");
+      removeScreenLogo.setSize("24px", "24px");
+      removeScreenLogo.setStyleName("ode-Community");
+
+    TextButton removeScreenButton = new TextButton(removeScreenLogo);
+      removeScreenButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+      }
+    });
+      removeScreenButton.setStyleName("ode-Rightbar");
+    
+    //createScreenMenu();
+
+    Image assetsButtonLogo = new Image("https://cdn.reactiveide.com/mtl-icons/baseline_drive_folder_upload_red.png");
+      assetsButtonLogo.setTitle("Assets");
+      assetsButtonLogo.setSize("24px", "24px");
+      assetsButtonLogo.setStyleName("ode-Community");
+
+    TextButton assetsButton = new TextButton(assetsButtonLogo);
+      assetsButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        AssetList assetbtn = new AssetList();
+        assetbtn.launchAssetsDialog();
+      }
+    });
+      assetsButton.setStyleName("ode-TopPanelButton");
+
     // Add the Buttons to the Toolbar.
     toolbar.add(fileDropDown);
     toolbar.add(connectDropDown);
     toolbar.add(buildDropDown);
+
+    toolbar.add(screenDropDown);
+    toolbar.add(newScreenButton);
+    toolbar.add(copyScreenButton);
+    toolbar.add(removeScreenButton);
+
+    toolbar.add(assetsButton);
 
     //Only if logged in as an admin, add the Admin Button
     if (Ode.getInstance().getUser().getIsAdmin()) {
@@ -209,13 +280,23 @@ public class TopToolbar extends Composite {
     return button;
   }
 
-    private DropDownButton makeImgButton(String id, String text, String imgurl) {
+    private DropDownButton makeImgButton(String id, String text, String imgurl, int useDecorationBar) {
     Image buildImgLogo = new Image(imgurl);
     buildImgLogo.setTitle(text);
     buildImgLogo.setSize("24px", "24px");
     buildImgLogo.setStyleName("ode-"+text);
+
     DropDownButton button = new DropDownButton(id, buildImgLogo, new ArrayList<DropDownItem>(), false);
     button.setStyleName("ode-TopPanelButton");
+
+    if (useDecorationBar == 1) {
+    button.setStyleName("ode-Leftbar");  
+    }
+
+    if (useDecorationBar == 2) {
+    button.setStyleName("ode-Rightbar");  
+    }
+
     return button;
   }
 
@@ -1028,4 +1109,4 @@ public class TopToolbar extends Composite {
     }
   }-*/;
 
-}
+ }

@@ -141,11 +141,26 @@ public class TopPanel extends Composite {
       links.add(readOnly);
     }
 
+       Image assetsButtonLogo = new Image("https://cdn.reactiveide.com/mtl-icons/twotone_extension_red.png");
+      assetsButtonLogo.setTitle("Blocks");
+      assetsButtonLogo.setSize("24px", "24px");
+      assetsButtonLogo.setStyleName("ode-Community");
+
+    TextButton blocksButton = new TextButton(assetsButtonLogo);
+      blocksButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        
+      }
+    });
+      blocksButton.setStyleName("ode-Rightbar");
+      links.add(blocksButton);
+
     Config config = ode.getSystemConfig();
     String guideUrl = config.getGuideUrl();
     if (!Strings.isNullOrEmpty(guideUrl)) {
 
-      Image communityLogo = new Image("https://cdn.reactiveide.com/face.png");
+      Image communityLogo = new Image("https://cdn.reactiveide.com/mtl-icons/twotone_face_red.png");
       communityLogo.setTitle("Community");
       communityLogo.setSize("24px", "24px");
       communityLogo.setStyleName("ode-Community");
@@ -188,7 +203,7 @@ public class TopPanel extends Composite {
     // About ReactiveIDE
     userItems.add(new DropDownItem(WIDGET_NAME_ABOUT, MESSAGES.aboutMenuItem(), new AboutAction()));
 
-    Image accountLogo = new Image("https://cdn.reactiveide.com/account_circle.png");
+    Image accountLogo = new Image("https://cdn.reactiveide.com/mtl-icons/twotone_account_circle_red.png");
     accountLogo.setTitle("My Account");
     accountLogo.setSize("24px", "24px");
     accountLogo.setStyleName("ode-Account");
@@ -211,7 +226,7 @@ public class TopPanel extends Composite {
     String currentLang = LocaleInfo.getCurrentLocale().getLocaleName();
     String nativeDisplayName = getDisplayName(currentLang);
 
-    Image languageLogo = new Image("https://cdn.reactiveide.com/language.png");
+    Image languageLogo = new Image("https://cdn.reactiveide.com/mtl-icons/twotone_language_red.png");
     languageLogo.setTitle("Language");
     languageLogo.setSize("24px", "24px");
     languageLogo.setStyleName("ode-Language");

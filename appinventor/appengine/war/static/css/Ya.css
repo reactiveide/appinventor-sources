@@ -71,6 +71,16 @@ select {
   background-color: white;
 }
 
+.ode-Leftbar {
+  border-left: 1px solid lightgray;
+  color: #f44336;position: relative;font-size: medium;height: 28px;margin: 0;min-width: 30px;padding: 0 16px;display: inline-block;font-family: 'Josefin Sans','Material Icons';will-change: box-shadow;transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline: none;cursor: pointer;text-decoration: none;text-align: center;line-height: 28px;vertical-align: middle;
+}
+
+.ode-Rightbar {
+  border-right: 1px solid lightgray;
+  color: #f44336;position: relative;font-size: medium;height: 28px;margin: 0;min-width: 30px;padding: 0 16px;display: inline-block;font-family: 'Josefin Sans','Material Icons';will-change: box-shadow;transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline: none;cursor: pointer;text-decoration: none;text-align: center;line-height: 28px;vertical-align: middle;
+}
+
 .ode-ContextMenuItem,
 .ode-CurrentColor {
   color: #000;
@@ -154,7 +164,7 @@ select {
   cursor: pointer;
   height: 20px;
   padding: 15px 16px 8px 16px;
-  border: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   text-align: left;
 }
 
@@ -337,7 +347,6 @@ select {
   min-height: 40px;
   margin-top: 8px;
   margin-bottom:  2px;
-  border-bottom: 1px solid lightgray;
   height: 40px;
   background-color: white;
   /* -webkit-box-shadow:0px 1px 1px black;
@@ -369,6 +378,7 @@ select {
 .ode-TopPanelAccount {
   font-size: 15px;
   color: grey;
+  padding-right: 15px;
 }
 
 .ode-TopPanelAccount a {
@@ -421,22 +431,6 @@ select {
 
 }
 
-/*,
-.ActionDropDown-Default,
-.ActionDropDown-Options,.ode-TextButton, .gwt-Button{
-}*/
-
-.ode-TopPanelButton:hover,
-.ActionDropDown-Default:hover
-.ActionDropDownBC-Options:hover {
-
-background-color: rgba(150,150,150,0.15);
-
-padding: 3px 16px 3px 16px;
-
-border-radius: 2px;
-}
-
 .ode-TopPanelButton:active
 .ActionDropDown-Default:active
 .ActionDropDown-Options:active {
@@ -456,7 +450,7 @@ border-radius: 2px;
  */
 
 .ode-DeckPanel {
-  margin: 4px 8px 8px;
+  margin: 0;
 }
 
 .ode-NavArrow {
@@ -616,9 +610,12 @@ gwt-Tree .gwt-TreeItem span:hover,
 /* Young Android Toolbar */
 
 .ya-Toolbar {
-  background-color: white;
-  box-shadow: 0 5px 5px -5px #333;
-  padding-bottom:  5px;
+ display: none;
+}
+
+.ya-ProjectName {
+    padding-left: 15px;
+    font-size: 16px;
 }
 
 .ya-Toolbar .ya-ProjectName {
@@ -633,7 +630,7 @@ gwt-Tree .gwt-TreeItem span:hover,
   letter-spacing: 0;
 }
 
-.ode-TextButton, .ode-TopPanelButton{color: #f44336;position: relative;font-size: medium;height: 28px;margin: 0;min-width: 40px;padding: 0 16px;display: inline-block;font-family: 'Josefin Sans','Material Icons';/* text-transform:  uppercase; */will-change: box-shadow;transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline: none;cursor: pointer;text-decoration: none;text-align: center;line-height: 28px;vertical-align: middle;}
+.ode-TextButton, .ode-TopPanelButton{color: #f44336;position: relative;font-size: medium;height: 28px;margin: 0;min-width: 30px;padding: 0 16px;display: inline-block;font-family: 'Josefin Sans','Material Icons';will-change: box-shadow;transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline: none;cursor: pointer;text-decoration: none;text-align: center;line-height: 28px;vertical-align: middle;}
 
 .ode-TextButton-up-disabled,
 .gwt-Button-up-disabled {
@@ -2113,18 +2110,20 @@ div.dropdiv p {
 
 .ode-TopPanelButton:hover,
 .ActionDropDown-Default:hover,
-.ActionDropDownBC-Options:hover {
+.ActionDropDownBC-Options:hover,
+.ode-Leftbar:hover,
+.ode-Rightbar:hover {
 
 background:  #96969626 radial-gradient(circle, transparent 1%, #96969626 1%) center/15000%;
-
 padding: 3px 16px 3px 16px;
-
-border-radius: 2px;
+border-radius: 8px;
 }
 
 .ode-TopPanelButton:active,
 .ActionDropDown-Default:active,
-.ActionDropDown-Options:active {
+.ActionDropDown-Options:active,
+.ode-Leftbar:active,
+.ode-Rightbar:active {
   background-color: #d8d0d0;
   background-size: 100%;
   transition: background 0.3s;
