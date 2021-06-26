@@ -140,6 +140,8 @@ public class TopToolbar extends Composite {
   private DropDownButton adminDropDown;
   private DropDownButton settingsDropDown;
 
+   final Ode ode = Ode.getInstance();
+
   private boolean isReadOnly;
   /**
    * This flag is set to true when a check for the android.keystore file is in progress.
@@ -222,8 +224,8 @@ public class TopToolbar extends Composite {
       assetsButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        AssetList assetbtn = new AssetList();
-        assetbtn.launchAssetsDialog();
+        Ode.getInstance().getTopToolbar().updateMoveToTrash("Move To Trash");
+        ode.switchToProjectsView();
       }
     });
       assetsButton.setStyleName("ode-TopPanelButton");

@@ -6,26 +6,16 @@
 
 package com.google.appinventor.client.widgets.properties;
 
-import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.client.ui.TextBox;
 
 /**
- * Property editor for long text.  Appears as a scrollable, resizable area.
+ * Property editor for long text.  Now same with Text.
  */
 public class TextAreaPropertyEditor extends TextPropertyEditorBase {
 
-  /* same as the height set in TextPropertyEditorBase */
-  private static final String MIN_CSS_HEIGHT = "2em";
-
-  /* tightly coupled with the width of properties panel:
-   * 186px == width of properties panel - side paddings and borders of textarea
-   *       == 194px - 8px
-   */
-  private static final String MAX_CSS_WIDTH = "186px";
-
   public TextAreaPropertyEditor() {
-   super(new TextArea());
-
-   textEdit.getElement().getStyle().setProperty("minHeight", MIN_CSS_HEIGHT);
-   textEdit.getElement().getStyle().setProperty("maxWidth", MAX_CSS_WIDTH);
+   super(new TextBox());
+   textEdit.getElement().setPropertyString("type", "");
+   textEdit.getElement().setPropertyString("placeholder", " ");
   }
 }

@@ -11,6 +11,7 @@ import com.google.appinventor.client.explorer.project.ComponentDatabaseChangeLis
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.HTML;
 
 import java.util.List;
 import java.util.Map;
@@ -51,16 +52,13 @@ public class PropertiesPanel extends Composite implements ComponentDatabaseChang
    * @param property  new property to be shown
    */
   void addProperty(EditableProperty property) {
-    Label label = new Label(property.getCaption());
-    label.setStyleName("ode-PropertyLabel");
-    panel.add(label);
     PropertyEditor editor = property.getEditor();
     // Since UIObject#setStyleName(String) clears existing styles, only
     // style the editor if it hasn't already been styled during instantiation.
-    if(!editor.getStyleName().contains("PropertyEditor")) {
-      editor.setStyleName("ode-PropertyEditor");
-    }
-    panel.add(editor);
+
+    HTML label = new HTML("<label class='ode-mtl-textfield'>" + editor + "<span>" + property.getCaption() + "</span></label>");
+    label.setStyleName("ode-PropertyEditor");  
+    panel.add(label);
   }
 
   /**

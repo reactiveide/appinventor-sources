@@ -16,5 +16,7 @@ public class TextPropertyEditor extends TextPropertyEditorBase{
 
   public TextPropertyEditor() {
    super(new TextBox());
+   textEdit.getElement().setPropertyString("type", "");
+   textEdit.getElement().setPropertyString("placeholder", " ");
   }
 }

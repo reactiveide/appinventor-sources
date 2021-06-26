@@ -56,6 +56,14 @@ public class DesignToolbar extends Toolbar {
   private boolean isReadOnly;   // If the UI is in read only mode
   private volatile boolean lockPublishButton = false; // Used to prevent double-clicking the
                                                      // SendToGallery button
+  
+    // Global instance of the DesignToolbar object
+  private static DesignToolbar instance;
+  final TopPanel toppanelt = TopPanel.getInstance();
+
+    public static DesignToolbar getInstance() {
+    return instance;
+  }
 
   /*
    * A Screen groups together the form editor and blocks editor for an
@@ -198,6 +206,10 @@ public class DesignToolbar extends Toolbar {
     // Gray out the Designer button and enable the blocks button
     toggleEditor(false);
     Ode.getInstance().getTopToolbar().updateFileMenuButtons(0);
+  }
+
+  public void switchToBlockEdit() {
+    new SwitchToBlocksEditorAction();
   }
 
   private class ToogleTutorialAction implements Command {
@@ -456,8 +468,8 @@ public class DesignToolbar extends Toolbar {
         addDropDownButtonItem(WIDGET_NAME_SCREENS_DROPDOWN, new DropDownItem(screen.screenName,
             screen.screenName, new SwitchScreenAction(projectId, screen.screenName)));
       }
-      TopPanel toppanelt = new TopPanel();
-      toppanelt.updateProjectName(projectName);
+      
+      //toppanelt.updateProjectName(projectName);
       YaBlocksEditor.resendAssetsAndExtensions();  // Send assets for active project
     } else {
       ErrorReporter.reportError("Design toolbar doesn't know about project " + projectName +

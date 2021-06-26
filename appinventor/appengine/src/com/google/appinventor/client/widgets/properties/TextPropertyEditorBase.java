@@ -104,8 +104,6 @@ public class TextPropertyEditorBase extends PropertyEditor {
     });
 
     initWidget(textEdit); //kludge for now fix this with instanceOf?
-
-    setHeight("2em");
   }
 
   @Override

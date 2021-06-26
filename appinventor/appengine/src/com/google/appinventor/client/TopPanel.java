@@ -90,7 +90,14 @@ public class TopPanel extends Composite {
 
   private final VerticalPanel rightPanel;  // remember this so we can add MOTD later if needed
 
+  private static TopPanel instance;
+
   final Ode ode = Ode.getInstance();
+  final DesignToolbar designtoolbar = DesignToolbar.getInstance();
+
+      public static TopPanel getInstance() {
+    return instance;
+  }
 
   interface Translations extends ClientBundle {
     Translations INSTANCE = GWT.create(Translations.class);
@@ -150,7 +157,8 @@ public class TopPanel extends Composite {
       blocksButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        
+        //designtoolbar.switchToBlockEdit();
+        updateProjectName("HelloWorld");
       }
     });
       blocksButton.setStyleName("ode-Rightbar");
@@ -253,6 +261,8 @@ public class TopPanel extends Composite {
 
     setStyleName("ode-TopPanel");
     setWidth("100%");
+
+    updateProjectName("Project");
   }
 
   private String getDisplayName(String localeName){
@@ -272,9 +282,13 @@ public class TopPanel extends Composite {
     logo.setSize("40px", "40px");
     logo.setStyleName("ode-Logo");
     String logoUrl = ode.getSystemConfig().getLogoUrl();
-    if (!Strings.isNullOrEmpty(logoUrl)) {
-      logo.addClickHandler(new WindowOpenClickHandler(logoUrl));
-    }
+    logo.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        Ode.getInstance().getTopToolbar().updateMoveToTrash("Move To Trash");
+        ode.switchToProjectsView();
+      }
+    });
 
     projectNameLabel = new Label();
     projectNameLabel.setStyleName("ya-ProjectName");
