@@ -224,8 +224,7 @@ public class TopToolbar extends Composite {
       assetsButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        Ode.getInstance().getTopToolbar().updateMoveToTrash("Move To Trash");
-        ode.switchToProjectsView();
+        new showAssetsDialogAction();
       }
     });
       assetsButton.setStyleName("ode-TopPanelButton");
@@ -452,6 +451,17 @@ public class TopToolbar extends Composite {
         cmd.startExecuteChain(Tracking.PROJECT_ACTION_SAVE_YA, projectRootNode);
       }
     }
+  }
+
+  private class showAssetsDialogAction implements Command {
+  // to be done Show Assets Dialog
+     @Override
+    public void execute() {
+          //FileUploadWizard uploader = new FileUploadWizard(assetsFolder);
+          //uploader.show();
+          AssetList getal = new AssetList(); 
+          new FileUploadWizard(getal.assetsFolder).center();
+    } 
   }
 
   private class SaveAsAction implements Command {

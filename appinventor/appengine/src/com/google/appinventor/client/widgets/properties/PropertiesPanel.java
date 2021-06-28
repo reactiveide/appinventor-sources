@@ -56,7 +56,7 @@ public class PropertiesPanel extends Composite implements ComponentDatabaseChang
     // Since UIObject#setStyleName(String) clears existing styles, only
     // style the editor if it hasn't already been styled during instantiation.
 
-    HTML label = new HTML("<label class='ode-mtl-textfield'>" + editor + "<span>" + property.getCaption() + "</span></label>");
+    HTML label = new HTML("<label class='ode-mtl-textfield'>" + "<input placeholder=' ' value='" /*+ editor*/ + "'><span>" + property.getCaption() + "</span></label>");
     label.setStyleName("ode-PropertyEditor");  
     panel.add(label);
   }

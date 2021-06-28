@@ -171,9 +171,9 @@ select {
 }
 
 .ode-Box-body {
-    background-color: #fbfbfb;
-    height: 94.5%;
-    padding-left: 5px;
+    background-color: #fff;
+    height: 95.5%;
+    padding-left: 2px;
 }
 
 .ode-Box-body-padding {
@@ -759,31 +759,18 @@ gwt-Tree .gwt-TreeItem span:hover,
   border: 0px;
 }
 
-
-.ode-SimplePaletteItem {
-  background-color: white; /* needed on Firefox */
-  height: 30px;
-  cursor: pointer;
-  width: 100%;
-  background-color: white;
-  padding: 8px;
-  border-radius: 3px;
-  display: table;
-  margin-bottom: 8px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
-}
-
 .ode-SimplePaletteItem-icon {
-  height: 18px;
-  width: 18px;
+  height: 48px;
+  width: 48px;
+  padding-left: 5px;
+  margin-bottom: 20px;
 }
 
 .ode-SimplePaletteItem-caption {
-  font-size: 12px;
-  padding-top: 5px;
-  color: #282828;
-
+    font-size: 16px;
+    padding-top: 2px;
+    color: #282828;
+    width: 80px;
 }
 
 .ode-SimplePalleteItem-button {
@@ -996,10 +983,12 @@ select.ode-PropertyEditor[disabled] {
     --pure-material-safari-helper1: rgb(var(--pure-material-primary-rgb, 244, 67, 54));
     position: relative;
     display: inline-block;
-    padding-top: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     font-family: var(--pure-material-font, "Roboto", "Josefin Sans", BlinkMacSystemFont, system-ui, -apple-system);
-    font-size: 16px;
+    font-size: 15px;
     overflow: hidden;
+    width: 99%;
 }
 
 /* Input, Textarea */
@@ -2417,28 +2406,36 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     border-radius: 5px;
 }
 
+.ode-PaletteSearchbar {
+    background: transparent !important;
+    border:0px !important;
+    border-radius:none !important;
+    border-bottom: 1px solid lightgray !important;
+    margin-bottom : 1px !important;
+}
+
+.ode-PaletteSearchbar:focus {
+    background: transparent !important;
+    border-radius:0px !important;
+    border-bottom: 2px solid #f44336 !important;
+    margin-bottom : 0px !important;
+}
+
 .ode-SimplePaletteItem {
-  background-color: white; /* needed on Firefox */
-  height: 30px;
-  cursor: pointer;
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  display: table;
-  margin-bottom: 8px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+    height: 30px;
+    cursor: pointer;
+    padding: 16px 12px 17px 12px;
+    display: table;
+    margin: 0;
+    background: transparent;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    border-bottom: 1px solid lightgray;
 }
 
 .ode-SimplePaletteItem:hover {
-  background:  #96969626 radial-gradient(circle, transparent 1%, #96969626 1%) center/15000%;
-}
-
-.ode-SimplePaletteItem:active {
-background-color: #eae4e4;
-  background-size: 100%;
-  transition: background border 0.3s;
-  border: 1.2px solid #f44336;
+    background:  #96969626 radial-gradient(circle, transparent 1%, #96969626 1%) center/15000%;
+    border-radius: 12px;
 }
 
 .gwt-StackPanel .gwt-StackPanelItem:hover {

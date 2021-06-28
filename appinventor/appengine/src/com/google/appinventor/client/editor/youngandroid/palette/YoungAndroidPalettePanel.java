@@ -31,6 +31,8 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.StackPanel;
+import com.google.gwt.user.client.ui.Grid;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.event.dom.client.KeyPressEvent;
@@ -70,6 +72,7 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
   private final Map<ComponentCategory, PaletteHelper> paletteHelpers;
 
   private final StackPanel stackPalette;
+  private final Grid gridPalette;
   private final Map<ComponentCategory, VerticalPanel> categoryPanels;
   // store Component Type along with SimplePaleteItem to enable removal of components
   private final Map<String, SimplePaletteItem> simplePaletteItems;
@@ -156,6 +159,17 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
     COMPONENT_DATABASE = SimpleComponentDatabase.getInstance(editor.getProjectId());
 
     stackPalette = new StackPanel();
+    gridPalette = new Grid(2,2);
+
+    // Add images to the grid
+      int numRows = gridPalette.getRowCount();
+      int numColumns = gridPalette.getColumnCount();
+      for (int row = 0; row < numRows; row++) {
+         for (int col = 0; col < numColumns; col++) {
+            gridPalette.setWidget(row, col, 
+            new Image("http://www.tutorialspoint.com/images/gwt-mini.png"));
+         }
+      }
 
     paletteHelpers = new HashMap<ComponentCategory, PaletteHelper>();
     // If a category has a palette helper, add it to the paletteHelpers map here.
@@ -176,9 +190,9 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
     }
 
     searchText = new TextBox();
-    searchText.setWidth("100%");
+    searchText.setWidth("250px");
     searchText.getElement().setPropertyString("placeholder", MESSAGES.searchComponents());
-    searchText.getElement().setAttribute("style", "width: 100%; box-sizing: border-box;");
+    searchText.addStyleName("ode-PaletteSearchbar");
 
     searchText.addKeyUpHandler(new SearchKeyUpHandler());
     searchText.addKeyPressHandler(new ReturnKeyHandler());
@@ -201,12 +215,13 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
     panel.setWidth("100%");
 
     searchResults = new VerticalPanel();
-    searchResults.setWidth("100%");
-    stackPalette.setWidth("100%");
+    searchResults.setWidth("265px");
+    gridPalette.setWidth("265px");
 
     initWidget(panel);
     panel.add(searchResults);
     panel.add(stackPalette);
+    //panel.add(gridPalette);
 
     for (ComponentCategory category : ComponentCategory.values()) {
       if (showCategory(category)) {

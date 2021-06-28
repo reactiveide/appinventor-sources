@@ -17,9 +17,11 @@ import com.google.gwt.event.dom.client.MouseDownHandler;
 import com.google.gwt.event.dom.client.TouchStartEvent;
 import com.google.gwt.event.dom.client.TouchStartHandler;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.Grid;
 
 /**
  * This class represents a component on the component palette panel.
@@ -52,14 +54,18 @@ public class SimplePaletteItem extends DragSourcePanel {
     componentPrototype = null;
 
     // Initialize palette item UI
+    VerticalPanel newpanel = new VerticalPanel();
     HorizontalPanel panel = new HorizontalPanel();
-    panel.setStylePrimaryName("ode-SimplePaletteItem");
+
+    newpanel.setStylePrimaryName("ode-SimplePaletteItem");
+    panel.setStylePrimaryName("ode-SimplePaletteHorizontalContainer");
+
 
     Image image = scd.getImage();
     image.setStylePrimaryName("ode-SimplePaletteItem-icon");
-    panel.add(image);
-    panel.setCellHorizontalAlignment(image, HorizontalPanel.ALIGN_LEFT);
-    panel.setCellWidth(image, "30px");
+    newpanel.add(image);
+    newpanel.setCellHorizontalAlignment(image, HorizontalPanel.ALIGN_LEFT);
+    newpanel.setCellWidth(image, "48px");
 
     Label label = new Label(ComponentsTranslation.getComponentName(scd.getName()));
     label.setHorizontalAlignment(Label.ALIGN_LEFT);
@@ -82,7 +88,8 @@ public class SimplePaletteItem extends DragSourcePanel {
     panel.setCellHorizontalAlignment(optPanel, HorizontalPanel.ALIGN_RIGHT);
 
     panel.setWidth("100%");
-    add(panel);
+    newpanel.add(panel);
+    add(newpanel);
     setWidth("100%");
 
     addHandlers();
@@ -94,11 +101,7 @@ public class SimplePaletteItem extends DragSourcePanel {
    * @param paletteItemWidget the Widget of the panel item to be selected
    */
   private static void select(Widget paletteItemWidget) {
-    if (selectedPaletteItemWidget != null) {
-      selectedPaletteItemWidget.getElement().getStyle().setProperty("backgroundColor", "white");
-    }
-    selectedPaletteItemWidget = paletteItemWidget;
-    selectedPaletteItemWidget.getElement().getStyle().setProperty("backgroundColor", "#e8e8e8");
+  // removed, nothing to do now
   }
 
   private void addHandlers() {

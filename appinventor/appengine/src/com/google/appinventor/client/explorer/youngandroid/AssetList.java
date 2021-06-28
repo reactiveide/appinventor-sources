@@ -49,7 +49,7 @@ public class AssetList extends Composite implements ProjectChangeListener {
 
   private long projectId;
   private Project project;
-  private YoungAndroidAssetsFolder assetsFolder;
+  public YoungAndroidAssetsFolder assetsFolder;
   private int clientX;
   private int clientY;
 
