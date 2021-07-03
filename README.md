@@ -1,4 +1,6 @@
-# Welcome to MIT App Inventor
+# Welcome to ReactiveIDE 
+
+https://github.com/reactiveide/appinventor-sources/blob/master/LICENSE
 
 ## Introduction
 
