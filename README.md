@@ -54,7 +54,7 @@ Software that you will need before working on this project :
 
 - Java 8 (OpenJDK 8 is recommended, JRE is not enough)
 - Apache Ant
-- GCloud SDK
+- GCloud SDK (for JAVA)
 - Python
 
 Note 1: If you are working on a 64-bit linux system, you may need to install 32-bit version of: glibc(to get a 32-bit version of ld-linux.so), zlib and libstdc++.
