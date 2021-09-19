@@ -1,6 +1,11 @@
 # Welcome to ReactiveIDE 
 
-https://github.com/reactiveide/appinventor-sources/blob/master/LICENSE
+## Disclaimer
+[ReactiveIDE](https://reactiveide.com) is ***No Longer*** based on MIT App Inventor 2 and ***WILL NOT*** be offering any support to any MIT App Inventor 2 based Platform.
+
+The following Source Code is a ***Development Copy*** of ReactiveIDE based on MIT App Inventor 2 which is ***NOT supposed*** to be used in production. 
+
+Features, Components and contents with this source code may be ***unfinnished, not functional, or causing error***, there is ***NO Guarantee*** of functionality.
 
 ## Introduction
 
@@ -15,6 +20,20 @@ We provide this code for reference and for experienced people who wish
 to operate their own App Inventor instance and/or contribute to the project.
 
 This code is tested and known to work with Java 8.
+
+## Licenses
+
+Please be noted that this project is NOT intended for ***Commerical use*** !
+
+If you are working on a personal or hobby project, feel free to use it ***WITH CREDIT*** !
+
+(simply attach either the developer name kwankiu or the project name ReactiveIDE somewhere in your project, thanks! :)
+
+If you are contributing to any other OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use and OPEN SOURCE it. 
+
+(We encourage you to help our community and contribute to open source)
+
+https://github.com/reactiveide/appinventor-sources/blob/master/LICENSE
 
 ## Contributors
 The best way to go about integrating changes in App Inventor is to start a conversation in the [Open Source forum](https://community.appinventor.mit.edu/c/open-source-development/10) about whatever you intend to change or add.
