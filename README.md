@@ -181,6 +181,3 @@ The release configuration sets the following additional options:
    6. Refresh the page and that's it! The changes are live.
 
 Logs can be found at http://localhost:9876/log/ode and SourceMaps at http://localhost:9876/sourcemaps/ode
-
-## Need help?
-Join [our community](https://community.appinventor.mit.edu/).
