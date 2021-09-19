@@ -47,6 +47,8 @@ Since this software is based on MIT App Inventor 2, you may be able to find a lo
 
 This is a quick guide to get started with the sources. More detailed instructions can be found [here](https://docs.google.com/document/pub?id=1Xc9yt02x3BRoq5m1PJHBr81OOv69rEBy8LVG_84j9jc), a slide show can be seen [here](http://josmas.github.io/contributingToAppInventor2/#/).
 
+This guide will let you get started only on Linux or macOS. Although it is possible to setup for Windows, we DO NOT provide any help for setting up on Windows platform currently, but Ubuntu Subsystem (WSL) on Windows 10 works fine, just follow the instructions for Linux.
+
 ### Dependencies
 Software that you will need before working on this project :
 
@@ -102,43 +104,45 @@ to clear out the submodules ___before switching branches___. When switching back
 ### Troubleshooting common installation issues
 Run this command to run a self-diagnosis of your environment. This command tries to figure out common installation issues and offers you a solution to fix them yourself. Make sure this passes all the checks before you proceed further.
 
-#### Linux and macOS
-```bash
-./buildtools doctor
-```
-
-#### Windows
-```bash
-buildtools doctor
-```
+    $ ./buildtools
+    
+    You should see a menu with option (B.Doctor) , type "B" and hit enter.
 
 ### Compiling
 Before compiling the code, an [auth key](https://docs.google.com/document/pub?id=1Xc9yt02x3BRoq5m1PJHBr81OOv69rEBy8LVG_84j9jc#h.yikyg2e1rfut) is needed. You can create one by running the following commands:
 
-    $ cd appinventor
-    $ ant MakeAuthKey
+    $ ./buildtools
+    
+    You should see a menu with option (2.Make Auth Key) , type "2" and hit enter.
 
-Once the key is in place, type the following to compile (from the appinventor folder):
+Once the key is in place, type the following to compile :
 
-    $ ant
+    $ ./buildtools
+    
+    You should see a menu with option (4.Build (Full)) , type "4" and hit enter.
 
 You will see a lot of stuff in the terminal and after a few minutes (it can take from 2 to 10 minutes, depending on your machine specs) you should see a message saying something like *Build Successful*.
+
+Tips : 
+The standard compile option (4.Build (Full)) will compile the full source code including the AI Companion App (Mobile App for Live Testing), to reduce compilation time you may use option 5 (5.Build (Without Companion)). This will compile the source code without compile the AI Companion App.
 
 ### Running the server(s)
 There are two servers in App Inventor, the main server that deals with project information, and the build server that creates apk files. More detailed information can be found in the [App Inventor Developer Overview](https://docs.google.com/document/d/1hIvAtbNx-eiIJcTA2LLPQOawctiGIpnnt0AvfgnKBok/pub) document.
 
 #### Running the main server
 
-    $ your-google-cloud-SDK-folder/bin/java_dev_appserver.sh
-            --port=8888 --address=0.0.0.0 appengine/build/war/
+    $ ./buildtools
+    
+    You should see a menu with option (8.Run Local Server) , type "8" and hit enter.
 
-Make sure you change *your-google-cloud-SDK-folder* to wherever in your hard drive you have placed the Google Cloud SDK.
+Make sure you have installed Google Cloud SDK in your system enviroment and is callable via the gcloud command
 
 #### Running the build server
 The build server can be run from the terminal by typing:
 
-    $ cd appinventor/buildserver
-    $ ant RunLocalBuildServer
+    $ ./buildtools
+    
+    You should see a menu with option (10.Run Build Server) , type "10" and hit enter.
 
 Note that you will only need to run the build server if you are going to build an app as an apk. You can do all the layout and programming without having the build server running, but you will need it to download the apk.
 
@@ -152,13 +156,16 @@ Before entering or scanning the QR code in the Companion, check the box labeled 
 ### Running tests
 The automated tests depend on [Phantomjs](http://phantomjs.org/). Make sure you install it and add it to your path. After that, you can run all tests by typing the following in a terminal window:
 
-    $ ant tests
+    $ ./buildtools
+    
+    You should see a menu with option (A.Run Tests) , type "A" and hit enter.
 
 ### Building Release Code
 
 Release builds with optimizations turned on for the web components of the system can be done by passing `-Drelease=true` to `ant`, e.g.:
 
 ```
+cd appinventor
 ant -Drelease=true noplay
 ```
 
@@ -169,11 +176,12 @@ The release configuration sets the following additional options:
 - App Engine YaClient module is compiled with optimization tuned to 9 and with 8 threads
 
 ### Hot-reloading GWT code with 'Super Dev Mode'
-1. Run `ant devmode`
-2. [Run the main server](#running-the-main-server).
-3. Open http://localhost:9876 (*GWT CodeServer*) and drag the two bookmarklets (*Dev Mode On & Off*) to the bookmarks bar.
-4. Open http://localhost:8888 (*App Engine server*)
-5. To see changes "live":
+1. Run `cd appinventor`
+2. Run `ant devmode`
+3. [Run the main server](#running-the-main-server).
+4. Open http://localhost:9876 (*GWT CodeServer*) and drag the two bookmarklets (*Dev Mode On & Off*) to the bookmarks bar.
+5. Open http://localhost:8888 (*App Engine server*)
+6. To see changes "live":
    1. Save your changes in file.
    2. Click on the *"Dev Mode On"* bookmarklet.
    3. A popup will be shown with a button to compile `ode` module.
