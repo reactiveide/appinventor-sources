@@ -36,61 +36,25 @@ If you are contributing to any other OPEN SOURCE Project or MIT App Inventor 2 a
 https://github.com/reactiveide/appinventor-sources/blob/master/LICENSE
 
 ## Contributors
-The best way to go about integrating changes in App Inventor is to start a conversation in the [Open Source forum](https://community.appinventor.mit.edu/c/open-source-development/10) about whatever you intend to change or add.
 
-We use ***very brief and informal*** design documents with descriptions of the proposed changes and screenshots of how the functionality would look like and behave, in order to gather as much feedback from the community, as early as possible. We generally use shared Google docs for this (with permissions to add comments), but any format that is accessible from a web browser (and allows comments) would do.
+If you are interested in this project and would like to improve this project, any contribution to this project is appreciated.
+Simply open a pull request or issue, our developer will review it.
 
-If you have skipped this step and have gone ahead and made your changes already, feel free to open a pull request, but don't be too surprised if we ask you to go back and document it in a design document. Remember that the main goal of doing this is ***to gather as much feedback, as early as possible***. We will also possibly ask you to put an instance with your changes on [appspot](http://appspot.com), and provide a modified Companion app (if that applies) so that reviewers can play with the changes before looking at the source.
+Tips :
+Since this software is based on MIT App Inventor 2, you may be able to find a lot more information about the project via [this link](https://mit-cml.github.io/appinventor-sources/) and how to contribute to it.
 
-Check out our open source [site](http://appinventor.mit.edu/appinventor-sources/) to find a lot more information about the project and how to contribute to it.
+## Setup instructions
 
-## Setup instructions (Vagrant)
-
-The easiest way to get a development environment up and running is to use the provided Vagrantfile. Install [Vagrant](https://vagrantup.com) and open a terminal in the root directory of this repository. Run the following commands
-
-```bash
-vagrant plugin install vagrant-vbguest  # optionally for virtualbox users, and only once
-vagrant up                              # initializes the VM
-```
-
-It may take a few minutes for Vagrant to initialize as it will pull down a virtual machine image from the Internet and configure it with all of the App Inventor dependencies. Subsequent start-ups will be faster. Next, enter the virtual machine by running:
-
-```bash
-vagrant ssh
-```
-
-This should open up a terminal within the virtual machine in the directory `/vagrant/appinventor`. This directory is the same as the `appinventor` directory in this repository, shared between your host machine and the virtual machine. Any changes made on one side will be visible in the other. This allows you to edit files on your host machine with your preferred editor, while keeping the build environment relegated to the virtual machine. To build App Inventor, you may now run:
-
-```bash
-ant
-```
-
-and to run App Inventor:
-
-```bash
-start_appinventor
-```
-
-Press Ctrl+C to quit the server. Enter exit at the prompt to leave the virtual machine. To reclaim resources when you are not actively developing, you can run `vagrant halt` to stop the virtual machine. To completely remove the virtual machine, run `vagrant destroy`. If you destroy the VM, you will need to start these instructions from the top.
-
-Note 1: For macOS users, if you are using VirtualBox and get any error while initializing the VM it may be due to security restrictions in System Preferences, consider reading [this](https://medium.com/@Aenon/mac-virtualbox-kernel-driver-error-df39e7e10cd8) article. 
-
-Note 2: If it seems like none of the dependencies are installed in the VM, run ```vagrant provision```.
-
-For better performance, consider using the manual instructions.
-
-## Setup instructions (manual)
-
-This is a quick guide to get started with the sources. More detailed instructions can be found [here](https://docs.google.com/document/pub?id=1Xc9yt02x3BRoq5m1PJHBr81OOv69rEBy8LVG_84j9jc), a slide show can be seen [here](http://josmas.github.io/contributingToAppInventor2/#/), and all the [documentation](http://appinventor.mit.edu/appinventor-sources/#documentation) for the project is available in our [site](http://appinventor.mit.edu/appinventor-sources/).
+This is a quick guide to get started with the sources. More detailed instructions can be found [here](https://docs.google.com/document/pub?id=1Xc9yt02x3BRoq5m1PJHBr81OOv69rEBy8LVG_84j9jc), a slide show can be seen [here](http://josmas.github.io/contributingToAppInventor2/#/).
 
 ### Dependencies
-You will need a full Java JDK (version 8, OpenJDK preferred; JRE is not enough) and Python to compile and run the servers.
+Software that you will need before working on this project :
 
-You will also need a copy of the [Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/java/download) for Java and [ant](http://ant.apache.org/).
+- Java 8 (OpenJDK 8 is recommended, JRE is not enough)
+- Apache Ant
+- Python
 
-If you want to make changes to the source, you are going to need to run an automated test suite, and for that you will also need [phantomjs](http://phantomjs.org/). Have a look at the testing section for more information.
-
-Note 1: If you are working on a 64-bit linux system, you need to install 32-bit version of: glibc(to get a 32-bit version of ld-linux.so), zlib and libstdc++.
+Note 1: If you are working on a 64-bit linux system, you may need to install 32-bit version of: glibc(to get a 32-bit version of ld-linux.so), zlib and libstdc++.
 
 If you are on a Debian-based distribution(Ubuntu), use:
 
