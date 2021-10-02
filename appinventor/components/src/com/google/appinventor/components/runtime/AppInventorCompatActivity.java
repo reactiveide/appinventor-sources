@@ -261,7 +261,12 @@ public class AppInventorCompatActivity extends Activity implements AppCompatCall
     }
   }
 
-  protected boolean isRepl() {
+  /**
+   * Checks whether the activity is the REPL.
+   *
+   * @return true if the activity is the REPL, otherwise false
+   */
+  public boolean isRepl() {
     return false;
   }
 

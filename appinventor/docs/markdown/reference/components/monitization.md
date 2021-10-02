@@ -13,7 +13,6 @@ Table of Contents:
 * [FacebookInterstitialAds](#FacebookInterstitialAds)
 * [FacebookRewardedAds](#FacebookRewardedAds)
 * [PayPal](#PayPal)
-* [UPIGateway](#UPIGateway)
 
 ## AndroidPay  {#AndroidPay}
 
@@ -253,39 +252,3 @@ None
 
 {:id="PayPal.StartPayment" class="method"} <i/> StartPayment(*amount*{:.text},*currency*{:.text},*description*{:.text})
 : Start Payment Gateway by passing amount, currencyType and description for Payment
-
-## UPIGateway  {#UPIGateway}
-
-Component for UPIGateway
-
-
-
-### Properties  {#UPIGateway-Properties}
-
-{:.properties}
-
-{:id="UPIGateway.UpiId" .text .wo} *UpiId*
-: Property for UpiId
-
-### Events  {#UPIGateway-Events}
-
-{:.events}
-
-{:id="UPIGateway.PaymentCancelled"} PaymentCancelled()
-: Payment Cancel
-
-{:id="UPIGateway.PaymentFailed"} PaymentFailed()
-: Payment Fail
-
-{:id="UPIGateway.PaymentSuccessful"} PaymentSuccessful()
-: Payment Success
-
-{:id="UPIGateway.RegisteredFailed"} RegisteredFailed()
-: Registered Fail
-
-### Methods  {#UPIGateway-Methods}
-
-{:.methods}
-
-{:id="UPIGateway.StartPaymentUPI" class="method"} <i/> StartPaymentUPI(*amount*{:.text},*name*{:.text},*note*{:.text})
-: Start the Payment
