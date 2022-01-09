@@ -20,9 +20,7 @@ This code is known to work with Java 8.
 
 This Project is now available under the MIT License !
 
-If you are working on a personal or hobby project, feel free to use it ***WITH CREDIT*** !
-
-If you are contributing to any other OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use it within the license. 
+If you are contributing to any OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use it within the license. 
 
 (We encourage you to help our community and contribute to open source)
 
