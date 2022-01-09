@@ -3,12 +3,11 @@
 ## Disclaimer
 [ReactiveIDE](https://reactiveide.com) is ***No Longer*** based on MIT App Inventor 2 and ***WILL NOT*** be offering any support to any MIT App Inventor 2 based Platform.
 
-The following Source Code is a ***Development Copy*** of ReactiveIDE based on MIT App Inventor 2 which is ***NOT supposed*** to be used in production. 
+The following Source Code is a ***Development Copy*** of ReactiveIDE based on MIT App Inventor 2 under MIT License which is ***NOT production ready***. 
 
 Features, Components and contents with this source code may be ***unfinnished, not functional, or causing error***, there is ***NO Guarantee*** of functionality.
 
 ## Introduction
-
 
 This code is based on [MIT App Inventor 2](http://appinventor.mit.edu) and is designed to be run in Google's App Engine.
 
@@ -19,13 +18,11 @@ This code is known to work with Java 8.
 
 ## Licenses
 
-Please be noted that this project is NOT intended for ***Commerical use*** !
+This Project is now available under the MIT License !
 
 If you are working on a personal or hobby project, feel free to use it ***WITH CREDIT*** !
 
-(simply attach either the developer name kwankiu or the project name ReactiveIDE somewhere in your project, thanks! :)
-
-If you are contributing to any other OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use and OPEN SOURCE it. 
+If you are contributing to any other OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use it within the license. 
 
 (We encourage you to help our community and contribute to open source)
 
