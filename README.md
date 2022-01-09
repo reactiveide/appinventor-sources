@@ -1,9 +1,11 @@
-# Welcome to ReactiveIDE 
+# Welcome to ReactiveIDE (HydrIDE)
 
 ## Disclaimer
 [ReactiveIDE](https://reactiveide.com) is ***No Longer*** based on MIT App Inventor 2 and ***WILL NOT*** be offering any support to any MIT App Inventor 2 based Platform.
 
-The following Source Code is a ***Development Copy*** of ReactiveIDE based on MIT App Inventor 2 under MIT License which is ***NOT production ready***. 
+The following Source Code is basically a ***Development Copy*** of HydrIDE (it has been renamed to ReactiveIDE during the development, however it was never released and is discontinued) based on MIT App Inventor 2 under MIT License which is ***NOT production ready***. 
+
+We decided to open source this copy of ReactiveIDE (which is actually HydrIDE) for those who is interested in contributing to MIT App Inventor 2 and would like to do any further development and contribute to OPEN SOURCE.
 
 Features, Components and contents with this source code may be ***unfinnished, not functional, or causing error***, there is ***NO Guarantee*** of functionality.
 
@@ -22,7 +24,9 @@ This Project is now available under the MIT License !
 
 If you are contributing to any OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use it within the license. 
 
-(We encourage you to help our community and contribute to open source)
+We previously has a custom license as we DO NOT encourage any developer to do any kind of blind copy of any components in order to package their own app builder for commercial use without giving any credit. However, after certain considerations, we decided to open source the code via MIT License to match with MIT App Inventor 2 to convince any contributions to either HydrIDE or MIT App Inventor.
+
+Although MIT License means you can modify and redistribute this source code, we still encourage developers to help our community by contributing to open source.
 
 https://github.com/reactiveide/appinventor-sources/blob/master/LICENSE
 
