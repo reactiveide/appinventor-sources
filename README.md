@@ -3,7 +3,7 @@
 ## Disclaimer
 [ReactiveIDE](https://reactiveide.com) is ***No Longer*** based on MIT App Inventor 2 and ***WILL NOT*** be offering any support to any MIT App Inventor 2 based Platform.
 
-The following Source Code is basically a ***Development Copy*** of HydrIDE (it has been renamed to ReactiveIDE during the development, however it was never released and is discontinued) based on MIT App Inventor 2 under MIT License which is ***NOT production ready***. 
+The following Source Code is basically a ***Development Copy*** of HydrIDE (it has been renamed to ReactiveIDE during the development, however it was never released and is discontinued) based on MIT App Inventor 2 under Apache License (with some code/modules under MIT License) which is ***NOT production ready and MAY NOT BE FUNCTIONAL***.
 
 We decided to open source this copy of ReactiveIDE (which is actually HydrIDE) for those who is interested in contributing to MIT App Inventor 2 and would like to do any further development and contribute to OPEN SOURCE.
 
@@ -20,13 +20,13 @@ This code is known to work with Java 8.
 
 ## Licenses
 
-This Project is now available under the MIT License !
+This Project is now available under the Apache 2.0 License (with some code/modules under MIT License) !
 
 If you are contributing to any OPEN SOURCE Project or MIT App Inventor 2 and you find anything useful here, feel free to use it within the license. 
 
-We previously has a custom license as we DO NOT encourage any developer to do any kind of blind copy of any components in order to package their own app builder for commercial use without giving any credit. However, after certain considerations, we decided to open source the code via MIT License to match with MIT App Inventor 2 to convince any contributions to either HydrIDE or MIT App Inventor.
+This copy of software is currently matching the open source license with [MIT App Inventor's source code](https://github.com/mit-cml/appinventor-sources)
 
-Although MIT License means you can modify and redistribute this source code, we still encourage developers to help our community by contributing to open source.
+Although Apache 2.0 License allows you to modify and redistribute this source code regardless of the purpose (such as research, personal, hobby or commmerial purpose), we highly encourage developers to help our community by contributing to open source.
 
 https://github.com/reactiveide/appinventor-sources/blob/master/LICENSE
 
