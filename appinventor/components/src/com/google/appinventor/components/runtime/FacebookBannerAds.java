@@ -1,19 +1,9 @@
 package com.google.appinventor.components.runtime;
 
-    /*
-    
-    
-      _   _           _    ___________ _____ 
-     | | | |         | |  |_   _|  _  \  ___|
-     | |_| |_   _  __| |_ __| | | | | | |__  
-     |  _  | | | |/ _` | '__| | | | | |  __| 
-     | | | | |_| | (_| | | _| |_| |/ /| |___ 
-     \_| |_/\__, |\__,_|_| \___/|___/ \____/  @ Hybro 2020
-             __/ |                           
-            |___/                            
-
-
-    */
+// Copyright © 2023 ReactiveIDE
+// HydrIDE, Hybro and Hybro Studio are previous name assoiated with any MIT App Inventor based software of ReactiveIDE
+// Released under the Apache License, Version 2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 
 import android.app.Activity;
 import android.content.Context;

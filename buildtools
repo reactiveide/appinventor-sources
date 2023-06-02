@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Copyright © 2023 ReactiveIDE under Apache 2.0 License
+
 DIR="$PWD/appinventor"
 #check if current path is a source code
 if [ -d "$DIR" ]; then
